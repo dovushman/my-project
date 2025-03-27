@@ -21,14 +21,14 @@
 //     <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center p-8">
 //       {/* Main Greeting */}
 //       <h1 className="text-5xl font-bold leading-tight">Hi, I'm Dov!</h1>
-      
+
 //       {/* About Section */}
 //       <p className="text-xl mt-4 max-w-2xl mx-auto">
 //         A Full Stack Engineer passionate about building amazing experiences. I specialize
 //         in both front-end and back-end development, focusing on creating seamless, scalable
 //         applications with a strong attention to user experience and performance.
 //       </p>
-      
+
 //       {/* Call to Action */}
 //       <button className="mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg transition-transform transform hover:scale-105">
 //         View My Work
@@ -142,6 +142,7 @@
 "use client";
 
 import { useTheme } from "../ThemeContext"; // Import the useTheme hook
+import Image from "next/image";
 
 export default function Hero() {
   const { theme } = useTheme(); // Access the current theme from context
@@ -158,10 +159,12 @@ export default function Hero() {
     >
       {/* Image or Graphic */}
       <div className="flex-1">
-        <img
+        <Image
           src="/images/your-image.jpg"
           alt="Dov"
-          className="rounded-full shadow-lg w-80 h-80 object-cover mx-auto"
+          width={320}
+          height={320}
+          className="rounded-full shadow-lg object-cover mx-auto"
         />
       </div>
 
@@ -177,7 +180,7 @@ export default function Hero() {
               <span style={{ color: "var(--text-keyword)" }}>const</span>{" "}
               <span style={{ color: "var(--text-variable)" }}>name</span>{" "}
               <span style={{ color: "var(--text-operator)" }}>=</span>{" "}
-              <span style={{ color: "var(--text-string)" }}>"Dov Ushman"</span>;
+              <span style={{ color: "var(--text-string)" }}>&quot;Dov Ushman&quot;</span>;
             </p>
             <p>
               <span style={{ color: "var(--text-keyword)" }}>function</span>{" "}
@@ -187,7 +190,7 @@ export default function Hero() {
             <p style={{ paddingLeft: "2rem" }}>
               <span style={{ color: "var(--text-keyword)" }}>return</span>{" "}
               <span style={{ color: "var(--text-string)" }}>
-                `"Hi, I'm Dov, a Full Stack Engineer passionate about creating impactful software."`
+                &quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;
               </span>;
             </p>
             <p>{"}"}</p>
@@ -195,9 +198,9 @@ export default function Hero() {
         ) : (
           // Regular mode
           <>
-            <h1 className="text-4xl font-bold">Hi, I'm Dov!</h1>
+            <h1 className="text-4xl font-bold">Hi, I&apos;m Dov!</h1>
             <p className="text-lg mt-4 max-w-lg">
-              I'm a Full Stack Engineer passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+              I&apos;m a Full Stack Engineer passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
             </p>
           </>
         )}
