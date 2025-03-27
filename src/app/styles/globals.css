@@ -1,5 +1,8 @@
+@import url("https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
 @import "tailwindcss";
-/* Default styles (dark mode) */
+
+
 /* Default styles (dark mode) */
 :root {
   --background-color: #2B2B2B;
@@ -8,7 +11,25 @@
   --card-background: #1a1a1a;
   --button-background: #00bcd4;
   --button-text-color: #000;
+
+  /* blue purple */
+  /*--hero-gradient-start: #1e3a8a; /* Indigo-600 */
+  /*--hero-gradient-end: #6b21a8;*/ /* Purple-600 */
+
+  /* blue green */
+  /*--hero-gradient-start: #1e3a8a; /* Dark Blue */
+  /*--hero-gradient-end: #065f46; /* Dark Green */
+
+  /* blue red */
+  --hero-gradient-start: #1e3a8a; /* Dark Blue */
+  --hero-gradient-end: #b91c1c; /* Dark Red */
+
+  /* blue red */
+  /*--hero-gradient-start: #007acc; /* VS Code blue */
+  /*--hero-gradient-end: #1e1e1e; /* VS Code dark background */
+
 }
+
 
 /* Light mode styles */
 [data-theme="light"] {
@@ -18,6 +39,44 @@
   --card-background: #f5f5f5;
   --button-background: #00796b;
   --button-text-color: #fff;
+
+   /* blue purple */
+  /*--hero-gradient-start: #93c5fd;*/ /* Light Blue */
+  /*--hero-gradient-end: #d8b4fe;*/ /* Light Purple */
+
+  /* blue green   
+  /*  --hero-gradient-start: #93c5fd; /* Light Blue */
+  /* --hero-gradient-end: #6ee7b7; /* Light Green */
+
+  /* blue red */
+  --hero-gradient-start: #93c5fd; /* Light Blue */
+  --hero-gradient-end: #fca5a5; /* Light Red */
+}
+
+
+/* filepath: /Users/dovushman/my-project/src/app/styles/globals.css */
+
+/* IDE Theme styles */
+[data-theme="ide"] {
+  --background-color: #1e1e1e; /* VS Code editor background */
+  --navbar-background: #252526; /* VS Code sidebar background */
+  --text-color: #d4d4d4; /* Default text color */
+  --card-background: #2d2d2d; /* VS Code panel background */
+  --button-background: #007acc; /* VS Code blue button */
+  --button-text-color: #ffffff; /* Button text color */
+
+  /* Hero Gradient */
+  --hero-gradient-start: #007acc; /* VS Code blue */
+  --hero-gradient-end: #1e1e1e; /* VS Code dark background */
+
+  /* Syntax Highlighting Colors */
+  --text-keyword: #569cd6; /* Blue for keywords */
+  --text-string: #ce9178; /* Orange for strings */
+  --text-variable: #9cdcfe; /* Light blue for variables */
+  --text-comment: #6a9955; /* Green for comments */
+  --text-function: #dcdcaa; /* Yellow for functions */
+  --text-number: #b5cea8; /* Light green for numbers */
+  --text-operator: #c586c0; /* Purple for operators */
 }
 
 body {
