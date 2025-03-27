@@ -124,7 +124,7 @@ export default function Projects() {
       fullDescription:
         "Web applications with a Python backend and React frontend, providing a solution to reduce AWS costs.",
       link: "#",
-      image: "/images/7FactorSmallLogo.png",
+      image: "/Images/7FactorSmallLogo.png",
       techStack: ["react", "python", "express"],
     },
     {
