@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import Image from "next/image";
@@ -88,19 +90,19 @@ export default function Projects() {
                 <h3 className="text-lg font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm">{project.fullDescription}</p>
               </div>
-
-              {/* View Project Link */}
-              <a
-                href={project.link}
-                className="text-button-background text-sm hover:underline absolute bottom-25 left-5"
-              >
-                View Project →
-              </a>
             </div>
 
-            {/* Tech Stack Icons */}
-            <div className="mt-auto flex justify-center gap-6 flex-wrap z-30">
+            {/* View Project Button */}
+            <a
+              href={project.link}
+              className="absolute transform -translate-x-1/2 text-sm font-medium text-blue-500 hover:underline transition-opacity duration-300 opacity-0 group-hover:opacity-100 z-30"
+              style={{ bottom: "4.5rem", left: "23%" }} // Adjust `left` with rem or percentage
+            >
+              View Project →
+            </a>
 
+            {/* Tech Stack Icons */}
+            <div className="mt-auto flex justify-center gap-6 flex-wrap z-20">
 
               {project.techStack.map((tech, i) => {
                 const customIcons: Record<string, string> = {
@@ -143,16 +145,16 @@ export default function Projects() {
                         width={tech === "reactNative" ? 64 : 48}
                         height={tech === "reactNative" ? 64 : 48}
                         className={`transition-transform duration-300 group-hover:scale-110 ${(tech === "express" || tech === "expo") && theme === "dark"
-                            ? "invert"
-                            : ""
+                          ? "invert"
+                          : ""
                           }`}
                         style={tech === "reactNative" ? { objectFit: "contain" } : {}}
                       />
                       {/* Tooltip */}
                       <div
                         className={`absolute top-[-33px] left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-300 ${hoveredTech === `${tech}-${index}`
-                            ? "opacity-100 pointer-events-auto"
-                            : "opacity-0 pointer-events-none"
+                          ? "opacity-100 pointer-events-auto"
+                          : "opacity-0 pointer-events-none"
                           }`}
                       >
                         <span className="bg-gray-800 text-white text-xs rounded-md px-2 py-1 whitespace-nowrap">
@@ -164,7 +166,6 @@ export default function Projects() {
                   </div>
                 );
               })}
-
             </div>
           </div>
         ))}
