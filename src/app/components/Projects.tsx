@@ -348,7 +348,10 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="p-4 cursor-pointer transition-all hover:transform hover:translate-x-2"
+              onClick={() => setSelectedProject(project.id)}
+              className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 ${
+                selectedProject === project.id && "md:border-l-4 md:border-blue-500 md:pl-4"
+              }`}
             >
               {/* Show full details on larger screens */}
               <div className="hidden md:block">
