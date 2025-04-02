@@ -333,8 +333,6 @@ export default function Projects() {
     },
   ];
 
-  const currentProject = projects[selectedProject];
-
   const customIcons = {
     expo: "/icons/expo-svgrepo-com.svg",
     reactNative: "/icons/react-native-1.svg",
@@ -350,10 +348,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              onClick={() => setSelectedProject(project.id)}
-              className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 ${
-                selectedProject === project.id ? "border-l-4 border-blue-500 pl-4" : ""
-              }`}
+              className="p-4 cursor-pointer transition-all hover:transform hover:translate-x-2"
             >
               {/* Show full details on larger screens */}
               <div className="hidden md:block">
@@ -422,21 +417,21 @@ export default function Projects() {
 
         {/* Right side: Project details (hidden on smaller screens) */}
         <div className="sticky-scroll p-6 hidden md:block" style={{ height: "500px", overflowY: "auto" }}>
-          <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
+          <h2 className="text-2xl font-bold mb-4">{projects[selectedProject].title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
               <Image
-                src={currentProject.image}
-                alt={currentProject.title}
+                src={projects[selectedProject].image}
+                alt={projects[selectedProject].title}
                 layout="fill"
                 objectFit="cover"
                 className="rounded-md"
               />
             </div>
             <div>
-              <p className="mb-6">{currentProject.fullDescription}</p>
+              <p className="mb-6">{projects[selectedProject].fullDescription}</p>
               <div className="flex flex-wrap gap-4 mb-6">
-                {currentProject.techStack.map((tech, i) => {
+                {projects[selectedProject].techStack.map((tech, i) => {
                   const iconPath = tech in customIcons
                     ? customIcons[tech as keyof typeof customIcons]
                     : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
@@ -458,7 +453,7 @@ export default function Projects() {
                 })}
               </div>
               <a
-                href={currentProject.link}
+                href={projects[selectedProject].link}
                 className="inline-flex items-center text-blue-500 hover:text-blue-700"
               >
                 View Project <span className="ml-1">→</span>
