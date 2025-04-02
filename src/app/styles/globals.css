@@ -129,9 +129,9 @@ section {
 
 .sticky-scroll {
   position: sticky;
-  top: 100px; /* Stick to the top of the viewport */
-  max-height: 400px; /* Default maximum height for smaller screens */
-  overflow-y: auto; /* Enable scrolling within the sticky container */
+  top: 100px;
+  height: 400px; /* Fixed height for smaller screens */
+  overflow-y: auto;
   background-color: var(--card-background);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -140,13 +140,13 @@ section {
 
 @media (min-width: 768px) {
   .sticky-scroll {
-    max-height: 500px; /* Larger maximum height for medium screens */
+    height: 500px; /* Fixed height for medium screens */
   }
 }
 
 @media (min-width: 1024px) {
   .sticky-scroll {
-    max-height: 600px; /* Even larger maximum height for large screens */
+    height: 600px; /* Fixed height for large screens */
   }
 }
 
