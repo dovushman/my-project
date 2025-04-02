@@ -121,7 +121,8 @@ export default function Projects() {
   return (
     <section className="py-12 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ overflow: "visible" }}>
         {/* Left side: Project list */}
         <div className="space-y-4 pr-4">
           {projects.map((project) => (
@@ -185,75 +186,75 @@ export default function Projects() {
         </div>
 
         {/* Right side: Project details */}
-        <div className="sticky-scroll p-6" style={{ height: "650px" }}>
-          <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Left side: Project image */}
-            <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
-              <Image
-                src={currentProject.image}
-                alt={currentProject.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md"
-              />
-            </div>
+        <div className="sticky-scroll p-6">
+  <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Left side: Project image */}
+    <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
+      <Image
+        src={currentProject.image}
+        alt={currentProject.title}
+        layout="fill"
+        objectFit="cover"
+        className="rounded-md"
+      />
+    </div>
 
-            {/* Right side: Project information */}
-            <div>
-              <p className="mb-6">{currentProject.fullDescription}</p>
+    {/* Right side: Project information */}
+    <div>
+      <p className="mb-6">{currentProject.fullDescription}</p>
 
-              {/* Tech stack */}
-              <div className="flex flex-wrap gap-4 mb-6">
-                {currentProject.techStack.map((tech, i) => {
-                  const iconPath = tech in customIcons
-                    ? customIcons[tech as keyof typeof customIcons]
-                    : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+      {/* Tech stack */}
+      <div className="flex flex-wrap gap-4 mb-6">
+        {currentProject.techStack.map((tech, i) => {
+          const iconPath = tech in customIcons
+            ? customIcons[tech as keyof typeof customIcons]
+            : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
 
-                  return (
-                    <div key={i} className="relative">
-                      <div
-                        onMouseEnter={() => setHoveredTech(`${tech}-${currentProject.id}`)}
-                        onMouseLeave={() => setHoveredTech(null)}
-                        className="group flex flex-col items-center"
-                      >
-                        <div className="bg-gray-100 dark:bg-gray-700 rounded-full p-2">
-                          <Image
-                            src={iconPath}
-                            alt={tech}
-                            width={24}
-                            height={24}
-                            className={`transition-transform duration-300 ${
-                              (tech === "express" || tech === "expo") && theme === "dark"
-                                ? "invert"
-                                : ""
-                            }`}
-                          />
-                        </div>
-
-                        {/* Tooltip */}
-                        {hoveredTech === `${tech}-${currentProject.id}` && (
-                          <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1">
-                            {tooltipLabels[tech as keyof typeof tooltipLabels] ||
-                              tech.charAt(0).toUpperCase() + tech.slice(1)}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* View project link */}
-              <a
-                href={currentProject.link}
-                className="inline-flex items-center text-blue-500 hover:text-blue-700"
+          return (
+            <div key={i} className="relative">
+              <div
+                onMouseEnter={() => setHoveredTech(`${tech}-${currentProject.id}`)}
+                onMouseLeave={() => setHoveredTech(null)}
+                className="group flex flex-col items-center"
               >
-                View Project <span className="ml-1">→</span>
-              </a>
+                <div className="bg-gray-100 dark:bg-gray-700 rounded-full p-2">
+                  <Image
+                    src={iconPath}
+                    alt={tech}
+                    width={24}
+                    height={24}
+                    className={`transition-transform duration-300 ${
+                      (tech === "express" || tech === "expo") && theme === "dark"
+                        ? "invert"
+                        : ""
+                    }`}
+                  />
+                </div>
+
+                {/* Tooltip */}
+                {hoveredTech === `${tech}-${currentProject.id}` && (
+                  <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1">
+                    {tooltipLabels[tech as keyof typeof tooltipLabels] ||
+                      tech.charAt(0).toUpperCase() + tech.slice(1)}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
+      </div>
+
+      {/* View project link */}
+      <a
+        href={currentProject.link}
+        className="inline-flex items-center text-blue-500 hover:text-blue-700"
+      >
+        View Project <span className="ml-1">→</span>
+      </a>
+    </div>
+  </div>
+</div>
       </div>
     </section>
   );
