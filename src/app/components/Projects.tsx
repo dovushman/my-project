@@ -249,7 +249,6 @@ import { useState } from "react";
 export default function Projects() {
   const { theme } = useTheme();
   const [selectedProject, setSelectedProject] = useState(0); // Default to first project
-  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   const projects = [
     {
@@ -340,22 +339,6 @@ export default function Projects() {
     expo: "/icons/expo-svgrepo-com.svg",
     reactNative: "/icons/react-native-1.svg",
     adobexd: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg",
-  };
-
-  const tooltipLabels = {
-    postgresql: "PostgreSQL",
-    reactNative: "React Native",
-    adobexd: "Adobe XD",
-    sqlite: "SQLite",
-    mongodb: "MongoDB",
-    nodejs: "Node.js",
-    firebase: "Firebase",
-    java: "Java",
-    javafx: "JavaFX",
-    python: "Python",
-    express: "Express",
-    react: "React",
-    expo: "Expo",
   };
 
   return (
