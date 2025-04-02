@@ -129,13 +129,26 @@ section {
 
 .sticky-scroll {
   position: sticky;
-  top: 100; /* Stick to the top of the viewport */
+  top: 100px; /* Stick to the top of the viewport */
   height: 600px; /* Set a consistent height */
   overflow-y: auto; /* Enable scrolling within the sticky container */
   background-color: var(--card-background); /* Matches the theme */
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
   padding: 1rem;
+  max-height: calc(var(--vh, 1vh) * 100); /* Use custom vh unit */
+}
+
+.parent-container {
+  min-height: 100vh; /* Ensure the parent container is tall enough */
+}
+
+:root {
+  --vh: 1vh;
+}
+
+.sticky-scroll {
+  max-height: calc(var(--vh, 1vh) * 100); /* Use custom vh unit */
 }
 
 .fade-gradient {

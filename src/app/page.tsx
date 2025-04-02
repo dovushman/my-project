@@ -2,11 +2,21 @@
 
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills"; // Import the Skills component
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { useEffect } from "react";
 
 export default function HomePage() {
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
   return (
     <main>
       <section id="home">
@@ -15,7 +25,7 @@ export default function HomePage() {
       <section id="about">
         <About />
       </section>
-      <section id="skills"> {/* Add the Skills section */}
+      <section id="skills">
         <Skills />
       </section>
       <section id="projects">
