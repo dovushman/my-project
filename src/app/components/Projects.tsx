@@ -347,12 +347,12 @@ export default function Projects() {
         <div className="space-y-4 pr-4">
           {projects.map((project) => (
             <div
-              key={project.id}
-              onClick={() => setSelectedProject(project.id)}
-              className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 ${
-                selectedProject === project.id && "md:border-l-4 md:border-blue-500 md:pl-4"
-              }`}
-            >
+  key={project.id}
+  onClick={() => setSelectedProject(project.id)}
+  className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 focus:outline-none ${
+    selectedProject === project.id ? "selected md:border-l-4 md:border-blue-500 md:pl-4" : ""
+  }`}
+>
               {/* Show full details on larger screens */}
               <div className="hidden md:block">
                 <h3 className="text-xl font-semibold">{project.title}</h3>

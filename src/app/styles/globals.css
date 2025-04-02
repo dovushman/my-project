@@ -173,6 +173,29 @@ section {
     padding: 0 1rem; /* Add some horizontal padding */
   }
 
+  .project-list > div {
+    outline: none;
+    border-left: 4px solid transparent;
+    background-color: var(--background-color); /* Explicitly set the default background color */
+    transition: border-color 0.2s ease-in-out; /* Only transition the border color */
+  }
+  
+  .project-list > div:focus,
+  .project-list > div:active {
+    outline: none;
+    border-left-color: transparent;
+    background-color: var(--background-color); /* Ensure consistent background color */
+  }
+  
+  .project-list > div.selected {
+    border-left-color: #3b82f6; /* Blue border for selected project */
+    background-color: var(--background-color); /* Explicitly set the background color */
+  }
+  
+  .project-list > div:not(.selected) {
+    background-color: var(--background-color); /* Ensure non-selected items retain the same background */
+  }
+
   .sticky-scroll {
     display: none; /* Hide the right box on mobile */
   }
