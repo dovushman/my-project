@@ -130,15 +130,16 @@ section {
 .parent-container {
   display: flex; /* Align the two columns side by side */
   align-items: flex-start; /* Align items at the top */
-  gap: 1rem; /* Add spacing between columns */
+  justify-content: center; /* Center the divide between the two sections */
+  gap: 2rem; /* Add spacing between the sections */
 }
 
 .project-list {
-  width: 50%; /* Take up 50% of the container width */
+  width: 45%; /* Slightly reduce width to create space for centering */
 }
 
 .sticky-scroll {
-  width: 50%; /* Take up 50% of the container width */
+  width: 45%; /* Match the width of the project list */
   position: sticky;
   top: 100px; /* Stick to the top of the viewport */
   max-height: 100%; /* Match the height of the parent container */
