@@ -129,8 +129,7 @@ section {
 
 .sticky-scroll {
   position: sticky;
-  top: 100px;
-  height: auto; /* Allow height to adjust dynamically */
+  top: 100px; /* Stick to the top of the viewport */
   max-height: 400px; /* Default maximum height for smaller screens */
   overflow-y: auto; /* Enable scrolling within the sticky container */
   background-color: var(--card-background);
