@@ -130,7 +130,7 @@ section {
 .sticky-scroll {
   position: sticky;
   top: 100px;
-  max-height: 50vh; /* Default maximum height for smaller screens */
+  max-height: clamp(300px, 50vh, 600px); /* Responsive height */
   overflow-y: auto; /* Enable scrolling within the sticky container */
   background-color: var(--card-background);
   border-radius: 0.5rem;
