@@ -386,9 +386,32 @@ export default function Projects() {
               {/* Show simplified details on smaller screens */}
               <div className="block md:hidden">
                 <h3 className="text-lg font-semibold">{project.title}</h3>
+                <p className="text-sm mt-1">{project.description}</p>
+                <div className="flex gap-2 mt-2">
+                  {project.techStack.map((tech, i) => {
+                    const iconPath = tech in customIcons
+                      ? customIcons[tech as keyof typeof customIcons]
+                      : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+
+                    return (
+                      <Image
+                        key={i}
+                        src={iconPath}
+                        alt={tech}
+                        width={20}
+                        height={20}
+                        className={`transition-transform duration-300 ${
+                          (tech === "express" || tech === "expo") && theme === "dark"
+                            ? "invert"
+                            : ""
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
                 <a
                   href={project.link}
-                  className="text-blue-500 hover:text-blue-700 text-sm"
+                  className="text-blue-500 hover:text-blue-700 text-sm mt-2 block"
                 >
                   View Project →
                 </a>
@@ -397,11 +420,8 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Right side: Project details */}
-        <div
-          className="sticky-scroll p-6"
-          style={{ height: "500px", overflowY: "auto" }} // Set height for the right box
-        >
+        {/* Right side: Project details (hidden on smaller screens) */}
+        <div className="sticky-scroll p-6 hidden md:block" style={{ height: "500px", overflowY: "auto" }}>
           <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
