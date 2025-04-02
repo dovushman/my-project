@@ -138,6 +138,17 @@ section {
   width: 45%; /* Slightly reduce width to create space for centering */
 }
 
+.parent-container {
+  display: flex; /* Align the two columns side by side */
+  align-items: flex-start; /* Align items at the top */
+  justify-content: center; /* Center the divide between the two sections */
+  gap: 2rem; /* Add spacing between the sections */
+}
+
+.project-list {
+  width: 45%; /* Slightly reduce width to create space for centering */
+}
+
 .sticky-scroll {
   width: 45%; /* Match the width of the project list */
   position: sticky;
@@ -150,15 +161,25 @@ section {
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
-  .sticky-scroll {
-    max-height: 60vh; /* Larger maximum height for medium screens */
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .parent-container {
+    flex-direction: column; /* Stack the project list vertically */
+    align-items: center; /* Center the project list */
   }
-}
 
-@media (min-width: 1024px) {
+  .project-list {
+    width: 100%; /* Take up the full width on mobile */
+    padding: 0 1rem; /* Add some horizontal padding */
+  }
+
   .sticky-scroll {
-    max-height: 70vh; /* Even larger maximum height for large screens */
+    display: none; /* Hide the right box on mobile */
+  }
+
+  .project-list > div {
+    border-left: none; /* Remove the blue border for the selected project */
+    padding-left: 0; /* Reset padding */
   }
 }
 
