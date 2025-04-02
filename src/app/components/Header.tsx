@@ -33,7 +33,19 @@ export default function Header() {
         <ul className="flex space-x-4">
           <li>
             <button
-              onClick={() => scrollToSection("hero")}
+              onClick={() => scrollToSection("home")} // Scroll to the Hero section
+              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
+              style={{
+                color: "var(--text-color)",
+                backgroundColor: "transparent", // No background for text links
+              }}
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("about")} // Scroll to the About section
               className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
               style={{
                 color: "var(--text-color)",
@@ -45,7 +57,19 @@ export default function Header() {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("skills")} // Scroll to the Skills section
+              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
+              style={{
+                color: "var(--text-color)",
+                backgroundColor: "transparent", // No background for text links
+              }}
+            >
+              Skills
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("projects")} // Scroll to the Projects section
               className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
               style={{
                 color: "var(--text-color)",
@@ -57,7 +81,7 @@ export default function Header() {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("contact")} // Scroll to the Contact section
               className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
               style={{
                 color: "var(--text-color)",
@@ -84,7 +108,7 @@ export default function Header() {
             className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="currentColor"
+            stroke={theme === "dark" ? "white" : "black"} // Adjust stroke color based on theme
           >
             <path
               strokeLinecap="round"

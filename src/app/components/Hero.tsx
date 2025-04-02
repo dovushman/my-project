@@ -139,6 +139,97 @@
 //     </section>
 //   );
 // }
+
+
+
+
+
+
+
+//Old very good one
+
+// "use client";
+
+// import { useTheme } from "../ThemeContext"; // Import the useTheme hook
+// import Image from "next/image";
+
+// export default function Hero() {
+//   const { theme } = useTheme(); // Access the current theme from context
+//   const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
+
+//   return (
+//     <section
+//       className="flex items-center justify-between h-screen px-10"
+//       style={{
+//         background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
+//         color: "var(--text-color)",
+//         fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit", // Monospaced font for IDE mode
+//       }}
+//     >
+//       {/* Image or Graphic */}
+//       <div className="flex-1">
+//         <Image
+//           src="/images/your-image.jpg"
+//           alt="Dov"
+//           width={320}
+//           height={320}
+//           className="rounded-full shadow-lg object-cover mx-auto"
+//         />
+//       </div>
+
+//       {/* Text Section */}
+//       <div className="flex-1">
+//         {isIdeMode ? (
+//           // IDE-like mode
+//           <div className="w-full max-w-4xl mx-auto">
+//             <p style={{ color: "var(--text-comment)" }}>
+//               {"// Welcome to my portfolio"}
+//             </p>
+//             <p>
+//               <span style={{ color: "var(--text-keyword)" }}>const</span>{" "}
+//               <span style={{ color: "var(--text-variable)" }}>name</span>{" "}
+//               <span style={{ color: "var(--text-operator)" }}>=</span>{" "}
+//               <span style={{ color: "var(--text-string)" }}>&quot;Dov Ushman&quot;</span>;
+//             </p>
+//             <p>
+//               <span style={{ color: "var(--text-keyword)" }}>function</span>{" "}
+//               <span style={{ color: "var(--text-function)" }}>introduce</span>(){" "}
+//               {"{"}
+//             </p>
+//             <p style={{ paddingLeft: "2rem" }}>
+//               <span style={{ color: "var(--text-keyword)" }}>return</span>{" "}
+//               <span style={{ color: "var(--text-string)" }}>
+//                 &quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;
+//               </span>;
+//             </p>
+//             <p>{"}"}</p>
+//           </div>
+//         ) : (
+//           // Regular mode
+//           <>
+//             <h1 className="text-4xl font-bold">Hi, I&apos;m Dov!</h1>
+//             <p className="text-lg mt-4 max-w-lg">
+//               I&apos;m a Full Stack Engineer passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+//             </p>
+//           </>
+//         )}
+
+//         {/* Call to Action */}
+//         <button
+//           className="mt-6 px-6 py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+//           style={{
+//             backgroundColor: "var(--button-background)",
+//             color: "var(--button-text-color)",
+//             fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+//           }}
+//         >
+//           View My Work
+//         </button>
+//       </div>
+//     </section>
+//   );
+// }
+
 "use client";
 
 import { useTheme } from "../ThemeContext"; // Import the useTheme hook
@@ -148,9 +239,16 @@ export default function Hero() {
   const { theme } = useTheme(); // Access the current theme from context
   const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
-      className="flex items-center justify-between h-screen px-10"
+      className="flex flex-col items-center justify-center h-screen px-10 text-center"
       style={{
         background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
         color: "var(--text-color)",
@@ -158,7 +256,7 @@ export default function Hero() {
       }}
     >
       {/* Image or Graphic */}
-      <div className="flex-1">
+      <div className="mb-8">
         <Image
           src="/images/your-image.jpg"
           alt="Dov"
@@ -169,7 +267,7 @@ export default function Hero() {
       </div>
 
       {/* Text Section */}
-      <div className="flex-1">
+      <div>
         {isIdeMode ? (
           // IDE-like mode
           <div className="w-full max-w-4xl mx-auto">
@@ -198,19 +296,20 @@ export default function Hero() {
         ) : (
           // Regular mode
           <>
-            <h1 className="text-4xl font-bold">Hi, I&apos;m Dov!</h1>
-            <p className="text-lg mt-4 max-w-lg">
-              I&apos;m a Full Stack Engineer passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+            <h1 className="text-5xl font-extrabold leading-tight">
+              Hi, I&apos;m Dov Ushman!
+            </h1>
+            <p className="text-xl mt-4 max-w-2xl mx-auto">
+            A Full Stack Engineer with a passion for creating scalable, user-focused applications that deliver real-world impact.
             </p>
           </>
         )}
 
         {/* Call to Action */}
         <button
-          className="mt-6 px-6 py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+          onClick={() => scrollToSection("projects")} // Scroll to the Projects section
+          className="mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg transition-transform transform hover:scale-105"
           style={{
-            backgroundColor: "var(--button-background)",
-            color: "var(--button-text-color)",
             fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
           }}
         >
@@ -220,6 +319,13 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+
+
+
+
 //idea 3.5
 // export default function Hero() {
 //   return (
