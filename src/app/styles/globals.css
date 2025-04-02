@@ -134,14 +134,14 @@ section {
 }
 
 .project-list {
-  width: 50%; /* Make the project list take up 25% of the container width */
+  width: 50%; /* Take up 50% of the container width */
 }
 
 .sticky-scroll {
-  width: 50%; /* Make the sticky box take up 75% of the container width */
+  width: 50%; /* Take up 50% of the container width */
   position: sticky;
   top: 100px; /* Stick to the top of the viewport */
-  max-height: calc(100% - 100px); /* Constrain the sticky box to the parent container */
+  max-height: 100%; /* Match the height of the parent container */
   overflow-y: auto; /* Enable scrolling within the sticky container */
   background-color: var(--card-background);
   border-radius: 0.5rem;
