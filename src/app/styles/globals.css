@@ -127,10 +127,16 @@ section {
 */
 
 
+.parent-container {
+  display: flex; /* Align the two columns side by side */
+  align-items: flex-start; /* Align items at the top */
+  gap: 1rem; /* Add spacing between columns */
+}
+
 .sticky-scroll {
   position: sticky;
-  top: 100px;
-  max-height: 50vh; /* Default maximum height for smaller screens */
+  top: 100px; /* Stick to the top of the viewport */
+  max-height: calc(100% - 100px); /* Constrain the sticky box to the parent container */
   overflow-y: auto; /* Enable scrolling within the sticky container */
   background-color: var(--card-background);
   border-radius: 0.5rem;
@@ -148,10 +154,6 @@ section {
   .sticky-scroll {
     max-height: 70vh; /* Even larger maximum height for large screens */
   }
-}
-
-.parent-container {
-  min-height: 100vh; /* Ensure the parent container is tall enough */
 }
 
 :root {
