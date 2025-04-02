@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Pokédex App",
       description: "A React Native app for searching Pokémon.",
       fullDescription:
-        "A full-featured Pokédex with searching, filters and information regarding pokemon. Includes a comprehensive 'Whos that Pokemon?' with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team. Here is some more words, wow isn't this neat?!?! Blah blah blah blah blah blah blah bblah blah blah blah blah blah blah blah blah blah blah blahblah blah blahlah blah",
+        "A full-featured Pokédex with searching, filters and information regarding pokemon. Includes a comprehensive 'Whos that Pokemon?' with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
       link: "#",
       image: "/images/tempPokedexPhoto.png",
       techStack: ["reactNative", "expo", "sqlite"],
@@ -75,7 +75,7 @@ export default function Projects() {
       title: "LegUp: Note Sharing Website",
       description: "Note sharing website for textbook material and collaborative learning platform",
       fullDescription:
-        "•	Developed, with a team, a web and mobile application: note sharing for textbook material and collaborative learning platform. •	Implemented the Google Books API and constructed algorithms that identified requested book and contained submitted notes. •	Presented the above application at Google Cambridge to Google employees and interns.", 
+        "Developed, with a team, a web and mobile application: note sharing for textbook material and collaborative learning platform. Implemented the Google Books API and constructed algorithms that identified requested book and contained submitted notes. Presented the above application at Google Cambridge to Google employees and interns.",
       link: "#",
       image: "/images/team-builder.jpg",
       techStack: ["javascript", "html5", "css3", "bootstrap", "heroku"],
@@ -85,7 +85,7 @@ export default function Projects() {
       title: "myCoverage",
       description: "Mobile fitness application",
       fullDescription:
-        "Android mobile fitness app to record daily steps taken, time duration of runs, and display running history",
+        "Android mobile fitness app to record daily steps taken, time duration of runs, and display running history.",
       link: "#",
       image: "/images/team-builder.jpg",
       techStack: ["kotlin", "android"],
@@ -123,7 +123,7 @@ export default function Projects() {
       <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left side: Project list */}
-        <div className="space-y-4  pr-4">
+        <div className="space-y-4 pr-4">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -147,18 +147,35 @@ export default function Projects() {
                       : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
 
                     return (
-                      <Image
-                        key={i}
-                        src={iconPath}
-                        alt={tech}
-                        width={32}
-                        height={32}
-                        className={`transition-transform duration-300 ${
-                          (tech === "express" || tech === "expo") && theme === "dark"
-                            ? "invert"
-                            : ""
-                        }`}
-                      />
+                      <div key={i} className="relative">
+                        <div
+                          onMouseEnter={() => setHoveredTech(`${tech}-${project.id}`)}
+                          onMouseLeave={() => setHoveredTech(null)}
+                          className="group flex flex-col items-center"
+                        >
+                          <div className="bg-gray-100 dark:bg-gray-700 rounded-full p-2">
+                            <Image
+                              src={iconPath}
+                              alt={tech}
+                              width={24}
+                              height={24}
+                              className={`transition-transform duration-300 ${
+                                (tech === "express" || tech === "expo") && theme === "dark"
+                                  ? "invert"
+                                  : ""
+                              }`}
+                            />
+                          </div>
+
+                          {/* Tooltip */}
+                          {hoveredTech === `${tech}-${project.id}` && (
+                            <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1">
+                              {tooltipLabels[tech as keyof typeof tooltipLabels] ||
+                                tech.charAt(0).toUpperCase() + tech.slice(1)}
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     );
                   })}
                 </div>
@@ -167,11 +184,8 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Right side: Project details with sticky positioning */}
-        <div
-          className="sticky-scroll p-6"
-          style={{ height: "650px" }} // Adjusted height
-        >
+        {/* Right side: Project details */}
+        <div className="sticky-scroll p-6" style={{ height: "650px" }}>
           <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left side: Project image */}
@@ -217,11 +231,13 @@ export default function Projects() {
                           />
                         </div>
 
-                        {/* Tech label */}
-                        <span className="text-xs mt-1">
-                          {tooltipLabels[tech as keyof typeof tooltipLabels] ||
-                            tech.charAt(0).toUpperCase() + tech.slice(1)}
-                        </span>
+                        {/* Tooltip */}
+                        {hoveredTech === `${tech}-${currentProject.id}` && (
+                          <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1">
+                            {tooltipLabels[tech as keyof typeof tooltipLabels] ||
+                              tech.charAt(0).toUpperCase() + tech.slice(1)}
+                          </div>
+                        )}
                       </div>
                     </div>
                   );
