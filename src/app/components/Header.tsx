@@ -176,6 +176,9 @@
 //     </header>
 //   );
 // }
+
+
+
 "use client";
 
 import { useState } from "react";
@@ -210,7 +213,7 @@ export default function Header() {
     >
       {/* Mobile Menu Icon */}
       <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the side menu
         className="md:hidden p-2 rounded-full bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 transition"
         aria-label="Open Menu"
       >
@@ -219,7 +222,7 @@ export default function Header() {
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke={theme === "dark" ? "white" : "black"} // Change color based on theme
         >
           <path
             strokeLinecap="round"
@@ -298,6 +301,74 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      {/* Mobile Side Menu */}
+      {isMenuOpen && (
+  <div
+    className="fixed inset-0 bg-black bg-opacity-50 z-40"
+    onClick={() => setIsMenuOpen(false)} // Close menu when clicking outside
+  >
+    <div
+      className="fixed top-0 left-0 h-full w-64 bg-white dark:bg-[#2A2A2A] shadow-lg z-50 p-4"
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+      <button
+        onClick={() => setIsMenuOpen(false)}
+        className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-400 mb-4"
+        aria-label="Close Menu"
+        style={{
+          backgroundColor: "transparent", // Ensure no background color
+        }}
+      >
+        &times;
+      </button>
+      <nav>
+        <ul className="space-y-2">
+          <li>
+            <button
+              onClick={() => scrollToSection("home")}
+              className="w-full text-left px-4 py-2 rounded-lg text-lg font-medium transition-all bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100"
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="w-full text-left px-4 py-2 rounded-lg text-lg font-medium transition-all bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100"
+            >
+              About
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("skills")}
+              className="w-full text-left px-4 py-2 rounded-lg text-lg font-medium transition-all bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100"
+            >
+              Skills
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="w-full text-left px-4 py-2 rounded-lg text-lg font-medium transition-all bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100"
+            >
+              Projects
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="w-full text-left px-4 py-2 rounded-lg text-lg font-medium transition-all bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+)}
 
       {/* Theme Toggle Button */}
       <div className="relative">
