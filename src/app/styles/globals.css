@@ -7,12 +7,15 @@
 
 /* Default styles (dark mode) */
 :root {
-  --background-color: #2B2B2B;
-  --navbar-background: #1F1F1F; /* Dark mode navbar color */
-  --text-color: #fff;
-  --card-background: #1a1a1a;
-  --button-background: #00bcd4;
-  --button-text-color: #000;
+  --background-color: #121212; /* Darker background */
+  --navbar-background: #1C1C1E; /* Slightly lighter for navbar */
+  --text-color: #E5E5E7; /* Softer white for primary text */
+  --secondary-text-color: #A1A1A6; /* Muted gray for secondary text */
+  --card-background: #1E1E1F; /* Slightly darker card background */
+  --button-background: #0A84FF; /* iOS blue for buttons */
+  --button-text-color: #FFFFFF; /* White text for buttons */
+  --accent-color: #64A1FF; /* Softer blue for headings and highlights */
+  --border-color: #2C2C2E; /* Subtle border color for cards and elements */
 
   /* blue purple */
   /*--hero-gradient-start: #1e3a8a; /* Indigo-600 */
@@ -35,12 +38,13 @@
 
 /* Light mode styles */
 [data-theme="light"] {
-  --background-color: #fff;
-  --navbar-background: #f5f5f5; /* Light mode navbar color */
-  --text-color: #000;
-  --card-background: #f5f5f5;
-  --button-background: #00796b;
-  --button-text-color: #fff;
+  --background-color: #ffffff; /* Light background */
+  --card-background: #f9f9f9; /* Slightly darker for alternating sections */
+  --text-color: #000000; /* Dark text */
+  --navbar-background: #f5f5f5; /* Navbar background */
+  --button-background: #00796b; /* Button background */
+  --button-text-color: #ffffff; /* Button text */
+  --accent-color: #007acc; /* Accent color */
 
    /* blue purple */
   /*--hero-gradient-start: #93c5fd;*/ /* Light Blue */
