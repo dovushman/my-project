@@ -184,8 +184,11 @@
 "use client";
 
 import Image from "next/image";
+import { useTheme } from "../ThemeContext"; // Import the useTheme hook
 
 export default function Skills() {
+  const { theme } = useTheme(); // Access the current theme
+
   const deviconIcons = {
     javascript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
@@ -214,7 +217,7 @@ export default function Skills() {
     docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     sqldeveloper: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg", // Custom SQL Developer icon
     tailwindcss: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", // Tailwind CSS icon
-};
+  };
 
   const skills = {
     Languages: ["javascript", "typescript", "python", "java", "html5", "css3", "c", "cpp", "r", "kotlin"],
@@ -235,7 +238,12 @@ export default function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Languages Section */}
-          <div className="rounded-lg shadow-lg p-6 bg-[var(--card-background)] border border-[var(--border-color)]">
+          <div
+            className="rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
+            style={{
+              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
+            }}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
               Languages
             </h3>
@@ -248,9 +256,12 @@ export default function Skills() {
               ))}
             </div>
           </div>
-
-          {/* Frameworks Section */}
-          <div className="rounded-lg shadow-lg p-6 bg-[var(--card-background)] border border-[var(--border-color)]">
+          <div
+            className="rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
+            style={{
+              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
+            }}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
               Frameworks & Libraries
             </h3>
@@ -264,8 +275,12 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Databases Section */}
-          <div className="rounded-lg shadow-lg p-6 bg-[var(--card-background)] border border-[var(--border-color)]">
+          <div
+            className="rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
+            style={{
+              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
+            }}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
               Databases & Storage
             </h3>
@@ -279,8 +294,12 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Tools Section */}
-          <div className="rounded-lg shadow-lg p-6 bg-[var(--card-background)] border border-[var(--border-color)]">
+          <div
+            className="rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
+            style={{
+              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
+            }}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
               Tools & Platforms
             </h3>

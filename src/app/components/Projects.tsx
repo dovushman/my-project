@@ -110,12 +110,11 @@ export default function Projects() {
         <div className="space-y-4 pr-4">
           {projects.map((project) => (
             <div
-  key={project.id}
-  onClick={() => setSelectedProject(project.id)}
-  className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 focus:outline-none ${
-    selectedProject === project.id ? "selected md:border-l-4 md:border-blue-500 md:pl-4" : ""
-  }`}
->
+              key={project.id}
+              onClick={() => setSelectedProject(project.id)}
+              className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 focus:outline-none ${selectedProject === project.id ? "selected md:border-l-4 md:border-blue-500 md:pl-4" : ""
+                }`}
+            >
               {/* Show full details on larger screens */}
               <div className="hidden md:block">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -133,11 +132,10 @@ export default function Projects() {
                         alt={tech}
                         width={24}
                         height={24}
-                        className={`transition-transform duration-300 ${
-                          (tech === "express" || tech === "expo") && theme === "dark"
+                        className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
                             ? "invert"
                             : ""
-                        }`}
+                          }`}
                       />
                     );
                   })}
@@ -161,11 +159,10 @@ export default function Projects() {
                         alt={tech}
                         width={20}
                         height={20}
-                        className={`transition-transform duration-300 ${
-                          (tech === "express" || tech === "expo") && theme === "dark"
+                        className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
                             ? "invert"
                             : ""
-                        }`}
+                          }`}
                       />
                     );
                   })}
@@ -191,50 +188,49 @@ export default function Projects() {
             color: theme === "dark" ? "#ffffff" : "var(--text-color)",
           }}
         >
-  <h2 className="text-2xl font-bold mb-4">{projects[selectedProject].title}</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
-      <Image
-        src={projects[selectedProject].image}
-        alt={projects[selectedProject].title}
-        layout="fill"
-        objectFit="cover"
-        className="rounded-md"
-      />
-    </div>
-    <div>
-      <p className="mb-6">{projects[selectedProject].fullDescription}</p>
-      <div className="flex flex-wrap gap-4 mb-6">
-        {projects[selectedProject].techStack.map((tech, i) => {
-          const iconPath = tech in customIcons
-            ? customIcons[tech as keyof typeof customIcons]
-            : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+          <h2 className="text-2xl font-bold mb-4">{projects[selectedProject].title}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative aspect-square md:aspect-auto overflow-hidden rounded-md">
+              <Image
+                src={projects[selectedProject].image}
+                alt={projects[selectedProject].title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+              />
+            </div>
+            <div>
+              <p className="mb-6">{projects[selectedProject].fullDescription}</p>
+              <div className="flex flex-wrap gap-4 mb-6">
+                {projects[selectedProject].techStack.map((tech, i) => {
+                  const iconPath = tech in customIcons
+                    ? customIcons[tech as keyof typeof customIcons]
+                    : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
 
-          return (
-            <Image
-              key={i}
-              src={iconPath}
-              alt={tech}
-              width={24}
-              height={24}
-              className={`transition-transform duration-300 ${
-                (tech === "express" || tech === "expo") && theme === "dark"
-                  ? "invert"
-                  : ""
-              }`}
-            />
-          );
-        })}
-      </div>
-      <a
-        href={projects[selectedProject].link}
-        className="inline-flex items-center text-blue-500 hover:text-blue-700"
-      >
-        View Project <span className="ml-1">→</span>
-      </a>
-    </div>
-  </div>
-</div>
+                  return (
+                    <Image
+                      key={i}
+                      src={iconPath}
+                      alt={tech}
+                      width={24}
+                      height={24}
+                      className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
+                          ? "invert"
+                          : ""
+                        }`}
+                    />
+                  );
+                })}
+              </div>
+              <a
+                href={projects[selectedProject].link}
+                className="inline-flex items-center text-blue-500 hover:text-blue-700"
+              >
+                View Project <span className="ml-1">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
