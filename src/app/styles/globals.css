@@ -108,6 +108,14 @@ body {
   scroll-behavior: smooth;
 }
 
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end));
+    background-attachment: fixed; /* Ensure the gradient stays fixed */
+  }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -124,6 +132,12 @@ button {
 
 section {
   padding: 2rem;
+}
+
+.hero-section {
+  padding: 2rem !important; /* Override the generic section padding */
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 .card {

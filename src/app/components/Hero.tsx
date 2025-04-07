@@ -62,13 +62,21 @@ export default function Hero() {
   }, [isIdeMode]); // Re-run effect when `isIdeMode` changes
 
   return (
-    <section
-      className="flex flex-col md:flex-row items-center justify-center min-h-[80vh] md:h-screen px-6 py-10 md:px-10 md:py-0 section"
-      style={{
-        background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
-        fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-      }}
-    >
+<section
+  className="flex flex-col md:flex-row items-center justify-center min-h-[90vh] md:h-screen section hero-section"
+  style={{
+    width: "100vw",
+    height: "100%",
+    margin: 0,
+    marginLeft: "-32px",
+    marginBottom: "-32px", 
+    background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
+    backgroundSize: "cover",
+    fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+    overflow: "hidden",
+    boxSizing: "border-box",
+  }}
+>
       {/* Image or Graphic */}
       <div className="flex-1 mb-0 md:mb-6">
         <Image
