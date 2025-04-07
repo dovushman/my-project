@@ -72,7 +72,7 @@ export default function Hero() {
       {/* Image or Graphic */}
       <div className="flex-1">
         <Image
-          src="/images/profilePic2.jpeg"
+          src="/static/images/profilePic2.jpeg"
           alt="Dov"
           width={320}
           height={320}
