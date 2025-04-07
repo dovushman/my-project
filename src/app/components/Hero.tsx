@@ -71,20 +71,20 @@ export default function Hero() {
     >
       {/* Image or Graphic */}
       <div className="flex-1 mb-0 md:mb-6">
-  <Image
-    src="/static/images/profilePic2.jpeg"
-    alt="Dov"
-    width={384}
-    height={384}
-    className="rounded-full shadow-lg object-cover mx-auto w-40 h-40 md:w-64 md:h-64 lg:w-80 lg:h-80"
-    style={{
-      borderRadius: "50%", // Keep the circular shape
-      objectFit: "cover",
-      objectPosition: "center", // Center the image for better alignment
-    }}
-    sizes="(max-width: 768px) 150px, (max-width: 1024px) 256px, 320px"
-  />
-</div>
+        <Image
+          src="/static/images/profilePic2.jpeg"
+          alt="Dov"
+          width={384}
+          height={384}
+          className="rounded-full shadow-lg object-cover mx-auto w-40 h-40 md:w-64 md:h-64 lg:w-80 lg:h-80"
+          style={{
+            borderRadius: "50%", // Keep the circular shape
+            objectFit: "cover",
+            objectPosition: "0% 10%", // Adjust the image position (move it up)
+          }}
+          sizes="(max-width: 768px) 150px, (max-width: 1024px) 256px, 320px"
+        />
+      </div>
 
       {/* Text Section */}
       <div className="flex-1 text-center md:text-left">
@@ -105,25 +105,25 @@ export default function Hero() {
           </div>
         ) : (
           <>
-<h1 className="text-3xl md:text-4xl font-bold">
-  Hi, I&apos;m Dov, a{" "}
-  <span
-    className="text-accent-color inline-block min-h-[1.5em] relative"
-    style={{ minWidth: "13ch" }} // adjust as needed
-  >
-    {/* Hidden static version of the longest phrase to preserve layout */}
-    <span className="invisible block absolute">
-      Creative Thinker
-    </span>
+            <h1 className="text-3xl md:text-4xl font-bold">
+              Hi, I&apos;m Dov, a{" "}
+              <span
+                className="text-accent-color inline-block min-h-[1.5em] relative"
+                style={{ minWidth: "13ch" }} // adjust as needed
+              >
+                {/* Hidden static version of the longest phrase to preserve layout */}
+                <span className="invisible block absolute">
+                  Creative Thinker
+                </span>
 
-    {/* Actual typewriter target */}
-    <span ref={typedRef} />
-  </span>
-</h1>
+                {/* Actual typewriter target */}
+                <span ref={typedRef} />
+              </span>
+            </h1>
 
 
 
-<p className="text-base md:text-lg mt-2 md:mt-4 max-w-lg mx-auto md:mx-0">
+            <p className="text-base md:text-lg mt-2 md:mt-4 max-w-lg mx-auto md:mx-0">
 
               I&apos;m passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
             </p>
