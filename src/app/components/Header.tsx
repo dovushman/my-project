@@ -204,13 +204,14 @@ export default function Header() {
   };
 
   return (
-    <header
-      className="flex justify-between items-center p-4 fixed w-full z-50 shadow-md"
-      style={{
-        backgroundColor: "var(--navbar-background)",
-        color: "var(--text-color)",
-      }}
-    >
+<header
+  className="flex justify-between items-center p-2 md:p-4 fixed w-full z-50 shadow-md"
+  style={{
+    backgroundColor: "var(--navbar-background)",
+    color: "var(--text-color)",
+    height: "56px", // Set a thinner height for the navbar
+  }}
+>
       {/* Mobile Menu Icon */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the side menu
