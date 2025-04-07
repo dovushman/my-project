@@ -180,11 +180,12 @@ export default function Projects() {
 
         {/* Right side: Project details (hidden on smaller screens) */}
         <div
-          className="sticky-scroll p-6 hidden md:block"
+          className="sticky-scroll p-6 hidden md:block rounded-lg shadow-lg"
           style={{
             height: "500px",
             overflowY: "auto",
             backgroundColor: theme === "dark" ? "#121212" : "var(--background-color)",
+            border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
             color: theme === "dark" ? "#ffffff" : "var(--text-color)",
           }}
         >

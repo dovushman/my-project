@@ -54,7 +54,21 @@ export default function About() {
               border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
             }}
           >
-            <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
+            <h3 className="text-2xl font-semibold mb-4 flex items-center text-[var(--accent-color)]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 mr-2 text-[var(--accent-color)]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 14l9-5-9-5-9 5z"
+                />
+              </svg>
               Who I Am
             </h3>
             <p className="text-lg leading-relaxed">

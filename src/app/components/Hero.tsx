@@ -146,7 +146,133 @@
 
 
 
-//Old very good one
+// Old very good one
+"use client";
+
+import { useTheme } from "../ThemeContext"; // Import the useTheme hook
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { Typed } from "react-typed"; // Ensure you are importing the correct Typed library
+
+export default function Hero() {
+  const { theme } = useTheme(); // Access the current theme from context
+  const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
+  const typedRef = useRef<HTMLSpanElement>(null); // Ref for the typewriter element
+  const ideTypedRef = useRef<HTMLSpanElement>(null); // Ref for the IDE mode typewriter
+  let typedInstance: Typed | null = null; // Store the Typed instance
+  let ideTypedInstance: Typed | null = null; // Store the IDE mode Typed instance
+
+  useEffect(() => {
+    if (!isIdeMode && typedRef.current) {
+      // Initialize Typed.js for non-IDE mode
+      typedInstance = new Typed(typedRef.current, {
+        strings: [
+          "Full Stack Engineer",
+          "Software Developer",
+          "Web Developer",
+          "Mobile Developer",
+          "Problem Solver",
+          "Creative Thinker",
+          "Tech Enthusiast",
+        ],
+        typeSpeed: 70,
+        backSpeed: 50,
+        loop: true,
+      });
+    } else if (isIdeMode && ideTypedRef.current) {
+      // Initialize Typed.js for IDE mode
+      ideTypedInstance = new Typed(ideTypedRef.current, {
+        strings: [
+          `<span style="color: var(--text-comment); line-height: 1.2;">{"// Welcome to my portfolio"}</span><br/>
+  <span style="color: var(--text-keyword); line-height: 1.2;">const</span> <span style="color: var(--text-variable); line-height: 1.2;">name</span> <span style="color: var(--text-operator); line-height: 1.2;">=</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Dov Ushman&quot;</span>;<br/>
+  <span style="color: var(--text-keyword); line-height: 1.2;">function</span> <span style="color: var(--text-function); line-height: 1.2;">introduce</span>() {<br/>
+  &nbsp;&nbsp;<span style="color: var(--text-keyword); line-height: 1.2;">return</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;</span>;<br/>
+  }`,
+        ],
+        typeSpeed: 30, // Faster typing speed for IDE mode
+        backSpeed: 15,
+        showCursor: true,
+        cursorChar: "|",
+        loop: false,
+      });
+    }
+
+    return () => {
+      // Destroy the Typed instances on cleanup
+      if (typedInstance) {
+        typedInstance.destroy();
+        typedInstance = null;
+      }
+      if (ideTypedInstance) {
+        ideTypedInstance.destroy();
+        ideTypedInstance = null;
+      }
+    };
+  }, [isIdeMode]); // Re-run effect when `isIdeMode` changes
+
+  return (
+    <section
+      className="flex items-center justify-between h-screen px-10 section"
+      style={{
+        background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
+        fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit", // Monospaced font for IDE mode
+      }}
+    >
+      {/* Image or Graphic */}
+      <div className="flex-1">
+        <Image
+          src="/images/your-image.jpg"
+          alt="Dov"
+          width={320}
+          height={320}
+          className="rounded-full shadow-lg object-cover mx-auto"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="flex-1">
+        {isIdeMode ? (
+          // IDE-like mode
+          <div className="w-full max-w-4xl mx-auto">
+            <pre
+              style={{
+                color: "var(--text-comment)",
+                whiteSpace: "pre-wrap",
+                wordWrap: "break-word",
+              }}
+            >
+              <span ref={ideTypedRef} />
+            </pre>
+          </div>
+        ) : (
+          <>
+            <h1 className="text-4xl font-bold">
+              Hi, I&apos;m Dov, a{" "}
+              <span className="text-accent-color">
+                <span ref={typedRef} />
+              </span>
+            </h1>
+            <p className="text-lg mt-4 max-w-lg">
+              I&apos;m passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+            </p>
+          </>
+        )}
+
+        {/* Call to Action */}
+        <button
+          className="mt-6 px-6 py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+          style={{
+            backgroundColor: "var(--button-background)",
+            color: "var(--button-text-color)",
+            fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+          }}
+        >
+          View My Work
+        </button>
+      </div>
+    </section>
+  );
+}
 
 // "use client";
 
@@ -157,9 +283,16 @@
 //   const { theme } = useTheme(); // Access the current theme from context
 //   const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
 
+//   const scrollToSection = (id: string) => {
+//     const section = document.getElementById(id);
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth" });
+//     }
+//   };
+
 //   return (
 //     <section
-//       className="flex items-center justify-between h-screen px-10"
+//       className="flex flex-col items-center justify-center h-screen px-10 text-center"
 //       style={{
 //         background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
 //         color: "var(--text-color)",
@@ -167,7 +300,7 @@
 //       }}
 //     >
 //       {/* Image or Graphic */}
-//       <div className="flex-1">
+//       <div className="mb-8">
 //         <Image
 //           src="/images/your-image.jpg"
 //           alt="Dov"
@@ -178,7 +311,7 @@
 //       </div>
 
 //       {/* Text Section */}
-//       <div className="flex-1">
+//       <div>
 //         {isIdeMode ? (
 //           // IDE-like mode
 //           <div className="w-full max-w-4xl mx-auto">
@@ -207,19 +340,20 @@
 //         ) : (
 //           // Regular mode
 //           <>
-//             <h1 className="text-4xl font-bold">Hi, I&apos;m Dov!</h1>
-//             <p className="text-lg mt-4 max-w-lg">
-//               I&apos;m a Full Stack Engineer passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+//             <h1 className="text-5xl font-extrabold leading-tight">
+//               Hi, I&apos;m Dov Ushman!
+//             </h1>
+//             <p className="text-xl mt-4 max-w-2xl mx-auto">
+//             A Full Stack Engineer with a passion for creating scalable, user-focused applications that deliver real-world impact.
 //             </p>
 //           </>
 //         )}
 
 //         {/* Call to Action */}
 //         <button
-//           className="mt-6 px-6 py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+//           onClick={() => scrollToSection("projects")} // Scroll to the Projects section
+//           className="mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg transition-transform transform hover:scale-105"
 //           style={{
-//             backgroundColor: "var(--button-background)",
-//             color: "var(--button-text-color)",
 //             fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
 //           }}
 //         >
@@ -229,96 +363,6 @@
 //     </section>
 //   );
 // }
-
-"use client";
-
-import { useTheme } from "../ThemeContext"; // Import the useTheme hook
-import Image from "next/image";
-
-export default function Hero() {
-  const { theme } = useTheme(); // Access the current theme from context
-  const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
-
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <section
-      className="flex flex-col items-center justify-center h-screen px-10 text-center"
-      style={{
-        background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
-        color: "var(--text-color)",
-        fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit", // Monospaced font for IDE mode
-      }}
-    >
-      {/* Image or Graphic */}
-      <div className="mb-8">
-        <Image
-          src="/images/your-image.jpg"
-          alt="Dov"
-          width={320}
-          height={320}
-          className="rounded-full shadow-lg object-cover mx-auto"
-        />
-      </div>
-
-      {/* Text Section */}
-      <div>
-        {isIdeMode ? (
-          // IDE-like mode
-          <div className="w-full max-w-4xl mx-auto">
-            <p style={{ color: "var(--text-comment)" }}>
-              {"// Welcome to my portfolio"}
-            </p>
-            <p>
-              <span style={{ color: "var(--text-keyword)" }}>const</span>{" "}
-              <span style={{ color: "var(--text-variable)" }}>name</span>{" "}
-              <span style={{ color: "var(--text-operator)" }}>=</span>{" "}
-              <span style={{ color: "var(--text-string)" }}>&quot;Dov Ushman&quot;</span>;
-            </p>
-            <p>
-              <span style={{ color: "var(--text-keyword)" }}>function</span>{" "}
-              <span style={{ color: "var(--text-function)" }}>introduce</span>(){" "}
-              {"{"}
-            </p>
-            <p style={{ paddingLeft: "2rem" }}>
-              <span style={{ color: "var(--text-keyword)" }}>return</span>{" "}
-              <span style={{ color: "var(--text-string)" }}>
-                &quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;
-              </span>;
-            </p>
-            <p>{"}"}</p>
-          </div>
-        ) : (
-          // Regular mode
-          <>
-            <h1 className="text-5xl font-extrabold leading-tight">
-              Hi, I&apos;m Dov Ushman!
-            </h1>
-            <p className="text-xl mt-4 max-w-2xl mx-auto">
-            A Full Stack Engineer with a passion for creating scalable, user-focused applications that deliver real-world impact.
-            </p>
-          </>
-        )}
-
-        {/* Call to Action */}
-        <button
-          onClick={() => scrollToSection("projects")} // Scroll to the Projects section
-          className="mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg transition-transform transform hover:scale-105"
-          style={{
-            fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-          }}
-        >
-          View My Work
-        </button>
-      </div>
-    </section>
-  );
-}
 
 
 
