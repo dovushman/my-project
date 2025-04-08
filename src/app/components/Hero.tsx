@@ -3,7 +3,7 @@
 import { useTheme } from "../ThemeContext"; // Import the useTheme hook
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Typed } from "react-typed"; // Ensure you are importing the correct Typed library
+import Typed from "typed.js"; // Ensure you are importing the correct Typed.js library
 
 export default function Hero() {
   const { theme } = useTheme(); // Access the current theme from context
@@ -35,13 +35,13 @@ export default function Hero() {
         // Initialize Typed.js for IDE mode
         ideTypedInstance.current = new Typed(ideTypedRef.current, {
           strings: [
-            `<span style="color: var(--text-comment); line-height: 1.2;">{"// Welcome to my portfolio"}</span><br/>
-  <span style="color: var(--text-keyword); line-height: 1.2;">const</span> <span style="color: var(--text-variable); line-height: 1.2;">name</span> <span style="color: var(--text-operator); line-height: 1.2;">=</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Dov Ushman&quot;</span>;<br/>
-  <span style="color: var(--text-keyword); line-height: 1.2;">function</span> <span style="color: var(--text-function); line-height: 1.2;">introduce</span>() {<br/>
-  &nbsp;&nbsp;<span style="color: var(--text-keyword); line-height: 1.2;">return</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;</span>;<br/>
+            `<span style="color: var(--text-comment);">// Welcome to my portfolio</span><br/>
+  <span style="color: var(--text-keyword);">const</span> <span style="color: var(--text-variable);">name</span> <span style="color: var(--text-operator);">=</span> <span style="color: var(--text-string);">"Dov Ushman"</span>;<br/>
+  <span style="color: var(--text-keyword);">function</span> <span style="color: var(--text-function);">introduce</span>() {<br/>
+  &nbsp;&nbsp;<span style="color: var(--text-keyword);">return</span> <span style="color: var(--text-string);">"Hi, I'm Dov, a Full Stack Engineer passionate about creating impactful software."</span>;<br/>
   }`,
           ],
-          typeSpeed: 30, // Faster typing speed for IDE mode
+          typeSpeed: 30,
           backSpeed: 15,
           showCursor: true,
           cursorChar: "|",
@@ -97,11 +97,17 @@ export default function Hero() {
           <div className="w-full max-w-4xl mx-auto">
             <pre
               style={{
-                color: "var(--text-comment)",
+                color: "var(--text-comment)", // Default text color for comments
                 whiteSpace: "pre-wrap",
                 wordWrap: "break-word",
-                height: "100px", // Fixed height to prevent layout shifts
+                minHeight: "150px", // Ensure enough space for the text
                 overflow: "hidden", // Prevent scrolling caused by typewriter
+                marginBottom: "1rem", // Add spacing between the text and buttons
+                fontFamily: "'Fira Code', monospace", // Use IDE font
+                backgroundColor: "var(--background-color)", // IDE background
+                padding: "1rem", // Add padding for better readability
+                borderRadius: "0.5rem", // Match card styling
+                width: "75%",
               }}
             >
               <span ref={ideTypedRef} />
@@ -113,89 +119,52 @@ export default function Hero() {
               Hi, I&apos;m Dov, a{" "}
               <span
                 className="text-accent-color inline-block min-h-[1.5em] relative"
-                style={{ minWidth: "13ch" }} // adjust as needed
+                style={{ minWidth: "13ch" }}
               >
-                {/* Hidden static version of the longest phrase to preserve layout */}
-                <span className="invisible block absolute">
-                  Creative Thinker
-                </span>
-
-                {/* Actual typewriter target */}
+                <span className="invisible block absolute">Creative Thinker</span>
                 <span ref={typedRef} />
               </span>
             </h1>
 
             <p className="text-base md:text-lg mt-2 md:mt-4 max-w-lg mx-auto md:mx-0">
-              I&apos;m passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
+              I&apos;m passionate about creating impactful software that changes the
+              world. I specialize in building scalable, user-focused applications.
             </p>
           </>
         )}
 
         {/* Call to Action */}
         <div className="flex gap-4 mt-6">
-          {/* View My Work - Primary */}
-          <div className="flex gap-4 mt-6">
-            {/* View My Work Button */}
-            <button
-              className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg transition-transform hover:scale-105"
-              style={{
-                backgroundColor: "var(--button-background)",
-                color: "var(--button-text-color)",
-                fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-              }}
-            >
-              View My Work
-            </button>
+          <button
+            className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+            style={{
+              backgroundColor: "var(--button-background)",
+              color: "var(--button-text-color)",
+              fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+            }}
+          >
+            View My Work
+          </button>
 
-            {/* View Resume Button */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={(e) => {
-                  if (typeof window !== "undefined") {
-                    if (
-                      (e.target as HTMLElement).tagName === "SVG" ||
-                      (e.target as HTMLElement).closest("svg")
-                    ) {
-                      const link = document.createElement("a");
-                      link.href = "/static/images/Dov Ushman Resume.pdf";
-                      link.download = "Dov_Ushman_Resume.pdf";
-                      link.click();
-                    } else {
-                      window.open(
-                        "/static/images/Dov Ushman Resume.pdf",
-                        "_blank",
-                        "noopener,noreferrer"
-                      );
-                    }
-                  }
-                }}
-                className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg border transition-transform hover:scale-105 flex items-center gap-2"
-                style={{
-                  backgroundColor: "transparent",
-                  borderColor: "var(--button-background)",
-                  border: "2px solid var(--button-background)",
-                  color: "var(--button-background)",
-                  fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-                }}
-              >
-                View Resume
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  width="25"
-                  height="25"
-                  style={{
-                    color: "var(--button-background)",
-                    marginLeft: "4px",
-                    marginRight: "-10px",
-                  }}
-                >
-                  <path d="M12 16l4-4h-3V4h-2v8H8l4 4zm-7 4h14v2H5v-2z" />
-                </svg>
-              </button>
-            </div>
-          </div>
+          <button
+            onClick={() => {
+              window.open(
+                "/static/images/Dov Ushman Resume.pdf",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+            className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg border transition-transform hover:scale-105"
+            style={{
+              backgroundColor: "transparent",
+              borderColor: "var(--button-background)",
+              border: "2px solid var(--button-background)",
+              color: "var(--button-background)",
+              fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+            }}
+          >
+            View Resume
+          </button>
         </div>
       </div>
     </section>

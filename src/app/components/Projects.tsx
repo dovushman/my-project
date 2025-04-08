@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect } from "react";
-import { projectList as projects } from "../projectList"; // Import the project list
+import { projectList as projects} from "../projectList"; // Import the project list
 
 export default function Projects() {
   const { theme } = useTheme();

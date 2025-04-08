@@ -4,100 +4,60 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Default styles (dark mode) */
 :root {
-  --background-color: #121212; /* Darker background */
-  --navbar-background: #1C1C1E; /* Slightly lighter for navbar */
-  --text-color: #E5E5E7; /* Softer white for primary text */
-  --secondary-text-color: #A1A1A6; /* Muted gray for secondary text */
-  --card-background: #1E1E1F; /* Slightly darker card background */
-  --button-background: #0A84FF; /* iOS blue for buttons */
-  --button-text-color: #FFFFFF; /* White text for buttons */
-  --accent-color: #64A1FF; /* Softer blue for headings and highlights */
-  --border-color: #2C2C2E; /* Subtle border color for cards and elements */
-
-  /* Font color for hero main text */
-  --section-font-color: #FFFFFF; /* Define a reusable variable for the section font color */
-
-
-  /* blue purple */
-  /*--hero-gradient-start: #1e3a8a; /* Indigo-600 */
-  /*--hero-gradient-end: #6b21a8;*/ /* Purple-600 */
-
-  /* blue green */
-  /*--hero-gradient-start: #1e3a8a; /* Dark Blue */
-  /*--hero-gradient-end: #065f46; /* Dark Green */
-
-  /* blue red */
-  --hero-gradient-start: #1e3a8a; /* Dark Blue */
-  --hero-gradient-end: #b91c1c; /* Dark Red */
-
-  /* blue red */
-  /*--hero-gradient-start: #007acc; /* VS Code blue */
-  /*--hero-gradient-end: #1e1e1e; /* VS Code dark background */
-
+  --background-color: #121212;
+  --navbar-background: #1C1C1E;
+  --text-color: #E5E5E7;
+  --secondary-text-color: #A1A1A6;
+  --card-background: #1E1E1F;
+  --button-background: #0A84FF;
+  --button-text-color: #FFFFFF;
+  --accent-color: #64A1FF;
+  --border-color: #2C2C2E;
+  --section-font-color: #FFFFFF;
+  --hero-gradient-start: #1e3a8a;
+  --hero-gradient-end: #b91c1c;
 }
-
 
 .section {
-  color: var(--section-font-color); /* Apply the font color to the section */
+  color: var(--section-font-color);
 }
 
-/* font color for typewriter changing section */
 .text-accent-color {
-  color: var(--accent-color); /* Apply the accent color only to specific elements */
+  color: var(--accent-color);
 }
-
-
 
 /* Light mode styles */
 [data-theme="light"] {
-  --background-color: #ffffff; /* Light background */
-  --card-background: #F2F2F7; /* Slightly darker for alternating sections */
-  --text-color: #000000; /* Dark text */
-  --navbar-background: #f5f5f5; /* Navbar background */
-  --button-background: #00796b; /* Button background */
-  --button-text-color: #ffffff; /* Button text */
-  --accent-color: #4d95d8; /* Accent color */
-
-   /* blue purple */
-  /*--hero-gradient-start: #93c5fd;*/ /* Light Blue */
-  /*--hero-gradient-end: #d8b4fe;*/ /* Light Purple */
-
-  /* blue green   
-  /*  --hero-gradient-start: #93c5fd; /* Light Blue */
-  /* --hero-gradient-end: #6ee7b7; /* Light Green */
-
-  /* blue red */
-  --hero-gradient-start: #93c5fd; /* Light Blue */
-  --hero-gradient-end: #fca5a5; /* Light Red */
+  --background-color: #ffffff;
+  --card-background: #F2F2F7;
+  --text-color: #000000;
+  --navbar-background: #f5f5f5;
+  --button-background: #00796b;
+  --button-text-color: #ffffff;
+  --accent-color: #4d95d8;
+  --hero-gradient-start: #93c5fd;
+  --hero-gradient-end: #fca5a5;
 }
-
-
-/* filepath: /Users/dovushman/my-project/src/app/styles/globals.css */
 
 /* IDE Theme styles */
 [data-theme="ide"] {
-  --background-color: #1e1e1e; /* VS Code editor background */
-  --navbar-background: #252526; /* VS Code sidebar background */
-  --text-color: #d4d4d4; /* Default text color */
-  --card-background: #2d2d2d; /* VS Code panel background */
-  --button-background: #007acc; /* VS Code blue button */
-  --button-text-color: #ffffff; /* Button text color */
-
-  /* Hero Gradient */
-  --hero-gradient-start: #007acc; /* VS Code blue */
-  --hero-gradient-end: #1e1e1e; /* VS Code dark background */
-
-  /* Syntax Highlighting Colors */
-  --text-keyword: #569cd6; /* Blue for keywords */
-  --text-string: #ce9178; /* Orange for strings */
-  --text-variable: #9cdcfe; /* Light blue for variables */
-  --text-comment: #6a9955; /* Green for comments */
-  --text-function: #dcdcaa; /* Yellow for functions */
-  --text-number: #b5cea8; /* Light green for numbers */
-  --text-operator: #c586c0; /* Purple for operators */
+  --background-color: #1e1e1e;
+  --navbar-background: #252526;
+  --text-color: #d4d4d4;
+  --card-background: #2d2d2d;
+  --button-background: #007acc;
+  --button-text-color: #ffffff;
+  --hero-gradient-start: #007acc;
+  --hero-gradient-end: #1e1e1e;
+  --text-keyword: #569cd6;
+  --text-string: #ce9178;
+  --text-variable: #9cdcfe;
+  --text-comment: #6a9955;
+  --text-function: #dcdcaa;
+  --text-number: #b5cea8;
+  --text-operator: #c586c0;
 }
 
 body {
@@ -127,9 +87,9 @@ section {
 }
 
 .hero-section {
-  padding: 2rem !important; /* Override the generic section padding */
+  padding: 2rem !important;
   width: 100%;
-  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  box-sizing: border-box;
 }
 
 .card {
@@ -143,13 +103,12 @@ section {
   scroll-behavior: smooth;
 }
 
-
 /* Typewriter effect */
 .typewriter {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid var(--accent-color); /* Blinking cursor */
+  border-right: 2px solid var(--accent-color);
   animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
   color: #1e3a8a;
 }
@@ -164,7 +123,8 @@ section {
 }
 
 @keyframes blink {
-  from, to {
+  from,
+  to {
     border-color: transparent;
   }
   50% {
@@ -172,35 +132,23 @@ section {
   }
 }
 
-
 .parent-container {
-  display: flex; /* Align the two columns side by side */
-  align-items: flex-start; /* Align items at the top */
-  justify-content: center; /* Center the divide between the two sections */
-  gap: 2rem; /* Add spacing between the sections */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .project-list {
-  width: 45%; /* Slightly reduce width to create space for centering */
-}
-
-.parent-container {
-  display: flex; /* Align the two columns side by side */
-  align-items: flex-start; /* Align items at the top */
-  justify-content: center; /* Center the divide between the two sections */
-  gap: 2rem; /* Add spacing between the sections */
-}
-
-.project-list {
-  width: 45%; /* Slightly reduce width to create space for centering */
+  width: 45%;
 }
 
 .sticky-scroll {
-  width: 45%; /* Match the width of the project list */
+  width: 45%;
   position: sticky;
-  top: 100px; /* Stick to the top of the viewport */
-  max-height: 100%; /* Match the height of the parent container */
-  overflow-y: auto; /* Enable scrolling within the sticky container */
+  top: 100px;
+  max-height: 100%;
+  overflow-y: auto;
   background-color: var(--card-background);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -210,45 +158,30 @@ section {
 /* Media query for mobile screens */
 @media (max-width: 768px) {
   .parent-container {
-    flex-direction: column; /* Stack the project list vertically */
-    align-items: center; /* Center the project list */
-  }
-
-  .project-list {
-    width: 100%; /* Take up the full width on mobile */
-    padding: 0 1rem; /* Add some horizontal padding */
+    flex-direction: column;
+    align-items: center;
   }
 
   .project-list > div {
     outline: none;
     border-left: 4px solid transparent;
-    background-color: var(--background-color); /* Explicitly set the default background color */
-    transition: border-color 0.2s ease-in-out; /* Only transition the border color */
+    background-color: var(--background-color);
+    transition: border-color 0.2s ease-in-out;
   }
-  
+
   .project-list > div:focus,
   .project-list > div:active {
-    outline: none;
     border-left-color: transparent;
-    background-color: var(--background-color); /* Ensure consistent background color */
+    background-color: var(--background-color);
   }
-  
+
   .project-list > div.selected {
-    border-left-color: #3b82f6; /* Blue border for selected project */
-    background-color: var(--background-color); /* Explicitly set the background color */
-  }
-  
-  .project-list > div:not(.selected) {
-    background-color: var(--background-color); /* Ensure non-selected items retain the same background */
+    border-left-color: #3b82f6;
+    background-color: var(--background-color);
   }
 
   .sticky-scroll {
-    display: none; /* Hide the right box on mobile */
-  }
-
-  .project-list > div {
-    border-left: none; /* Remove the blue border for the selected project */
-    padding-left: 0; /* Reset padding */
+    display: none;
   }
 }
 
@@ -285,5 +218,3 @@ section {
 .shadow-bottom {
   box-shadow: inset 0 -20px 20px -20px rgba(0, 0, 0, 0.1);
 }
-
-
