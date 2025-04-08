@@ -204,11 +204,41 @@ export default function Header() {
         </div>
       )}
 
-      {/* Theme Toggle Button */}
-      <div className="relative">
+      {/* Theme Toggle Button and Social Icons */}
+      <div className="flex items-center space-x-2">
+
+        {/* LinkedIn Icon */}
+        <a
+          href="https://www.linkedin.com/in/dov-ushman/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="p-2 rounded-full bg-transparent transition"
+        >
+          <i
+            className={`devicon-linkedin-plain text-2xl ${theme === "dark" ? "text-white" : "text-black"
+              }`}
+          ></i>
+        </a>
+
+        {/* GitHub Icon */}
+        <a
+          href="https://github.com/dovushman"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="p-2 rounded-full bg-transparent transition"
+        >
+          <i
+            className={`devicon-github-original text-2xl ${theme === "dark" ? "text-white" : "text-black"
+              }`}
+          ></i>
+        </a>
+
+        {/* Theme Toggle Button */}
         <button
           onClick={() => setIsCardOpen(!isCardOpen)} // Toggle the card
-          className="ml-4 p-2 rounded-full bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          className="p-2 rounded-full bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 transition"
           style={{
             color: "var(--button-text-color)",
           }}
@@ -230,6 +260,7 @@ export default function Header() {
             />
           </svg>
         </button>
+
 
         {/* Theme Card */}
         {isCardOpen && (
