@@ -10,62 +10,55 @@ export default function Hero() {
   const isIdeMode = theme === "ide"; // Determine if the current theme is IDE mode
   const typedRef = useRef<HTMLSpanElement>(null); // Ref for the typewriter element
   const ideTypedRef = useRef<HTMLSpanElement>(null); // Ref for the IDE mode typewriter
-  let typedInstance: Typed | null = null; // Store the Typed instance
-  let ideTypedInstance: Typed | null = null; // Store the IDE mode Typed instance
+  const typedInstance = useRef<Typed | null>(null); // Use useRef for mutable instance
+  const ideTypedInstance = useRef<Typed | null>(null); // Use useRef for mutable instance
 
   useEffect(() => {
-    if (!isIdeMode && typedRef.current) {
-      // Initialize Typed.js for non-IDE mode
-      typedInstance = new Typed(typedRef.current, {
-        strings: [
-          "Full Stack Engineer",
-          "Software Developer",
-          "Web Developer",
-          "Mobile Developer",
-          "Problem Solver",
-          "Creative Thinker",
-          "Tech Enthusiast",
-        ],
-        typeSpeed: 70,
-        backSpeed: 50,
-        loop: true,
-      });
-    } else if (isIdeMode && ideTypedRef.current) {
-      // Initialize Typed.js for IDE mode
-      ideTypedInstance = new Typed(ideTypedRef.current, {
-        strings: [
-          `<span style="color: var(--text-comment); line-height: 1.2;">{"// Welcome to my portfolio"}</span><br/>
+    if (typeof window !== "undefined") {
+      if (!isIdeMode && typedRef.current) {
+        // Initialize Typed.js for non-IDE mode
+        typedInstance.current = new Typed(typedRef.current, {
+          strings: [
+            "Full Stack Engineer",
+            "Software Developer",
+            "Web Developer",
+            "Mobile Developer",
+            "Problem Solver",
+            "Creative Thinker",
+            "Tech Enthusiast",
+          ],
+          typeSpeed: 70,
+          backSpeed: 50,
+          loop: true,
+        });
+      } else if (isIdeMode && ideTypedRef.current) {
+        // Initialize Typed.js for IDE mode
+        ideTypedInstance.current = new Typed(ideTypedRef.current, {
+          strings: [
+            `<span style="color: var(--text-comment); line-height: 1.2;">{"// Welcome to my portfolio"}</span><br/>
   <span style="color: var(--text-keyword); line-height: 1.2;">const</span> <span style="color: var(--text-variable); line-height: 1.2;">name</span> <span style="color: var(--text-operator); line-height: 1.2;">=</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Dov Ushman&quot;</span>;<br/>
   <span style="color: var(--text-keyword); line-height: 1.2;">function</span> <span style="color: var(--text-function); line-height: 1.2;">introduce</span>() {<br/>
   &nbsp;&nbsp;<span style="color: var(--text-keyword); line-height: 1.2;">return</span> <span style="color: var(--text-string); line-height: 1.2;">&quot;Hi, I&apos;m Dov, a Full Stack Engineer passionate about creating impactful software.&quot;</span>;<br/>
   }`,
-        ],
-        typeSpeed: 30, // Faster typing speed for IDE mode
-        backSpeed: 15,
-        showCursor: true,
-        cursorChar: "|",
-        loop: false,
-      });
+          ],
+          typeSpeed: 30, // Faster typing speed for IDE mode
+          backSpeed: 15,
+          showCursor: true,
+          cursorChar: "|",
+          loop: false,
+        });
+      }
     }
 
     return () => {
       // Destroy the Typed instances on cleanup
-      if (typedInstance) {
-        typedInstance.destroy();
-        typedInstance = null;
-      }
-      if (ideTypedInstance) {
-        ideTypedInstance.destroy();
-        ideTypedInstance = null;
-      }
+      typedInstance.current?.destroy();
+      ideTypedInstance.current?.destroy();
     };
   }, [isIdeMode]); // Re-run effect when `isIdeMode` changes
 
   return (
     <section
-      //smaller hero height version
-      //  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
-
       className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
       style={{
         width: "100vw",
@@ -132,10 +125,7 @@ export default function Hero() {
               </span>
             </h1>
 
-
-
             <p className="text-base md:text-lg mt-2 md:mt-4 max-w-lg mx-auto md:mx-0">
-
               I&apos;m passionate about creating impactful software that changes the world. I specialize in building scalable, user-focused applications.
             </p>
           </>
@@ -161,20 +151,22 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <button
                 onClick={(e) => {
-                  if (
-                    (e.target as HTMLElement).tagName === "SVG" ||
-                    (e.target as HTMLElement).closest("svg")
-                  ) {
-                    const link = document.createElement("a");
-                    link.href = "/static/images/Dov Ushman Resume.pdf";
-                    link.download = "Dov_Ushman_Resume.pdf";
-                    link.click();
-                  } else {
-                    window.open(
-                      "/static/images/Dov Ushman Resume.pdf",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
+                  if (typeof window !== "undefined") {
+                    if (
+                      (e.target as HTMLElement).tagName === "SVG" ||
+                      (e.target as HTMLElement).closest("svg")
+                    ) {
+                      const link = document.createElement("a");
+                      link.href = "/static/images/Dov Ushman Resume.pdf";
+                      link.download = "Dov_Ushman_Resume.pdf";
+                      link.click();
+                    } else {
+                      window.open(
+                        "/static/images/Dov Ushman Resume.pdf",
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }
                   }
                 }}
                 className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg border transition-transform hover:scale-105 flex items-center gap-2"
@@ -204,11 +196,7 @@ export default function Hero() {
               </button>
             </div>
           </div>
-
-
-
         </div>
-
       </div>
     </section>
   );
