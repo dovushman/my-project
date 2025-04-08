@@ -63,7 +63,10 @@ export default function Hero() {
 
   return (
 <section
-  className="flex flex-col md:flex-row items-center justify-center min-h-[90vh] md:h-screen section hero-section"
+//smaller hero height version
+//  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
+
+  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
   style={{
     width: "100vw",
     height: "100%",
