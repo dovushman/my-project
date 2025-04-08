@@ -34,14 +34,52 @@ export default function Skills() {
     docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     sqldeveloper: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg", // Custom SQL Developer icon
     tailwindcss: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", // Tailwind CSS icon
+    numpy: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+    pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
   };
 
   const skills = {
     Languages: ["javascript", "typescript", "python", "java", "html5", "css3", "c", "c++", "r", "kotlin"],
-    FrameworksAndLibraries: ["react", "React Native", "nextjs", "nodejs", "express", "bootstrap", "tailwindcss", "docker"],
+    FrameworksAndLibraries: ["react", "React Native", "nextjs", "nodejs", "express", "bootstrap", "tailwindcss", "docker", "numpy", "pandas"],
     DatabasesAndStorage: ["mongodb", "firebase", "postgresql", "sqldeveloper"],
     ToolsAndPlatforms: ["git", "github", "jira", "figma"],
   };
+
+  // Shared card styling
+  const cardStyle = {
+    border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
+    height: "100%", // Make all cards same height
+  };
+
+  // Component for each skill category
+  interface SkillCardProps {
+    title: string;
+    skillList: string[];
+  }
+
+  const SkillCard = ({ title, skillList }: SkillCardProps) => (
+    <div
+      className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)] h-full"
+      style={cardStyle}
+    >
+      <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
+        {title}
+      </h3>
+      <div className="grid grid-cols-4 gap-4">
+        {skillList.map((skill) => (
+          <div key={skill} className="flex flex-col items-center">
+            <Image 
+              src={deviconIcons[skill as keyof typeof deviconIcons]} 
+              alt={skill} 
+              width={48} 
+              height={48} 
+            />
+            <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">{skill}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <section
@@ -54,93 +92,33 @@ export default function Skills() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Languages Section */}
-          <div
-            className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
-            style={{
-              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-            }}
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
-              Languages
-            </h3>
-            <div className="grid grid-cols-4 gap-4">
-              {skills.Languages.map((lang) => (
-                <div key={lang} className="flex flex-col items-center">
-                  <Image src={deviconIcons[lang as keyof typeof deviconIcons]} alt={lang} width={48} height={48} />
-                  <span className="text-sm mt-2 capitalize">{lang}</span>
-                </div>
-              ))}
-            </div>
+          {/* Languages card - shows on all screens */}
+          <div className="col-span-1">
+            <SkillCard title="Languages" skillList={skills.Languages} />
           </div>
-          <div
-            className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
-            style={{
-              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-            }}
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
-              Frameworks & Libraries
-            </h3>
-            <div className="grid grid-cols-4 gap-4">
-              {skills.FrameworksAndLibraries.map((framework) => (
-                <div key={framework} className="flex flex-col items-center">
-                  <Image src={deviconIcons[framework as keyof typeof deviconIcons]} alt={framework} width={48} height={48} />
-                  <span className="text-sm mt-2 capitalize whitespace-nowrap">{framework}</span>
-                </div>
-              ))}
-            </div>
+          
+          {/* Frameworks card - shows on all screens */}
+          <div className="col-span-1">
+            <SkillCard title="Frameworks & Libraries" skillList={skills.FrameworksAndLibraries} />
           </div>
-
-          <div className="flex flex-col justify-between h-full">
-            {/* Databases & Storage */}
-            <div
-            className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
-            style={{
-              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-            }}
-          >
-              <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
-                Databases & Storage
-              </h3>
-              <div className="grid grid-cols-4 gap-4">
-                {skills.DatabasesAndStorage.map((database) => (
-                  <div key={database} className="flex flex-col items-center">
-                    <Image
-                      src={deviconIcons[database as keyof typeof deviconIcons]}
-                      alt={database}
-                      width={48}
-                      height={48}
-                    />
-                    <span className="text-sm mt-2 capitalize">{database}</span>
-                  </div>
-                ))}
-              </div>
+          
+          {/* Databases card - shows on small and medium screens, hidden on large */}
+          <div className="col-span-1 lg:hidden">
+            <SkillCard title="Databases & Storage" skillList={skills.DatabasesAndStorage} />
+          </div>
+          
+          {/* Tools card - shows on small and medium screens, hidden on large */}
+          <div className="col-span-1 lg:hidden">
+            <SkillCard title="Tools & Platforms" skillList={skills.ToolsAndPlatforms} />
+          </div>
+          
+          {/* Third column containing both Databases and Tools - only on large screens */}
+          <div className="hidden lg:flex lg:col-span-1 lg:flex-col lg:gap-8">
+            <div>
+              <SkillCard title="Databases & Storage" skillList={skills.DatabasesAndStorage} />
             </div>
-
-            {/* Tools & Platforms */}
-            <div
-            className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)]"
-            style={{
-              border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-            }}
-          >
-              <h3 className="text-2xl font-semibold mb-4 text-[var(--accent-color)]">
-                Tools & Platforms
-              </h3>
-              <div className="grid grid-cols-4 gap-4">
-                {skills.ToolsAndPlatforms.map((tool) => (
-                  <div key={tool} className="flex flex-col items-center">
-                    <Image
-                      src={deviconIcons[tool as keyof typeof deviconIcons]}
-                      alt={tool}
-                      width={48}
-                      height={48}
-                    />
-                    <span className="text-sm mt-2 capitalize">{tool}</span>
-                  </div>
-                ))}
-              </div>
+            <div>
+              <SkillCard title="Tools & Platforms" skillList={skills.ToolsAndPlatforms} />
             </div>
           </div>
         </div>
