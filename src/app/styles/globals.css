@@ -18,6 +18,15 @@
   --section-font-color: #FFFFFF;
   --hero-gradient-start: #1e3a8a;
   --hero-gradient-end: #b91c1c;
+
+  /* blue purple */
+  /*--hero-gradient-start: #1e3a8a; /* Indigo-600 */
+  /*--hero-gradient-end: #6b21a8;*/ /* Purple-600 */
+
+  /* blue green */
+  /*--hero-gradient-start: #1e3a8a; /* Dark Blue */
+  /*--hero-gradient-end: #065f46; /* Dark Green */
+
 }
 
 .section {
@@ -39,6 +48,14 @@
   --accent-color: #4d95d8;
   --hero-gradient-start: #93c5fd;
   --hero-gradient-end: #fca5a5;
+  /* blue purple */
+  /*--hero-gradient-start: #93c5fd;*/ /* Light Blue */
+  /*--hero-gradient-end: #d8b4fe;*/ /* Light Purple */
+
+  /* blue green   
+  /*  --hero-gradient-start: #93c5fd; /* Light Blue */
+  /* --hero-gradient-end: #6ee7b7; /* Light Green */
+
 }
 
 /* IDE Theme styles */
