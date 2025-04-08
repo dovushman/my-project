@@ -62,24 +62,24 @@ export default function Hero() {
   }, [isIdeMode]); // Re-run effect when `isIdeMode` changes
 
   return (
-<section
-//smaller hero height version
-//  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
+    <section
+      //smaller hero height version
+      //  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
 
-  className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
-  style={{
-    width: "100vw",
-    height: "100%",
-    margin: 0,
-    marginLeft: "-32px",
-    marginBottom: "-32px", 
-    background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
-    backgroundSize: "cover",
-    fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-    overflow: "hidden",
-    boxSizing: "border-box",
-  }}
->
+      className="flex flex-col md:flex-row items-center justify-center min-h-[95.5vh] md:h-screen section hero-section"
+      style={{
+        width: "100vw",
+        height: "100%",
+        margin: 0,
+        marginLeft: "-32px",
+        marginBottom: "-32px",
+        background: "linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end))",
+        backgroundSize: "cover",
+        fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+        overflow: "hidden",
+        boxSizing: "border-box",
+      }}
+    >
       {/* Image or Graphic */}
       <div className="flex-1 mb-0 md:mb-6">
         <Image
@@ -142,16 +142,73 @@ export default function Hero() {
         )}
 
         {/* Call to Action */}
-        <button
-          className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg transition-transform hover:scale-105"
-          style={{
-            backgroundColor: "var(--button-background)",
-            color: "var(--button-text-color)",
-            fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
-          }}
-        >
-          View My Work
-        </button>
+        <div className="flex gap-4 mt-6">
+          {/* View My Work - Primary */}
+          <div className="flex gap-4 mt-6">
+            {/* View My Work Button */}
+            <button
+              className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg transition-transform hover:scale-105"
+              style={{
+                backgroundColor: "var(--button-background)",
+                color: "var(--button-text-color)",
+                fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+              }}
+            >
+              View My Work
+            </button>
+
+            {/* View Resume Button */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => {
+                  if (
+                    (e.target as HTMLElement).tagName === "SVG" ||
+                    (e.target as HTMLElement).closest("svg")
+                  ) {
+                    const link = document.createElement("a");
+                    link.href = "/static/images/Dov Ushman Resume.pdf";
+                    link.download = "Dov_Ushman_Resume.pdf";
+                    link.click();
+                  } else {
+                    window.open(
+                      "/static/images/Dov Ushman Resume.pdf",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }
+                }}
+                className="px-4 py-2 md:px-6 md:py-3 font-semibold rounded-lg border transition-transform hover:scale-105 flex items-center gap-2"
+                style={{
+                  backgroundColor: "transparent",
+                  borderColor: "var(--button-background)",
+                  border: "2px solid var(--button-background)",
+                  color: "var(--button-background)",
+                  fontFamily: isIdeMode ? "'Fira Code', monospace" : "inherit",
+                }}
+              >
+                View Resume
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  width="25"
+                  height="25"
+                  style={{
+                    color: "var(--button-background)",
+                    marginLeft: "4px",
+                    marginRight: "-10px",
+                  }}
+                >
+                  <path d="M12 16l4-4h-3V4h-2v8H8l4 4zm-7 4h14v2H5v-2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+
+
+        </div>
+
       </div>
     </section>
   );
