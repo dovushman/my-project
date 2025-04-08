@@ -108,82 +108,87 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 parent-container">
   {/* Left side: Project list */}
   <div className="space-y-4 pr-4">
-    {projects.map((project) => (
-      <div
-        key={project.id}
-        onClick={() => setSelectedProject(project.id)}
-        className={`p-4 cursor-pointer transition-all hover:transform hover:translate-x-2 focus:outline-none ${
-          selectedProject === project.id
-            ? "selected md:border-l-4 md:border-blue-500 md:pl-4"
-            : ""
-        }`}
-      >
-        {/* Show full details on larger screens */}
-        <div className="hidden lg:block">
-          <h3 className="text-xl font-semibold">{project.title}</h3>
-          <p className="text-sm mt-1">{project.description}</p>
-          <div className="flex gap-2 mt-2">
-            {project.techStack.map((tech, i) => {
-              const iconPath =
-                tech in customIcons
-                  ? customIcons[tech as keyof typeof customIcons]
-                  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+  {projects.map((project) => (
+    <div
+      key={project.id}
+      onClick={() => {
+        if (window.innerWidth >= 1024) {
+          // Only allow selection on large screens
+          setSelectedProject(project.id);
+        }
+      }}
+      className={`p-4 cursor-pointer transition-all ${
+        window.innerWidth >= 1024 && selectedProject === project.id
+          ? "selected md:border-l-4 md:border-blue-500 md:pl-4"
+          : ""
+      }`}
+    >
+      {/* Show full details on larger screens */}
+      <div className="hidden lg:block">
+        <h3 className="text-xl font-semibold">{project.title}</h3>
+        <p className="text-sm mt-1">{project.description}</p>
+        <div className="flex gap-2 mt-2">
+          {project.techStack.map((tech, i) => {
+            const iconPath =
+              tech in customIcons
+                ? customIcons[tech as keyof typeof customIcons]
+                : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
 
-              return (
-                <Image
-                  key={i}
-                  src={iconPath}
-                  alt={tech}
-                  width={24}
-                  height={24}
-                  className={`transition-transform duration-300 ${
-                    (tech === "express" || tech === "expo") && theme === "dark"
-                      ? "invert"
-                      : ""
-                  }`}
-                />
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Show simplified details on smaller and medium screens */}
-        <div className="block lg:hidden">
-          <h3 className="text-lg font-semibold">{project.title}</h3>
-          <p className="text-sm mt-1">{project.description}</p>
-          <div className="flex gap-2 mt-2">
-            {project.techStack.map((tech, i) => {
-              const iconPath =
-                tech in customIcons
-                  ? customIcons[tech as keyof typeof customIcons]
-                  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
-
-              return (
-                <Image
-                  key={i}
-                  src={iconPath}
-                  alt={tech}
-                  width={20}
-                  height={20}
-                  className={`transition-transform duration-300 ${
-                    (tech === "express" || tech === "expo") && theme === "dark"
-                      ? "invert"
-                      : ""
-                  }`}
-                />
-              );
-            })}
-          </div>
-          <a
-            href={project.link}
-            className="text-blue-500 hover:text-blue-700 text-sm mt-2 block"
-          >
-            View Project →
-          </a>
+            return (
+              <Image
+                key={i}
+                src={iconPath}
+                alt={tech}
+                width={24}
+                height={24}
+                className={`transition-transform duration-300 ${
+                  (tech === "express" || tech === "expo") && theme === "dark"
+                    ? "invert"
+                    : ""
+                }`}
+              />
+            );
+          })}
         </div>
       </div>
-    ))}
-  </div>
+
+      {/* Show simplified details on smaller and medium screens */}
+      <div className="block lg:hidden">
+        <h3 className="text-lg font-semibold">{project.title}</h3>
+        <p className="text-sm mt-1">{project.description}</p>
+        <div className="flex gap-2 mt-2">
+          {project.techStack.map((tech, i) => {
+            const iconPath =
+              tech in customIcons
+                ? customIcons[tech as keyof typeof customIcons]
+                : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+
+            return (
+              <Image
+                key={i}
+                src={iconPath}
+                alt={tech}
+                width={20}
+                height={20}
+                className={`transition-transform duration-300 ${
+                  (tech === "express" || tech === "expo") && theme === "dark"
+                    ? "invert"
+                    : ""
+                }`}
+              />
+            );
+          })}
+        </div>
+        <a
+          href={project.link}
+          className="text-blue-500 hover:text-blue-700 text-sm mt-2 block"
+        >
+          View Project →
+        </a>
+      </div>
+    </div>
+  ))}
+</div>
 
   {/* Right side: Project details (hidden on medium and smaller screens) */}
   <div
