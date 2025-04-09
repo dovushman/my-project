@@ -17,11 +17,16 @@ export default function Contact() {
     }));
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent form submission on Enter key
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("Sending...");
-
-    // Example: Sending data to an API endpoint
+  
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -30,10 +35,15 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setStatus("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" }); // Reset form
+  
+        // Clear the message after 5 seconds
+        setTimeout(() => {
+          setStatus("");
+        }, 5000);
       } else {
         setStatus("Failed to send message. Please try again.");
       }
@@ -43,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="p-8 max-w-2xl mx-auto bg-[var(--section-background)] rounded-lg shadow-md">
+    <section className="p-8 max-w-2xl mx-auto bg-[var(--section-background)] rounded-lg focus:outline-none focus:ring-0 border-none">
       <h2 className="text-3xl font-bold mb-6 text-[var(--heading-color)]">Get in Touch</h2>
       <p className="mb-4 text-[var(--text-color)]">
         Feel free to reach out for collaborations or just to chat.
@@ -55,7 +65,8 @@ export default function Contact() {
           placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-color)]"
+          onKeyDown={handleKeyDown} // Prevent Enter key submission
+          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
         />
         <input
           type="email"
@@ -63,19 +74,20 @@ export default function Contact() {
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-color)]"
+          onKeyDown={handleKeyDown} // Prevent Enter key submission
+          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
         />
         <textarea
           name="message"
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-color)]"
+          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
           rows={5}
         />
         <button
           type="submit"
-          className="px-6 py-3 bg-[var(--button-background)] text-[var(--button-text-color)] rounded hover:bg-[var(--button-hover-background)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-color)] transition-all"
+          className="px-6 py-3 bg-[var(--button-background)] text-[var(--button-text-color)] rounded focus:outline-none focus:ring-0 border-none transition-all"
         >
           Send Message
         </button>
