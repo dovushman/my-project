@@ -5,7 +5,7 @@ export const projectList = [
     description: "A React Native app for searching Pokémon.",
     fullDescription:
       "A full-featured Pokédex with searching, filters and information regarding Pokémon. Includes a comprehensive 'Who's that Pokémon?' feature with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
-    link: "/projects/pokedexPage", // Link to the specific project page
+    link: "/projects/pokedexPage",
     image: "/images/tempPokedexPhoto.png",
     techStack: ["reactNative", "expo", "sqlite"],
   },
@@ -15,9 +15,9 @@ export const projectList = [
       description: "Web Application to analyze and help lower AWS costs.",
       fullDescription:
         "Web applications with a Python backend and React frontend, providing a solution to reduce AWS costs.",
-      link: "#",
+      link: "/projects/7FactorPage",
       image: "/images/7FactorSmallLogo.png",
-      techStack: ["react", "python", "express"],
+      techStack: ["react", "python", "axios"],
     },
     {
       id: 2,
@@ -25,9 +25,9 @@ export const projectList = [
       description: "A web app for enhancing images quality.",
       fullDescription:
         "Web app to enhance image quality and be a safe storing place for images.",
-      link: "#",
+      link: "/projects/sharpifyPage",
       image: "/images/SharpifyCoverImage.png",
-      techStack: ["react", "nodejs", "mongodb", "firebase"],
+      techStack: ["react", "nodejs", "mongodb", "firebase", "express"],
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export const projectList = [
       description: "A desktop application for hospital management.",
       fullDescription:
         "A desktop application for hospital management, including staff communication, management requests, and adjustable signage.",
-      link: "#",
+      link: "/projects/hospitalPage",
       image: "/images/portfolio.jpg",
       techStack: ["java", "javafx", "postgresql", "figma"],
     },
@@ -45,7 +45,7 @@ export const projectList = [
       description: "A prototype and design for MOSE floodgates in Venice, Italy.",
       fullDescription:
         "An interactive mock-up for the Commissario Straordinario MOSE to help alert the public of floodgate closures.",
-      link: "#",
+      link: "/projects/mosePage",
       image: "/images/team-builder.jpg",
       techStack: ["xd"],
     },
@@ -55,7 +55,7 @@ export const projectList = [
       description: "A web application to streamline roommate management ",
       fullDescription:
         "A web application to streamline roommate management, including a calendar, task manager, and shopping list.",
-      link: "#",
+      link: "/projects/homehubPage",
       image: "/images/team-builder.jpg",
       techStack: ["react", "nodejs", "mongodb", "bootstrap"],
     },
@@ -65,7 +65,7 @@ export const projectList = [
       description: "Note sharing website for textbook material and collaborative learning platform",
       fullDescription:
         "Developed, with a team, a web and mobile application: note sharing for textbook material and collaborative learning platform. Implemented the Google Books API and constructed algorithms that identified requested book and contained submitted notes. Presented the above application at Google Cambridge to Google employees and interns.",
-      link: "#",
+      link: "/projects/legupPage",
       image: "/images/team-builder.jpg",
       techStack: ["javascript", "html5", "css3", "bootstrap", "heroku"],
     },
@@ -75,7 +75,7 @@ export const projectList = [
       description: "Mobile fitness application",
       fullDescription:
         "Android mobile fitness app to record daily steps taken, time duration of runs, and display running history.",
-      link: "#",
+      link: "/projects/mycoveragePage",
       image: "/images/team-builder.jpg",
       techStack: ["kotlin", "android"],
     },

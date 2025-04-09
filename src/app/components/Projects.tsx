@@ -32,6 +32,7 @@ export default function Projects() {
     expo: "/icons/expo-svgrepo-com.svg",
     reactNative: "/icons/react-native-1.svg",
     adobexd: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg",
+    axios: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg",
   };
 
   return (

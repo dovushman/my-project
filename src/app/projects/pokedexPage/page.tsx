@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useTheme } from "../../ThemeContext";
 import SidePanel from "../../components/SidePanel";
 
-
 export default function PokedexProjectPage() {
   const { theme } = useTheme();
 
@@ -15,8 +14,8 @@ export default function PokedexProjectPage() {
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "ai-deep-dive", title: "AI Deep Dive" },
-    { id: "screenshots", title: "Screenshots" },
     { id: "tech-stack", title: "Tech Stack" },
+    { id: "screenshots", title: "Screenshots" },
     { id: "future-plans", title: "Future Plans" },
   ];
 
@@ -164,6 +163,25 @@ export default function PokedexProjectPage() {
           </div>
         </section>
 
+        {/* Tech Stack */}
+        <section id="tech-stack" className="py-12">
+          <h2 className="text-3xl font-semibold mb-6">Tech Stack</h2>
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center" style={{ color: "var(--text-color)" }}>
+            {[
+              { name: "React Native", icon: "/icons/react-native-1.svg" },
+              { name: "Expo", icon: "/icons/expo-svgrepo-com.svg" },
+              { name: "SQLite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+              { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+              // Add other relevant technologies
+            ].map((tech, index) => (
+              <li key={index} className="flex flex-col items-center gap-2">
+                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="inline-block" />
+                <span className="text-sm font-medium">{tech.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
@@ -188,25 +206,6 @@ export default function PokedexProjectPage() {
             </div>
             {/* Add more screenshots here */}
           </div>
-        </section>
-
-        {/* Tech Stack */}
-        <section id="tech-stack" className="py-12">
-          <h2 className="text-3xl font-semibold mb-6">Tech Stack</h2>
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center" style={{ color: "var(--text-color)" }}>
-            {[
-              { name: "React Native", icon: "/icons/react-native-1.svg" },
-              { name: "Expo", icon: "/icons/expo-svgrepo-com.svg" },
-              { name: "SQLite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
-              { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-              // Add other relevant technologies
-            ].map((tech, index) => (
-              <li key={index} className="flex flex-col items-center gap-2">
-                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="inline-block" />
-                <span className="text-sm font-medium">{tech.name}</span>
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* Future Plans */}

@@ -1,5 +1,4 @@
 import React from "react";
-import { usePathname, useRouter } from "next/navigation";
 
 interface SidePanelProps {
   sections: { id: string; title: string }[];
@@ -7,19 +6,12 @@ interface SidePanelProps {
 }
 
 const SidePanel: React.FC<SidePanelProps> = ({ sections, theme }) => {
-  const pathname = usePathname(); // Get the current route
-  const router = useRouter(); // Use router for navigation
 
   const handleNavigation = (id: string) => {
-    if (pathname === "/projects/pokedexPage") {
-      // If on the current page, scroll smoothly to the section
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // If on another page, navigate to the page with the section query
-      router.push(`/projects/pokedexPage#${id}`);
+    // Scroll smoothly to the section within the current page
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 

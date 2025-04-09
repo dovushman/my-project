@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,31 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation"; // Import useRouter
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "../ThemeContext";
 
-export default function Header() {
-  // const { theme, setTheme } = useTheme();
-  const { theme } = useTheme();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
-  const router = useRouter(); // Use router for navigation
+type Theme = "light" | "dark" | "ide"; // Define the Theme type
 
-  // const handleThemeChange = (newTheme: "dark" | "light" | "ide") => {
-  //   setTheme(newTheme);
-  // };
+export default function Header() {
+  const { theme, setTheme } = useTheme(); // Include setTheme for theme toggling
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false); // State for theme dropdown
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleNavigation = (id: string) => {
     if (pathname === "/") {
-      // If on the homepage, scroll smoothly to the section
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // If on another page, navigate to the homepage with the section query
       router.push(`/?section=${id}`);
     }
+  };
+
+  const handleThemeChange = (newTheme: Theme) => {
+    setTheme(newTheme);
+    setIsThemeMenuOpen(false); // Close the dropdown after selection
   };
 
   return (
@@ -137,6 +138,90 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      {/* Icons */}
+      <div className="flex items-center space-x-2">
+        {/* GitHub Icon */}
+        <a
+          href="https://github.com/dovushman"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="p-2 rounded-full bg-transparent transition hover:text-gray-400"
+        >
+          <i className="devicon-github-original text-2xl"></i>
+        </a>
+
+        {/* LinkedIn Icon */}
+        <a
+          href="https://www.linkedin.com/in/dov-ushman/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="p-2 rounded-full bg-transparent transition hover:text-gray-400"
+        >
+          <i className="devicon-linkedin-plain text-2xl"></i>
+        </a>
+
+       {/* Theme Dropdown */}
+       <div className="relative">
+  <button
+    onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
+    className="p-2 rounded-full bg-transparent transition-all duration-300 flex items-center gap-2"
+    aria-label="Toggle Theme"
+  >
+    <i
+      className={`fas fa-paint-roller text-lg ${
+        theme === "dark" || theme === "ide" ? "text-white" : "text-gray-800"
+      }`}
+    ></i>
+  </button>
+
+  {isThemeMenuOpen && (
+    <div
+      className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden z-50 border border-gray-200 dark:border-gray-700 transform origin-top-right transition-all duration-300"
+    >
+      <div className="py-2">
+        <button
+          onClick={() => handleThemeChange("light")}
+          className="flex items-center w-full px-4 py-2 transition-colors"
+          style={{ backgroundColor: "transparent" }}
+        >
+          <i className="fas fa-sun text-yellow-500 mr-3"></i>
+          <span className="text-gray-800 dark:text-gray-200">Light Mode</span>
+          {theme === "light" && (
+            <i className="fas fa-check ml-auto text-green-500"></i>
+          )}
+        </button>
+
+        <button
+          onClick={() => handleThemeChange("dark")}
+          className="flex items-center w-full px-4 py-2 transition-colors"
+          style={{ backgroundColor: "transparent" }}
+        >
+          <i className="fas fa-moon text-indigo-400 mr-3"></i>
+          <span className="text-gray-800 dark:text-gray-200">Dark Mode</span>
+          {theme === "dark" && (
+            <i className="fas fa-check ml-auto text-green-500"></i>
+          )}
+        </button>
+
+        <button
+          onClick={() => handleThemeChange("ide")}
+          className="flex items-center w-full px-4 py-2 transition-colors"
+          style={{ backgroundColor: "transparent" }}
+        >
+          <i className="fas fa-code text-blue-500 mr-3"></i>
+          <span className="text-gray-800 dark:text-gray-200">IDE Mode</span>
+          {theme === "ide" && (
+            <i className="fas fa-check ml-auto text-green-500"></i>
+          )}
+        </button>
+      </div>
+    </div>
+  )}
+</div>
+      </div>
     </header>
   );
 }
