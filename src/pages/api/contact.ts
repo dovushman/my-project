@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
 
-const mongoUri = process.env.MONGO_URI;
+const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
 
 if (!mongoUri) {
-  throw new Error("MONGO_URI is not defined in the environment variables.");
-}
+    throw new Error("Neither MONGODB_URI nor MONGO_URI is defined in the environment variables.");
+  }
 
 /* eslint-disable no-var */
 declare global {
