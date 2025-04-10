@@ -49,19 +49,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Validate the input
     if (!name || name.trim() === "") {
-      return res.status(400).json({ error: "Name is required." });
+      return res.status(400).json({ error: "Please fill out the name field." });
     }
-
+    
     if (!email || email.trim() === "") {
-      return res.status(400).json({ error: "Email is required." });
+      return res.status(400).json({ error: "Please fill out the email field." });
     }
-
+    
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return res.status(400).json({ error: "Invalid email address." });
     }
-
+    
     if (!message || message.trim() === "") {
-      return res.status(400).json({ error: "Message is required." });
+      return res.status(400).json({ error: "Please fill out the message field." });
     }
 
     try {

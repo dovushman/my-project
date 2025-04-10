@@ -45,7 +45,8 @@ export default function Contact() {
           setStatus("");
         }, 5000);
       } else {
-        setStatus("Failed to send message. Please try again.");
+        const errorData = await response.json(); // Parse the error response
+        setStatus(errorData.error || "Failed to send message. Please try again.");
       }
     } catch {
       setStatus("An error occurred. Please try again.");
