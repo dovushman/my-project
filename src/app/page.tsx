@@ -6,8 +6,23 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function HomePage() {
+function HomePageContent() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const section = searchParams?.get("section");
+    if (section) {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [searchParams]);
+
   return (
     <>
       <Head>
@@ -53,5 +68,13 @@ export default function HomePage() {
         </section>
       </main>
     </>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomePageContent />
+    </Suspense>
   );
 }
