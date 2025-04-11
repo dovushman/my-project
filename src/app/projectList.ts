@@ -6,7 +6,7 @@ export const projectList = [
     fullDescription:
       "A full-featured Pokédex with searching, filters and information regarding Pokémon. Includes a comprehensive 'Who's that Pokémon?' feature with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
     link: "/projects/pokedexPage",
-    image: "/images/tempPokedexPhoto.png",
+    image: "/static/images/tempPokedexPhoto.png",
     techStack: ["reactNative", "expo", "sqlite"],
   },
     {
@@ -16,7 +16,7 @@ export const projectList = [
       fullDescription:
         "Web applications with a Python backend and React frontend, providing a solution to reduce AWS costs.",
       link: "/projects/7FactorPage",
-      image: "/images/7FactorSmallLogo.png",
+      image: "/static/images/7FactorSmallLogo.png",
       techStack: ["react", "python", "axios"],
     },
     {
@@ -26,7 +26,7 @@ export const projectList = [
       fullDescription:
         "Web app to enhance image quality and be a safe storing place for images.",
       link: "/projects/sharpifyPage",
-      image: "/images/SharpifyCoverImage.png",
+      image: "/static/images/SharpifyCoverImage.png",
       techStack: ["react", "nodejs", "mongodb", "firebase", "express"],
     },
     {
@@ -46,7 +46,7 @@ export const projectList = [
       fullDescription:
         "An interactive mock-up for the Commissario Straordinario MOSE to help alert the public of floodgate closures.",
       link: "/projects/mosePage",
-      image: "/images/MOSECoverImage.png",
+      image: "/static/images/MOSECoverImage.png",
       techStack: ["xd"],
     },
     {
