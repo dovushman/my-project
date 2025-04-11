@@ -6,7 +6,7 @@ import { useTheme } from "../../ThemeContext";
 import SidePanel from "../../components/SidePanel";
 import { useEffect, useState } from "react";
 
-export default function SharpifyProjectPage() {
+export default function EncloseProjectPage() {
   const { theme } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,6 +31,7 @@ export default function SharpifyProjectPage() {
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
     { id: "screenshots", title: "Screenshots" },
+    { id: "future-plans", title: "Future Plans" },
   ];
 
   return (
@@ -54,16 +55,16 @@ export default function SharpifyProjectPage() {
       >
         {/* Hero Section */}
         <section id="hero" className="py-16 text-center">
-          <h1 className="text-4xl font-bold mb-2">Sharpify: Image-Enhancing Website</h1>
+          <h1 className="text-4xl font-bold mb-2">{`{Enclose}`}</h1>
           <p
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A web app for enhancing image quality and securely storing your images.
+            Google Chrome Extension to enable automatic closing of paired symbols.
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="https://github.com/dovushman/cs4241-final-project"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
@@ -79,22 +80,17 @@ export default function SharpifyProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Image Enhancement:</strong> Improve the quality of your images with advanced algorithms.
+                <strong className="font-semibold">Automatic Closing:</strong> Automatically inserts closing symbols (e.g., brackets, parentheses) when opening symbols are typed.
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Secure Storage:</strong> Safely store and organize your images in the cloud.
+                <strong className="font-semibold">Content Script:</strong> Monitors user input in text areas and code editors.
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Batch Processing:</strong> Enhance multiple images at once for efficiency.
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <div>
-                <strong className="font-semibold">User-Friendly Interface:</strong> Intuitive design for seamless user experience.
+                <strong className="font-semibold">Customizable:</strong> Allows users to enable or disable the extension for specific websites.
               </div>
             </li>
           </ul>
@@ -104,7 +100,7 @@ export default function SharpifyProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            Sharpify is a web application designed to enhance image quality and provide a secure platform for storing and managing images. It leverages advanced algorithms to improve image resolution and clarity, making it an essential tool for photographers, designers, and anyone who values high-quality visuals.
+            {`{Enclose}`} is a Google Chrome Extension designed to improve productivity by automatically closing paired symbols like brackets and parentheses in text areas and code editors. It uses a content script to monitor user input and ensures a seamless typing experience.
           </p>
         </section>
 
@@ -112,7 +108,7 @@ export default function SharpifyProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for Sharpify stemmed from the need for a reliable tool to enhance image quality without compromising on security. As someone passionate about photography and technology, I wanted to create a platform that combines cutting-edge image processing techniques with a user-friendly interface.
+            The idea for {`{Enclose}`} came from the need to reduce repetitive typing and improve efficiency when working in text areas or code editors. By automating the insertion of closing symbols, this extension helps users focus on their content without worrying about syntax errors.
           </p>
         </section>
 
@@ -121,12 +117,9 @@ export default function SharpifyProjectPage() {
           <h2 className="text-3xl font-semibold mb-6">Tech Stack</h2>
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center" style={{ color: "var(--text-color)" }}>
             {[
-              { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-              { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" },
-              { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg" },
-              { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-              { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-              { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" },
+              { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+              { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+              { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
             ].map((tech, index) => (
               <li key={index} className="flex flex-col items-center gap-2">
                 <Image src={tech.icon} alt={tech.name} width={50} height={50} className="inline-block" />
@@ -142,8 +135,8 @@ export default function SharpifyProjectPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-                src="/images/SharpifyCoverImage.png"
-                alt="Sharpify homepage"
+                src="/images/team-builder.jpg"
+                alt="{Enclose} screenshot"
                 width={200}
                 height={100}
                 className="h-auto object-cover"
@@ -151,6 +144,20 @@ export default function SharpifyProjectPage() {
             </div>
             {/* Add more screenshots here */}
           </div>
+        </section>
+
+        {/* Future Plans */}
+        <section id="future-plans" className="py-12">
+          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
+          <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
+            I am actively working on the following features and improvements:
+          </p>
+          <ul className="list-disc list-inside space-y-2" style={{ color: "var(--text-color)" }}>
+            <li>Adding the ability to highlight text and press a symbol to add the symbol around the text.</li>
+            <li>The ability to remove both with one back space when empty</li>
+            <li>Providing customization options for symbol pairs.</li>
+            <li>Publishing the extension to the Chrome Web Store.</li>
+          </ul>
         </section>
 
         {/* Back Link */}

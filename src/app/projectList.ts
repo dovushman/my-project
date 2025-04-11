@@ -71,6 +71,16 @@ export const projectList = [
     },
     {
       id: 7,
+      title: "{Enclose}",
+      description: "Google Chrome Extension to enable automatic closing of paired symbols",
+      fullDescription:
+        "A Google Chrome Extension to enable automatic closing of paired symbols (e.g., brackets, parentheses) in text areas and code editors. The extension uses a content script to monitor user input and automatically insert the closing symbol when the opening symbol is typed.",
+      link: "/projects/enclosePage",
+      image: "/images/team-builder.jpg",
+      techStack: ["javascript", "html5", "css3"],
+    },
+    {
+      id: 8,
       title: "myCoverage",
       description: "Mobile fitness application",
       fullDescription:

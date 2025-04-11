@@ -4,9 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "../../ThemeContext";
 import SidePanel from "../../components/SidePanel";
+import { useEffect, useState } from "react";
 
 export default function MoseProjectPage() {
   const { theme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size to determine if it's mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const sections = [
     { id: "hero", title: "Hero Section" },
@@ -25,8 +41,8 @@ export default function MoseProjectPage() {
         color: theme === "dark" ? "var(--dark-text-color)" : "var(--light-text-color)",
       }}
     >
-      {/* Use the SidePanel Component */}
-      <SidePanel sections={sections} theme={theme as "dark" | "light"} />
+      {/* Conditionally render SidePanel only on larger screens */}
+      {!isMobile && <SidePanel sections={sections} theme={theme as "dark" | "light"} />}
 
       {/* Main Content */}
       <div
