@@ -46,7 +46,7 @@ export const projectList = [
       fullDescription:
         "An interactive mock-up for the Commissario Straordinario MOSE to help alert the public of floodgate closures.",
       link: "/projects/mosePage",
-      image: "/images/team-builder.jpg",
+      image: "/images/MOSECoverImage.png",
       techStack: ["xd"],
     },
     {
