@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect } from "react";
-import { projectList as projects} from "../projectList"; // Import the project list
+import { projectList as projects } from "../projectList"; // Import the project list
 
 export default function Projects() {
   const { theme } = useTheme();
@@ -27,12 +27,19 @@ export default function Projects() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   const customIcons = {
     expo: "/icons/expo-svgrepo-com.svg",
     reactNative: "/icons/react-native-1.svg",
     adobexd: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg",
     axios: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg",
+  };
+
+  const customSizes = {
+    0: { width: 190, height: 180 }, // Pokédex
+    2: { width: 200, height: 200 }, // Sharpify
+    4: { width: 200, height: 100 }, // MOSE Mobile App Prototype
+    // 6: { width: 700, height: 500 }, // LegUp
   };
 
   return (
@@ -54,11 +61,10 @@ export default function Projects() {
                   setSelectedProject(project.id);
                 }
               }}
-              className={`p-4 cursor-pointer transition-all ${
-                isLargeScreen && selectedProject === project.id
+              className={`p-4 cursor-pointer transition-all ${isLargeScreen && selectedProject === project.id
                   ? "selected md:border-l-4 md:border-blue-500 md:pl-4"
                   : ""
-              }`}
+                }`}
             >
               {/* Show full details on larger screens */}
               <div className="hidden lg:block">
@@ -78,11 +84,10 @@ export default function Projects() {
                         alt={tech}
                         width={24}
                         height={24}
-                        className={`transition-transform duration-300 ${
-                          (tech === "express" || tech === "expo") && theme === "dark"
+                        className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
                             ? "invert"
                             : ""
-                        }`}
+                          }`}
                       />
                     );
                   })}
@@ -107,11 +112,10 @@ export default function Projects() {
                         alt={tech}
                         width={20}
                         height={20}
-                        className={`transition-transform duration-300 ${
-                          (tech === "express" || tech === "expo") && theme === "dark"
+                        className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
                             ? "invert"
                             : ""
-                        }`}
+                          }`}
                       />
                     );
                   })}
@@ -144,8 +148,8 @@ export default function Projects() {
               <Image
                 src={projects[selectedProject].image}
                 alt={projects[selectedProject].title}
-                layout="fill"
-                objectFit="cover"
+                width={customSizes[selectedProject as keyof typeof customSizes]?.width || 384} // Default to 384 if not specified
+                height={customSizes[selectedProject as keyof typeof customSizes]?.height || 384} // Default to 384 if not specified
                 className="rounded-md"
               />
             </div>
@@ -165,11 +169,10 @@ export default function Projects() {
                       alt={tech}
                       width={24}
                       height={24}
-                      className={`transition-transform duration-300 ${
-                        (tech === "express" || tech === "expo") && theme === "dark"
+                      className={`transition-transform duration-300 ${(tech === "express" || tech === "expo") && theme === "dark"
                           ? "invert"
                           : ""
-                      }`}
+                        }`}
                     />
                   );
                 })}
