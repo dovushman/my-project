@@ -166,11 +166,38 @@ export default function PokedexProjectPage() {
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-                src="/static/images/tempPokedexPhoto.png"
+                src="/static/images/Pokedex/PokedexHome.jpg"
+                alt="Pokedex Home"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Pokedex/PokedexPokemon.jpg"
+                alt="Pokemon Details"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Pokedex/PokedexSearch.jpg"
                 alt="Search screen"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Pokedex/PokedexTeam.jpg"
+                alt="Team Builder"
                 width={200}
                 height={100}
                 className="h-auto object-cover"

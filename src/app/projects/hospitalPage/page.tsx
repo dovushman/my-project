@@ -131,15 +131,35 @@ export default function HospitalProjectPage() {
 
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
-          <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex items-center mb-6">
+            <h2 className="text-3xl font-semibold text-left flex-1">Screenshots</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-8 justify-items-center">
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-                src="/images/portfolio.jpg"
-                alt="Hospital application screenshot"
-                width={200}
-                height={100}
-                className="h-auto object-cover"
+          src="/static/images/B&W/HomePage.jpg"
+          alt="Hospital application homepage screenshot"
+          width={800}
+          height={400}
+          className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+          src="/static/images/B&W/Pathfinder.jpg"
+          alt="Hospital application pathfinder screenshot"
+          width={800}
+          height={400}
+          className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+          src="/static/images/B&W/PersonalPage.jpg"
+          alt="Hospital application personal page screenshot"
+          width={800}
+          height={400}
+          className="h-auto object-cover"
               />
             </div>
             {/* Add more screenshots here */}

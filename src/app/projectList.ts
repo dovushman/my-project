@@ -6,7 +6,7 @@ export const projectList = [
     fullDescription:
       "A full-featured Pokédex with searching, filters and information regarding Pokémon. Includes a comprehensive 'Who's that Pokémon?' feature with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
     link: "/projects/pokedexPage",
-    image: "/static/images/tempPokedexPhoto.png",
+    image: "/static/images/Pokedex/tempPokedexPhoto.png",
     techStack: ["reactNative", "expo", "sqlite"],
   },
     {
@@ -16,7 +16,7 @@ export const projectList = [
       fullDescription:
         "A web application with a Python backend and React frontend, providing a way to help reduce AWS costs. Specifically, it looks at different Amazon EC2 instances to see if there was potential to downsize storage configurations and reduce cost. This project was completed as my senior project at WPI called an MQP (Major Qualifying Project) for our sponsor 7Factor.",
       link: "/projects/7FactorPage",
-      image: "/static/images/7FactorSmallLogo.png",
+      image: "/static/images/7Factor/7FactorSmallLogo.png",
       techStack: ["react", "python", "axios"],
     },
     {
@@ -26,7 +26,7 @@ export const projectList = [
       fullDescription:
         "A web application to enhance image quality and be a safe storing place for images. This was a react application with a Node.js backend. It used MongoDB to store user information and Firebase to store the images themselves. The image enhancements was accomplished through custom configurations using the Deep Image AI.",
       link: "/projects/sharpifyPage",
-      image: "/static/images/SharpifyCoverImage.png",
+      image: "/static/images/Sharpify/SharpifyCoverImage.png",
       techStack: ["react", "nodejs", "mongodb", "firebase", "express"],
     },
     {
@@ -36,7 +36,7 @@ export const projectList = [
       fullDescription:
         "A desktop application for hospital management including staff communications, management request and adjustable signage. This application. This application was given to Brigham and Women’s Hospital to help in the improvement of their systems and for them to take inspiration from. It was created using Java, JavaFX, and PostgreSQL.",
       link: "/projects/hospitalPage",
-      image: "/images/portfolio.jpg",
+      image: "/static/images/B&W/B&WLogo.png",
       techStack: ["java", "javafx", "postgresql", "figma"],
     },
     {

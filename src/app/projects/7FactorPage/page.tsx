@@ -136,6 +136,45 @@ export default function SevenFactorProjectPage() {
                     </ul>
                 </section>
 
+
+                {/* Screenshots */}
+                <section id="screenshots" className="py-12">
+                    <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                        <div className="shadow-md rounded-lg overflow-hidden">
+                            <Image
+                                src="/static/images/7Factor/AWSAnalysisMQPPoster.png"
+                                alt="7Factor Report"
+                                width={100000}
+                                height={100000}
+                                className="h-auto object-cover"
+                            />
+                        </div>
+                    </div>
+                    <br></br>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="shadow-md rounded-lg overflow-hidden">
+                            <Image
+                                src="/static/images/7Factor/7FactorHomePage.jpg"
+                                alt="7Factor Report"
+                                width={100000}
+                                height={100000}
+                                className="h-auto object-cover"
+                            />
+                        </div>
+                        <div className="shadow-md rounded-lg overflow-hidden">
+                            <Image
+                                src="/static/images/7Factor/CpuUtil.jpg"
+                                alt="7Factor Report"
+                                width={100000}
+                                height={100000}
+                                className="h-auto object-cover"
+                            />
+                        </div>
+                        {/* Add more screenshots here */}
+                    </div>
+                </section>
+
                 {/* Back Link */}
                 <div className="text-center py-8">
                     <Link

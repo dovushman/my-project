@@ -139,14 +139,23 @@ export default function SharpifyProjectPage() {
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8"> {/* Changed to single column */}
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-                src="/images/SharpifyCoverImage.png"
-                alt="Sharpify homepage"
-                width={200}
-                height={100}
-                className="h-auto object-cover"
+                src="/static/images/Sharpify/SharpifyLogin.jpg"
+                alt="Sharpify Login"
+                width={850}
+                height={800}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Sharpify/SharpifyComparison.jpg"
+                alt="Sharpify Comparison"
+                width={1000}
+                height={1200}
+                className="w-full h-auto object-cover"
               />
             </div>
             {/* Add more screenshots here */}
