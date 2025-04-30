@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useTheme } from "../../ThemeContext";
 import SidePanel from "../../components/SidePanel";
 import { useEffect, useState } from "react";
@@ -167,10 +166,17 @@ export default function LegUpProjectPage() {
           </ul>
         </section>
 
-        {/* Back Link */}
-        <div className="text-center py-8">
-          <Link
-            href="/projects"
+       {/* Back Link */}
+       <div className="text-center py-8">
+          <button
+            onClick={() => {
+              const section = document.getElementById("projects");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "/?section=projects&selected=6"; // 6 stands for legup on project list
+              }
+            }}
             className="inline-block px-8 py-3 rounded-md shadow-md hover:bg-opacity-90 transition duration-300 font-semibold"
             style={{
               backgroundColor: "var(--button-background)",
@@ -178,7 +184,7 @@ export default function LegUpProjectPage() {
             }}
           >
             ← Back to Projects
-          </Link>
+          </button>
         </div>
       </div>
     </div>

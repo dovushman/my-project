@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation"; // Import useSearchParams
 import { projectList as projects } from "../projectList"; // Import the project list
 
 export default function Projects() {
   const { theme } = useTheme();
   const [selectedProject, setSelectedProject] = useState(0); // Default to first project
   const [isLargeScreen, setIsLargeScreen] = useState(false); // Track if the screen is large
+  const searchParams = useSearchParams(); // Access query parameters
 
   // Check screen size on the client side
   useEffect(() => {
@@ -27,6 +29,14 @@ export default function Projects() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Read the selected project from the query parameter
+  useEffect(() => {
+    const selected = searchParams?.get("selected");
+    if (selected) {
+      setSelectedProject(parseInt(selected, 10)); // Set the selected project based on the query parameter
+    }
+  }, [searchParams]);
 
   const customIcons = {
     expo: "/icons/expo-svgrepo-com.svg",
