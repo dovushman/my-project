@@ -17,7 +17,7 @@ const SidePanel: React.FC<SidePanelProps> = ({ sections, theme }) => {
 
   return (
     <nav
-      className="fixed left-4 top-1/2 transform -translate-y-1/2 h-auto w-48 p-4 rounded-lg z-50"
+      className="fixed left-4 top-1/2 transform -translate-y-1/2 h-auto p-4 rounded-lg z-50"
       style={{
         backgroundColor: theme === "dark" ? "var(--dark-background)" : "var(--light-background)",
         color: theme === "dark" ? "var(--dark-text-color)" : "var(--light-text-color)",
