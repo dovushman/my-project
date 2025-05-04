@@ -63,7 +63,7 @@ export default function MyCoverageProjectPage() {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="#"
+              href="https://github.com/dovushman/myCoverage"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"

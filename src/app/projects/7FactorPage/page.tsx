@@ -62,7 +62,9 @@ export default function SevenFactorProjectPage() {
                     </p>
                     <div className="flex justify-center gap-4">
                         <a
-                            href="#"
+                            href="https://digital.wpi.edu/concern/student_works/x633f550j?locale=en"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
                         >
                             <span className="font-semibold">Learn More</span>

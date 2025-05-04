@@ -62,12 +62,12 @@ export default function MoseProjectPage() {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="#"
+              href="https://digital.wpi.edu/concern/student_works/8g84mq70r?locale=en"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
             >
-              <span className="font-semibold">View Interactive Design</span>
+              <span className="font-semibold">Learn More</span>
             </a>
           </div>
         </section>
@@ -125,39 +125,39 @@ export default function MoseProjectPage() {
           </ul>
         </section>
 
-{/* Screenshots */}
-<section id="screenshots" className="py-12">
-  <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-  <div className="flex flex-wrap justify-center gap-8">
-    <div className="shadow-md rounded-lg overflow-hidden">
-      <Image
-        src="/static/images/Mose/MoseMain.jpg"
-        alt="MOSE Main Page"
-        width={200}
-        height={100}
-        className="h-auto object-cover"
-      />
-    </div>
-    <div className="shadow-md rounded-lg overflow-hidden">
-      <Image
-        src="/static/images/Mose/MoseTide.jpg"
-        alt="MOSE Tide Page"
-        width={200}
-        height={100}
-        className="h-auto object-cover"
-      />
-    </div>
-    <div className="shadow-md rounded-lg overflow-hidden">
-      <Image
-        src="/static/images/Mose/MoseUpdates.jpg"
-        alt="MOSE Update Page"
-        width={200}
-        height={100}
-        className="h-auto object-cover"
-      />
-    </div>
-  </div>
-</section>
+        {/* Screenshots */}
+        <section id="screenshots" className="py-12">
+          <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Mose/MoseMain.jpg"
+                alt="MOSE Main Page"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Mose/MoseTide.jpg"
+                alt="MOSE Tide Page"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+            <div className="shadow-md rounded-lg overflow-hidden">
+              <Image
+                src="/static/images/Mose/MoseUpdates.jpg"
+                alt="MOSE Update Page"
+                width={200}
+                height={100}
+                className="h-auto object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Back Link */}
         <div className="text-center py-8">
