@@ -72,49 +72,16 @@ export default function Skills() {
     ToolsAndPlatforms: ["git", "github", "jira", "figma"],
   };
 
-  // Shared card styling
   const cardStyle = {
     border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-    height: "100%", // Make all cards same height
+    height: "100%", 
   };
 
-  // Define the SkillCardProps interface
   interface SkillCardProps {
     title: string;
     skillList: string[];
   }
 
-  // SkillCard for medium screens
-  const MediumSkillCard = ({ title, skillList }: SkillCardProps) => (
-    <div
-      className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)] h-full"
-      style={cardStyle}
-    >
-      <h3
-        className="text-2xl font-semibold mb-4 text-[var(--accent-color)]"
-        style={{ minHeight: "4rem" }} // Ensures consistent height for all titles
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skillList.map((skill) => (
-          <div key={skill} className="flex flex-col items-center">
-            <Image
-              src={deviconIcons[skill as keyof typeof deviconIcons]}
-              alt={skill}
-              width={48}
-              height={48}
-            />
-            <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
-              {skill}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  // Default SkillCard
   const DefaultSkillCard = ({ title, skillList }: SkillCardProps) => (
     <div
       className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)] h-full"
@@ -124,19 +91,56 @@ export default function Skills() {
         {title}
       </h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skillList.map((skill) => (
-          <div key={skill} className="flex flex-col items-center">
-            <Image
-              src={deviconIcons[skill as keyof typeof deviconIcons]}
-              alt={skill}
-              width={48}
-              height={48}
-            />
-            <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
-              {skill}
-            </span>
-          </div>
-        ))}
+        {skillList.map((skill) => {
+          const isDarkMode = theme === "dark" && skill === "express"; // Check if dark mode and skill is express
+          return (
+            <div key={skill} className="flex flex-col items-center">
+              <Image
+                src={deviconIcons[skill as keyof typeof deviconIcons]}
+                alt={skill}
+                width={48}
+                height={48}
+                className={isDarkMode ? "invert" : ""} // Apply invert class if dark mode
+              />
+              <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
+                {skill}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+  
+  const MediumSkillCard = ({ title, skillList }: SkillCardProps) => (
+    <div
+      className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)] h-full"
+      style={cardStyle}
+    >
+      <h3
+        className="text-2xl font-semibold mb-4 text-[var(--accent-color)]"
+        style={{ minHeight: "4rem" }}
+      >
+        {title}
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {skillList.map((skill) => {
+          const isDarkMode = theme === "dark" && skill === "express"; // Check if dark mode and skill is express
+          return (
+            <div key={skill} className="flex flex-col items-center">
+              <Image
+                src={deviconIcons[skill as keyof typeof deviconIcons]}
+                alt={skill}
+                width={48}
+                height={48}
+                className={isDarkMode ? "invert" : ""} // Apply invert class if dark mode
+              />
+              <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
+                {skill}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
