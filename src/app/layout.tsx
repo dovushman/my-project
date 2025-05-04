@@ -3,6 +3,7 @@ import ClientSideHeader from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./ThemeContext"; 
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"; 
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({
           </Suspense>
           {children}
           <Footer />
+          <Analytics /> 
         </ThemeProvider>
       </body>
     </html>
