@@ -165,8 +165,8 @@ export default function PokedexProjectPage() {
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="shadow-md rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-8">
+            <div className="shadow-md rounded-lg overflow-hidden mx-auto">
               <Image
                 src="/static/images/Pokedex/PokedexHome.jpg"
                 alt="Pokedex Home"
@@ -175,7 +175,7 @@ export default function PokedexProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            <div className="shadow-md rounded-lg overflow-hidden">
+            <div className="shadow-md rounded-lg overflow-hidden mx-auto">
               <Image
                 src="/static/images/Pokedex/PokedexPokemon.jpg"
                 alt="Pokemon Details"
@@ -184,7 +184,7 @@ export default function PokedexProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            <div className="shadow-md rounded-lg overflow-hidden">
+            <div className="shadow-md rounded-lg overflow-hidden mx-auto">
               <Image
                 src="/static/images/Pokedex/PokedexSearch.jpg"
                 alt="Search screen"
@@ -193,7 +193,7 @@ export default function PokedexProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            <div className="shadow-md rounded-lg overflow-hidden">
+            <div className="shadow-md rounded-lg overflow-hidden mx-auto">
               <Image
                 src="/static/images/Pokedex/PokedexTeam.jpg"
                 alt="Team Builder"
@@ -205,8 +205,8 @@ export default function PokedexProjectPage() {
           </div>
         </section>
 
-       {/* Back Link */}
-       <div className="text-center py-8">
+        {/* Back Link */}
+        <div className="text-center py-8">
           <button
             onClick={() => {
               const section = document.getElementById("projects");
