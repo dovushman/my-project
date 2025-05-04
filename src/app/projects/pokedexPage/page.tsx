@@ -71,12 +71,6 @@ export default function PokedexProjectPage() {
             >
               <span className="font-semibold">View Source Code</span>
             </a>
-            <a
-              href="/demo"
-              className="px-6 py-3 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition duration-300"
-            >
-              <span className="font-semibold">Try the Demo</span>
-            </a>
           </div>
         </section>
 
