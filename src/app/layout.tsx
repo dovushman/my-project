@@ -9,9 +9,9 @@ import "./styles/globals.css";
 export const metadata: Metadata = {
   title: "Dov Ushman | Portfolio",
   icons: {
-    icon: "/images/favicon.ico", // Updated path
-    shortcut: "/images/favicon.ico",
-    apple: "/images/favicon.ico",
+    icon: "/static/images/favicon.ico", // Updated path
+    shortcut: "/static/images/favicon.ico",
+    apple: "/static/images/favicon.ico",
   },
   openGraph: {
     title: "Dov Ushman | Portfolio",
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/static/images/favicon.ico" />
       </head>
       <body
         className="antialiased"
