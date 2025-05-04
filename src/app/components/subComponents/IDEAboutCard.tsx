@@ -99,7 +99,7 @@ const IDEAboutCard: React.FC<IDEAboutCardProps> = ({ title, icon, children }) =>
 // Function to apply syntax highlighting
 function syntaxHighlight(text: string): string {
   // Replace keywords with VS Code theme colors from your globals.css
-  let highlighted = text
+  const highlighted = text
     // Replace HTML tags and attributes that might be in the content
     .replace(/<strong>/g, '<span class="text-[#9cdcfe]">')
     .replace(/<\/strong>/g, '</span>')

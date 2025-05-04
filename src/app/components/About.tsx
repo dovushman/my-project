@@ -134,7 +134,7 @@ export default function About() {
             className="md:col-span-2 lg:col-span-1"
             content={
               <p>
-                Outside of work, I enjoy spending time with my family and friends. I'm
+                Outside of work, I enjoy spending time with my family and friends. I&apos;m
                 a lifelong Red Sox fan, an avid skier, and a tennis player. I also love
                 experimenting with new technologies and coding helpful tools. This
                 website is actually my first time using TypeScript, Next.js, and
