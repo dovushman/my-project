@@ -595,7 +595,7 @@ function ClientSideHeader() {
                   )}
                 </button>
 
-                <button
+                {/* <button
                   onClick={() => handleThemeChange("ide")}
                   className="flex items-center w-full px-4 py-2 transition-colors"
                   style={{ backgroundColor: "transparent" }}
@@ -605,7 +605,7 @@ function ClientSideHeader() {
                   {theme === "ide" && (
                     <i className="fas fa-check ml-auto text-green-500"></i>
                   )}
-                </button>
+                </button> */}
               </div>
             </div>
           )}
