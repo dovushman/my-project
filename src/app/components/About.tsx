@@ -76,7 +76,7 @@ export default function About() {
         {isIDE ? (
           <div className="mb-12">
             {/* <div className="flex items-center mb-3"> */}
-              {/* <div className="bg-[#252526] text-white px-4 py-1 rounded-t border border-[#2A2A3A] border-b-0 text-sm flex items-center space-x-2">
+            {/* <div className="bg-[#252526] text-white px-4 py-1 rounded-t border border-[#2A2A3A] border-b-0 text-sm flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-red-500"></span>
                 <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
@@ -84,9 +84,9 @@ export default function About() {
               </div> */}
             {/* </div> */}
             {/* <div className="border border-[#2A2A3A] rounded-tr-lg rounded-b-lg p-3 bg-[#1e1e1e]"> */}
-              <div className="text-[#569cd6] text-lg font-mono mb-4">
-                <span className="text-[#569cd6]">export const</span> <span className="text-[#9cdcfe]">AboutMe</span> = () <span className="text-[#c586c0]">=&gt; {"{"};</span>
-              </div>
+            <div className="text-[#569cd6] text-lg font-mono mb-4">
+              <span className="text-[#569cd6]">export const</span> <span className="text-[#9cdcfe]">AboutMe</span> = () <span className="text-[#c586c0]">=&gt; {"{"};</span>
+            </div>
             {/* </div> */}
           </div>
         ) : (
@@ -94,10 +94,10 @@ export default function About() {
             About Me
           </h2>
         )}
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Card
-            title="WhoIAm"
+            title="Who I Am"
             icon={icon}
             content={
               <p>
@@ -129,8 +129,8 @@ export default function About() {
             }
           />
           <Card
-            title="HobbiesAndInterests"
-            icon={icon}
+            title="Hobbies & Interests"
+            icon={icon} // Pass the icon prop here
             className="md:col-span-2 lg:col-span-1"
             content={
               <p>
@@ -143,13 +143,13 @@ export default function About() {
             }
           />
         </div>
-        
+
         {isIDE && (
           <div className="mt-8 text-right pr-12">
             <span className="text-[#c586c0]">&#125;</span>
           </div>
         )}
-        
+
         {isIDE && (
           <div className="mt-8 border-t border-[#2A2A3A] py-1 px-4 bg-[#007acc] text-white text-xs flex justify-between">
             <div className="flex items-center space-x-4">
