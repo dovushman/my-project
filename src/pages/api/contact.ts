@@ -1,15 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
-import rateLimit from "express-rate-limit";
-
-// Rate limiter: Limit each IP to 15 requests per 15 minutes
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 15, // Limit each IP to 15 requests per windowMs
-  handler: (_req, res) => {
-    res.status(429).json({ error: "Too many requests, please try again later." });
-  },
-});
 
 // MongoDB connection setup
 const mongoUri = process.env.MONGODB_URI;
@@ -33,17 +23,6 @@ const clientPromise: Promise<MongoClient> = globalWithMongo._mongoClientPromise!
 
 // API handler
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Apply rate limiter
-  await new Promise<void>((resolve, reject) => {
-    limiter(req as NextApiRequest, res as NextApiResponse, (result: unknown) => {
-      if (result instanceof Error) {
-        reject(result);
-      } else {
-        resolve();
-      }
-    });
-  });
-
   if (req.method === "POST") {
     const { name, email, message } = req.body;
 
