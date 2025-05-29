@@ -75,7 +75,7 @@ export default function Skills() {
 
   const cardStyle = {
     border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-    height: "100%", 
+    height: "100%",
   };
 
   interface SkillCardProps {
@@ -103,8 +103,18 @@ export default function Skills() {
                 height={48}
                 className={isDarkMode ? "invert" : ""} // Apply invert class if dark mode
               />
-              <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
-                {skill}
+              <span className={`text-sm mt-2 text-center whitespace-nowrap${(skill === "Next.js" || skill === "Node.js") ? "" : " capitalize"}`}>
+                {skill === "Next.js" ? (
+                  <>
+                    Next.<span className="lowercase">js</span>
+                  </>
+                ) : skill === "Node.js" ? (
+                  <>
+                    Node.<span className="lowercase">js</span>
+                  </>
+                ) : (
+                  skill
+                )}
               </span>
             </div>
           );
@@ -112,7 +122,7 @@ export default function Skills() {
       </div>
     </div>
   );
-  
+
   const MediumSkillCard = ({ title, skillList }: SkillCardProps) => (
     <div
       className="w-full rounded-lg shadow-lg p-6 bg-[var(--card-background)] h-full"
@@ -136,8 +146,18 @@ export default function Skills() {
                 height={48}
                 className={isDarkMode ? "invert" : ""} // Apply invert class if dark mode
               />
-              <span className="text-sm mt-2 capitalize text-center whitespace-nowrap">
-                {skill}
+              <span className={`text-sm mt-2 text-center whitespace-nowrap${(skill === "Next.js" || skill === "Node.js") ? "" : " capitalize"}`}>
+                {skill === "Next.js" ? (
+                  <>
+                    Next.<span className="lowercase">js</span>
+                  </>
+                ) : skill === "Node.js" ? (
+                  <>
+                    Node.<span className="lowercase">js</span>
+                  </>
+                ) : (
+                  skill
+                )}
               </span>
             </div>
           );
