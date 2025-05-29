@@ -1,20 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "../ThemeContext";
 import { Suspense } from "react";
 
 type Theme = "light" | "dark" | "ide"; // Define the Theme type
 
-// Create a client component wrapper for search params
 function ClientSideHeader() {
-  const { theme, setTheme } = useTheme(); // Include setTheme for theme toggling
+  const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false); // State for theme dropdown
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  // Ref for the theme dropdown
+  const themeMenuRef = useRef<HTMLDivElement>(null);
 
   // Handle screen size changes
   useEffect(() => {
@@ -22,17 +24,39 @@ function ClientSideHeader() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     handleResize();
-
-    // Add event listener
     window.addEventListener("resize", handleResize);
 
-    // Clean up
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Close theme dropdown when clicking outside
+  useEffect(() => {
+    if (!isThemeMenuOpen) return;
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        themeMenuRef.current &&
+        !themeMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsThemeMenuOpen(false);
+      }
+    }
+
+    function handleScroll() {
+      setIsThemeMenuOpen(false);
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isThemeMenuOpen]);
 
   const handleNavigation = (id: string) => {
     if (pathname === "/") {
@@ -41,14 +65,15 @@ function ClientSideHeader() {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      router.push(`/?section=${id}`); // Add section ID as a query parameter
+      router.push(`/?section=${id}`);
     }
   };
 
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);
-    setIsThemeMenuOpen(false); // Close the dropdown after selection
+    setIsThemeMenuOpen(false);
   };
+
 
   return (
     // <header
@@ -555,7 +580,7 @@ function ClientSideHeader() {
         </a>
 
         {/* Theme Dropdown */}
-        <div className="relative">
+        <div className="relative" ref={themeMenuRef}>
           <button
             onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
             className="p-2 rounded-full bg-transparent transition-all duration-300 flex items-center gap-1"
@@ -614,6 +639,7 @@ function ClientSideHeader() {
     </header>
   );
 }
+
 
 // Export a wrapped component with Suspense boundary
 export default function Header() {
