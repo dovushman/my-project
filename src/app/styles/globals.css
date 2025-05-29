@@ -18,13 +18,15 @@
   --border-color: #2C2C2E;
   --section-font-color: #FFFFFF;
   --hero-gradient-start: #1e3a8a;
-  --hero-gradient-end: #065f46;
+  /*--hero-gradient-end: #b91c1c; /* Dark Red */
+   --hero-gradient-end: #065f46; /* Dark Green */
+  
   /* --hero-gradient-end: #b91c1c; */
   /* --hero-gradient-start: #FFC857;  */
   /* --hero-gradient-end: #2D2A7F; */
   
   /* blue purple */
-  /*--hero-gradient-start: #1e3a8a; /* Indigo-600 */
+  /*  --hero-gradient-start: #1e3a8a; 
   /*--hero-gradient-end: #6b21a8;*/ /* Purple-600 */
 
   /* blue green */
@@ -51,7 +53,7 @@
   --button-text-color: #ffffff;
   --accent-color: #4d95d8;
   --hero-gradient-start: #93c5fd;
-  --hero-gradient-end: #fca5a5;
+  /* --hero-gradient-end: #fca5a5; */
 
   /* yellow to blue */
   /* --hero-gradient-start: #FFD95A;  */
@@ -64,6 +66,7 @@
   /* blue green   
   /*  --hero-gradient-start: #93c5fd; /* Light Blue */
   /* --hero-gradient-end: #6ee7b7; /* Light Green */
+  --hero-gradient-end: #6ee7b7;
 
 }
 

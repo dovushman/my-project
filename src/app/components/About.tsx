@@ -101,7 +101,7 @@ export default function About() {
             icon={icon}
             content={
               <p>
-                Hello! My name is Dov Ushman, and I am a passionate Full Stack Engineer
+                Hello! My name is Dov Ushman, and I am a passionate full-stack engineer
                 with a strong focus on building scalable, user-centric applications. I
                 thrive on solving complex problems and delivering impactful solutions.
               </p>
@@ -114,7 +114,7 @@ export default function About() {
               <ul className="list-disc pl-5 space-y-2">
                 <li className="text-left">
                   <strong>Bachelor of Science in Computer Science</strong> – Worcester
-                  Polytechnic Institute (Graduated: 2024)
+                  Polytechnic Institute - Graduated 2024
                 </li>
                 <li className="text-left">
                   <strong>Minor:</strong> Financial Technology
@@ -137,7 +137,7 @@ export default function About() {
                 Outside of work, I enjoy spending time with my family and friends. I&apos;m
                 a lifelong Red Sox fan, an avid skier, and a tennis player. I also love
                 experimenting with new technologies and coding helpful tools. This
-                website is actually my first time using TypeScript, Next.js, and
+                website is actually my first larger project using TypeScript, Next.js, and
                 TailwindCSS!
               </p>
             }

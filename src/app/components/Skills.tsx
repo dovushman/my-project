@@ -38,38 +38,39 @@ export default function Skills() {
     typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    html5: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    css3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "HTML5": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "CSS3": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     c: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
     "c++": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     r: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg",
     kotlin: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
     react: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     "React Native": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    nextjs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    nodejs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     express: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    mongodb: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
     firebase: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-    postgresql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "Postgres": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     aws: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
     git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    github: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     figma: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     jira: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
     bootstrap: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
     docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    sqldeveloper: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg", // Custom SQL Developer icon
-    tailwindcss: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", // Tailwind CSS icon
+    "SQL Developer": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg", // Custom SQL Developer icon
+    "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", // Tailwind CSS icon
     numpy: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
     pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    "SQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg", // Use Azure SQL Database icon for SQL
   };
 
   const skills = {
-    Languages: ["javascript", "typescript", "python", "java", "html5", "css3", "c", "c++", "r", "kotlin"],
-    FrameworksAndLibraries: ["react", "React Native", "nextjs", "nodejs", "express", "bootstrap", "tailwindcss", "docker", "numpy", "pandas"],
-    DatabasesAndStorage: ["mongodb", "firebase", "postgresql", "sqldeveloper"],
-    ToolsAndPlatforms: ["git", "github", "jira", "figma"],
+    Languages: ["javascript", "typescript", "python", "java", "HTML5", "CSS3", "c", "c++", "r", "kotlin", "SQL"],
+    FrameworksAndLibraries: ["react", "React Native", "Next.js", "Node.js", "express", "bootstrap", "Tailwind CSS", "docker", "numpy", "pandas"],
+    DatabasesAndStorage: ["MongoDB", "firebase", "Postgres", "SQL Developer"],
+    ToolsAndPlatforms: ["git", "GitHub", "jira", "figma"],
   };
 
   const cardStyle = {

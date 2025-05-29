@@ -84,7 +84,7 @@ export const projectList = [
       title: "myCoverage",
       description: "Mobile fitness application",
       fullDescription:
-        "Android mobile fitness app to record daily steps taken, time duration of runs, and display running history. This application was my first time making a mobile application and was created using Katlin.",
+        "Android mobile fitness app to record daily steps taken, time duration of runs, and display running history. This application was my first time making a mobile application and was created using Kotlin.",
       link: "/projects/mycoveragePage",
       image: "/images/team-builder.jpg",
       techStack: ["kotlin", "android"],
