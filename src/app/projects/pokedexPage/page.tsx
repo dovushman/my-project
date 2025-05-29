@@ -149,7 +149,13 @@ export default function PokedexProjectPage() {
               { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
             ].map((tech, index) => (
               <li key={index} className="flex flex-col items-center gap-2">
-                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="inline-block" />
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  width={50}
+                  height={50}
+                  className={`inline-block${tech.name === "Expo" && theme === "dark" ? " invert" : ""}`}
+                />
                 <span className="text-sm font-medium">{tech.name}</span>
               </li>
             ))}
