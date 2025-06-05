@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "../ThemeContext";
 import { Suspense } from "react";
 
-type Theme = "light" | "dark" | "ide"; // Define the Theme type
+type Theme = "light" | "dark" | "ide";
 
 function ClientSideHeader() {
   const { theme, setTheme } = useTheme();
@@ -58,16 +58,44 @@ function ClientSideHeader() {
     };
   }, [isThemeMenuOpen]);
 
-  const handleNavigation = (id: string) => {
-    if (pathname === "/") {
-      const section = document.getElementById(id);
-      if (section) {
+const handleNavigation = (id: string) => {
+  if (pathname === "/") {
+    const section = document.getElementById(id);
+    if (section) {
+      const width = window.innerWidth;
+      const isDesktop = width >= 1024;
+      const isMedium = width >= 768 && width < 1024;
+
+      if (id === "about" && (isDesktop || isMedium)) {
+        // For about: align bottom on desktop and medium screens, but scroll further on medium
+        const rect = section.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let offset = rect.bottom - window.innerHeight;
+        if (isMedium) {
+          offset += 80; // Increase value to scroll further
+        }
+        window.scrollTo({
+          top: scrollTop + offset,
+          behavior: "smooth",
+        });
+      } else if (id === "skills" && isDesktop) {
+        // For skills: align bottom only on desktop
+        const rect = section.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const offset = rect.bottom - window.innerHeight;
+        window.scrollTo({
+          top: scrollTop + offset,
+          behavior: "smooth",
+        });
+      } else {
+        // Default scroll for everything else and for skills on medium/mobile
         section.scrollIntoView({ behavior: "smooth" });
       }
-    } else {
-      router.push(`/?section=${id}`);
     }
-  };
+  } else {
+    router.push(`/?section=${id}`);
+  }
+};
 
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);

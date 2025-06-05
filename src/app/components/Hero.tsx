@@ -135,7 +135,13 @@ export default function Hero() {
 
           {/* Call to Action - Improved button sizing and spacing */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 justify-center md:justify-start">
-          <button
+<button
+  onClick={() => {
+    const section = document.getElementById("projects");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
   className="px-3 py-2 md:px-5 md:py-2.5 text-sm font-medium rounded-md transition-transform hover:scale-105 w-44 sm:w-auto mx-auto sm:mx-0"
   style={{
     backgroundColor: isIdeMode ? "#1e1e1e" : "var(--button-background)",
