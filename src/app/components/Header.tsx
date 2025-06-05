@@ -66,29 +66,21 @@ const handleNavigation = (id: string) => {
       const isDesktop = width >= 1024;
       const isMedium = width >= 768 && width < 1024;
 
-      if (id === "about" && (isDesktop || isMedium)) {
-        // For about: align bottom on desktop and medium screens, but scroll further on medium
+      if ((id === "about" && (isDesktop || isMedium)) || (id === "skills" && isDesktop)) {
         const rect = section.getBoundingClientRect();
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         let offset = rect.bottom - window.innerHeight;
-        if (isMedium) {
-          offset += 80; // Increase value to scroll further
+        if (id === "about" && isMedium) {
+          offset += 80; // Custom tweak for medium screens
         }
+        // Clamp so we never scroll past the bottom of the page
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const targetScroll = Math.min(scrollTop + offset, maxScroll);
         window.scrollTo({
-          top: scrollTop + offset,
-          behavior: "smooth",
-        });
-      } else if (id === "skills" && isDesktop) {
-        // For skills: align bottom only on desktop
-        const rect = section.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const offset = rect.bottom - window.innerHeight;
-        window.scrollTo({
-          top: scrollTop + offset,
+          top: targetScroll,
           behavior: "smooth",
         });
       } else {
-        // Default scroll for everything else and for skills on medium/mobile
         section.scrollIntoView({ behavior: "smooth" });
       }
     }
