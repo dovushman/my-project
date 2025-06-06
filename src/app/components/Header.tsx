@@ -606,9 +606,11 @@ const handleNavigation = (id: string) => {
             className="p-2 rounded-full bg-transparent transition-all duration-300 flex items-center gap-1"
             aria-label="Toggle Theme"
           >
-            <i
-              className={`fas fa-paint-roller text-lg ${theme === "dark" || theme === "ide" ? "text-white" : "text-gray-800"}`}
-            ></i>
+<i
+  className={`fas fa-paint-roller text-lg`}
+  style={{
+    color: theme === "dark" || theme === "ide" ? "#fff" : "#1f2937", }}
+/>
           </button>
 
           {isThemeMenuOpen && (
