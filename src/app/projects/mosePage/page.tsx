@@ -115,7 +115,8 @@ export default function MoseProjectPage() {
           <h2 className="text-3xl font-semibold mb-6">Tech Stack</h2>
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center" style={{ color: "var(--text-color)" }}>
             {[
-              { name: "Adobe XD", icon: "/icons/xd-icon.svg" },
+
+              { name: "Adobe XD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg" },
             ].map((tech, index) => (
               <li key={index} className="flex flex-col items-center gap-2">
                 <Image src={tech.icon} alt={tech.name} width={50} height={50} className="inline-block" />

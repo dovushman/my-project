@@ -30,7 +30,6 @@ export default function MyCoverageProjectPage() {
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
     { id: "screenshots", title: "Screenshots" },
-    { id: "future-plans", title: "Future Plans" },
   ];
 
   return (
@@ -147,20 +146,6 @@ export default function MyCoverageProjectPage() {
             </div>
             {/* Add more screenshots here */}
           </div>
-        </section>
-
-        {/* Future Plans */}
-        <section id="future-plans" className="py-12">
-          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
-          <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            I am actively working on the following features and improvements:
-          </p>
-          <ul className="list-disc list-inside space-y-2" style={{ color: "var(--text-color)" }}>
-            <li>Adding GPS tracking for route mapping during runs.</li>
-            <li>Integrating social features to share progress with friends.</li>
-            <li>Implementing personalized fitness goals and reminders.</li>
-            <li>Enhancing the user interface for a more modern look.</li>
-          </ul>
         </section>
 
         {/* Back Link */}

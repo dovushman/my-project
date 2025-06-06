@@ -15,7 +15,7 @@ export default function LegUpProjectPage() {
       setIsMobile(window.innerWidth <= 1024); // Adjust breakpoint as needed
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -30,7 +30,6 @@ export default function LegUpProjectPage() {
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
     { id: "screenshots", title: "Screenshots" },
-    { id: "future-plans", title: "Future Plans" },
   ];
 
   return (
@@ -124,7 +123,7 @@ export default function LegUpProjectPage() {
               { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
               { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
               { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-              { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" },
+              { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
               { name: "Heroku", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" },
             ].map((tech, index) => (
               <li key={index} className="flex flex-col items-center gap-2">
@@ -150,20 +149,6 @@ export default function LegUpProjectPage() {
             </div>
             {/* Add more screenshots here */}
           </div>
-        </section>
-
-        {/* Future Plans */}
-        <section id="future-plans" className="py-12">
-          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
-          <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            I am actively working on the following features and improvements:
-          </p>
-          <ul className="list-disc list-inside space-y-2" style={{ color: "var(--text-color)" }}>
-            <li>Enhancing the search functionality for notes and textbooks.</li>
-            <li>Adding user profiles to track contributions and favorites.</li>
-            <li>Integrating real-time collaboration tools for group projects.</li>
-            <li>Expanding the platform to support more file formats for notes.</li>
-          </ul>
         </section>
 
        {/* Back Link */}
