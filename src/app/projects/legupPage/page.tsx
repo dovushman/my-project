@@ -29,7 +29,7 @@ export default function LegUpProjectPage() {
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
-    { id: "screenshots", title: "Screenshots" },
+    // { id: "screenshots", title: "Screenshots" },
   ];
 
   return (
@@ -60,15 +60,18 @@ export default function LegUpProjectPage() {
           >
             A web platform sharing textbook notes and promoting collaborative learning among students.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col items-center gap-2">
             <a
-              href="#"
+              href="https://github.com/dovushman/BootLeg"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
             >
               <span className="font-semibold">View Source Code</span>
             </a>
+            <span className="text-xs text-gray-500">
+              (Repository is named <code>BootLeg</code> due to original branding)
+            </span>
           </div>
         </section>
 
@@ -98,15 +101,15 @@ export default function LegUpProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            LegUp simplifies the process of finding and sharing textbook notes, and creates a digital space where students can contribute and benefit from peer knowledge. By integrating the Google Books API, users can search for a textbook and instantly find notes related to the material. LegUp was built with collaboration in mind – designed to support students whether they were in the same classroom or not. The project was presented at Google Cambridge to a panel of employees and interns.       
-            </p>
+            LegUp simplifies the process of finding and sharing textbook notes, and creates a digital space where students can contribute and benefit from peer knowledge. By integrating the Google Books API, users can search for a textbook and instantly find notes related to the material. LegUp was built with collaboration in mind – designed to support students whether they were in the same classroom or not. The project was presented at Google Cambridge to a panel of employees and interns.
+          </p>
         </section>
 
         {/* Why I Built This */}
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for LegUp stemmed from the need for a centralized platform to share and access notes for textbook material. As a student, I often found it challenging to collaborate with peers effectively. This project aimed to address that gap by creating a platform that combines note sharing with collaborative learning tools, making education more accessible and engaging.          
+            The idea for LegUp stemmed from the need for a centralized platform to share and access notes for textbook material. As a student, I often found it challenging to collaborate with peers effectively. This project aimed to address that gap by creating a platform that combines note sharing with collaborative learning tools, making education more accessible and engaging.
           </p>
         </section>
 
@@ -130,7 +133,7 @@ export default function LegUpProjectPage() {
         </section>
 
         {/* Screenshots */}
-        <section id="screenshots" className="py-12">
+        {/* <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="shadow-md rounded-lg overflow-hidden">
@@ -142,9 +145,8 @@ export default function LegUpProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            {/* Add more screenshots here */}
           </div>
-        </section>
+        </section> */}
 
         {/* Back Link */}
         <div className="text-center py-8">
