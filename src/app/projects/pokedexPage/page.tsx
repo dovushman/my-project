@@ -113,7 +113,7 @@ export default function PokedexProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            As a lifelong Pokémon enthusiast, my interest in the franchise deepened during my time at WPI. The sheer volume of Pokémon and the constant release of new content became overwhelming. This inspired the idea of creating a mobile Pokédex to centralize all the information. While a basic Pokédex is not a new idea, I saw the app as an excellent opportunity to learn React Native and build something I am passionate about. I saw this app as a great way to learn how to implement currently existing AI models, as well as a chance to learn how to refine these models and even create my own to be used in a way I have not seen anyone else use them.
+            As a lifelong Pokémon enthusiast, my interest in the franchise deepened during my time at WPI. The sheer volume of Pokémon and the constant release of new content became overwhelming. This inspired the idea of creating a mobile Pokédex to centralize all the information. While a basic Pokédex is not a new idea, I saw the app as an excellent opportunity to learn React Native and build something that I enjoy. I saw this app as a way to learn how to implement currently existing AI models, to explore how to refine these models and even create my own AI models to be used in a unique way.
           </p>
         </section>
 

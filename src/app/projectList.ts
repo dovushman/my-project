@@ -56,7 +56,7 @@ export const projectList = [
       fullDescription:
         "A web application built to simplify the logistics of shared living. HomeHub combines a collaborative calendar, task manager, and shopping list into a single platform to help roommates stay organized and communicate effectively. It is being built with React, React-Bootstrap, Node.js and MongoDB.",
       link: "/projects/homehubPage",
-      image: "/images/team-builder.jpg",
+      image:"/static/images/HomeHubCoverImage.png",
       techStack: ["react", "nodejs", "mongodb", "bootstrap"],
     },
     {
