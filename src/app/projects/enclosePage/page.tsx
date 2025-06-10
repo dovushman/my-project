@@ -24,12 +24,12 @@ export default function EncloseProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
-    { id: "screenshots", title: "Screenshots" },
+    // { id: "screenshots", title: "Screenshots" },
     { id: "future-plans", title: "Future Plans" },
   ];
 
@@ -53,7 +53,7 @@ export default function EncloseProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">{`{Enclose}`}</h1>
           <p
             className="text-lg mb-6"
@@ -61,7 +61,7 @@ export default function EncloseProjectPage() {
           >
             Google Chrome Extension to enable automatic closing of paired symbols.
           </p>
-          <div className="flex justify-center gap-4">
+          {/* <div className="flex justify-center gap-4">
             <a
               href="#"
               target="_blank"
@@ -70,7 +70,7 @@ export default function EncloseProjectPage() {
             >
               <span className="font-semibold">View Source Code</span>
             </a>
-          </div>
+          </div> */}
         </section>
 
         {/* Key Features */}
@@ -129,7 +129,7 @@ export default function EncloseProjectPage() {
         </section>
 
         {/* Screenshots */}
-        <section id="screenshots" className="py-12">
+        {/* <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="shadow-md rounded-lg overflow-hidden">
@@ -141,9 +141,8 @@ export default function EncloseProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            {/* Add more screenshots here */}
           </div>
-        </section>
+        </section> */}
 
         {/* Future Plans */}
         <section id="future-plans" className="py-12">

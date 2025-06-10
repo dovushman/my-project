@@ -54,7 +54,7 @@ export const projectList = [
       title: "HomeHub: Smart Home Management",
       description: "A web application for managing shared living spaces.",
       fullDescription:
-        "A web application built to simplify the logistics of shared living. HomeHub combines a collaborative calendar, task manager, and shopping list into a single platform to help roommates stay organized and communicate effectively. It is being built with React, React-Bootstrap, Node.js and MongoDB.",
+        "A web application built to simplify the logistics of shared living. HomeHub combines a joint calendar, task manager, and shopping list into a single platform to help roommates stay organized and communicate effectively. It is being built with React, React-Bootstrap, Node.js and MongoDB.",
       link: "/projects/homehubPage",
       image:"/static/images/HomeHubCoverImage.png",
       techStack: ["react", "nodejs", "mongodb", "bootstrap"],
@@ -64,7 +64,7 @@ export const projectList = [
       title: "LegUp: Note Sharing Website",
       description: "Note sharing website for textbook material and collaborative learning platform",
       fullDescription:
-        "LegUp is a web-based note-sharing and collaborative learning platform built to help students exchange textbook-based notes and study materials more effectively. It integrates the Google Books API to match notes with specific books based on title and author and ISBN number. The project was developed using JavaScript, HTML5, CSS3, and Bootstrap. The project was presented at Google Cambridge to employees and interns.s",
+        "LegUp is a web-based note-sharing and collaborative learning platform built to help students exchange textbook-based notes and study materials more effectively. It integrates the Google Books API to match notes with specific books based on title and author and ISBN number. The project was developed using JavaScript, HTML5, CSS3, and Bootstrap. The project was presented at Google Cambridge to employees and interns.",
       link: "/projects/legupPage",
       image: "/static/images/LegUpCoverImage.png",
       techStack: ["javascript", "html5", "css3", "bootstrap", "heroku"],

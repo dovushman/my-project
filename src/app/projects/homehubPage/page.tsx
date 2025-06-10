@@ -59,7 +59,7 @@ export default function HomeHubProjectPage() {
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A full-stack web app designed to help roommates coordinate tasks, schedules and shared shopping lists in one place. 
+            A full-stack web app designed to help roommates coordinate tasks, schedules and shared shopping lists in one place.
           </p>
           <div className="flex justify-center gap-4">
           </div>
@@ -76,12 +76,12 @@ export default function HomeHubProjectPage() {
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Task Manager:</strong> Assign, track, and complete chores with visibility across all users 
+                <strong className="font-semibold">Task Manager:</strong> Assign, track, and complete chores with visibility across all users
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Collaborative shopping List:</strong> Add, edit, and manage grocery items together in real time
+                <strong className="font-semibold">Joint Shopping List:</strong> Add, edit, and manage grocery items together in real time
               </div>
             </li>
             <li className="flex items-start gap-4">
@@ -96,7 +96,7 @@ export default function HomeHubProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            HomeHub is a roommate management tool aimed to help manage shared living spaces. Whether it is coordinating cleaning duties, remembering who is buying groceries or just knowing what is happening when, HomeHub centralizes all of this information. The app supports a more organized, transparent, and low stress living environment by helping roommates stay on the same page. 
+            HomeHub is a roommate management tool aimed to help manage shared living spaces. Whether it is coordinating cleaning duties, remembering who is buying groceries or just knowing what is happening when, HomeHub centralizes all of this information. The app supports a more organized, transparent, and low stress living environment by helping roommates stay on the same page.
           </p>
         </section>
 
@@ -140,20 +140,21 @@ export default function HomeHubProjectPage() {
           </ul>
         </section>
 
+        
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 justify-items-center">
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-                src="/images/team-builder.jpg"
-                alt="HomeHub screenshot"
-                width={200}
-                height={100}
+                src="/static/images/HomeHub/HomeHubSignInPage.jpg"
+                alt="Hospital application homepage screenshot"
+                width={800}
+                height={400}
                 className="h-auto object-cover"
               />
             </div>
-            {/* Add more screenshots here */}
+            {/* more screenshots can be added here */}
           </div>
         </section>
 

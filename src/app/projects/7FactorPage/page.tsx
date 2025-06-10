@@ -98,7 +98,7 @@ export default function SevenFactorProjectPage() {
                 <section id="overview" className="py-12">
                     <h2 className="text-3xl font-semibold mb-6">Overview</h2>
                     <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-                        This project is a web-based tool aimed to help 7Factor monitor and optimize their AWS EC2 storage usage. It performs detailed analysis and helps display the current EC2 usage and how it could be downsized to help cut costs. It features a Python backend and a React frontend to improve usability and allow for future developments on a more modern tech stack.
+                        AWS cost management can be a major challenge for businesses. This tool was designed to offer a straightforward yet effective solution for analyzing AWS usage and identifying cost-saving opportunities. Our MQP team at WPI was tasked with modernizing and expanding upon an existing internal tool created by the prior year&apros;s MQP project. We transitioned the project to a modern tech stack, maintained the core functionality, improved performance and completely redesigned the frontend for a more intuitive user experience.
                     </p>
                 </section>
 

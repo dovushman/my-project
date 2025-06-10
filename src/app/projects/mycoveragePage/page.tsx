@@ -24,12 +24,12 @@ export default function MyCoverageProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
-    { id: "screenshots", title: "Screenshots" },
+    // { id: "screenshots", title: "Screenshots" },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function MyCoverageProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">myCoverage</h1>
           <p
             className="text-lg mb-6"
@@ -132,7 +132,7 @@ export default function MyCoverageProjectPage() {
         </section>
 
         {/* Screenshots */}
-        <section id="screenshots" className="py-12">
+        {/* <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="shadow-md rounded-lg overflow-hidden">
@@ -144,9 +144,8 @@ export default function MyCoverageProjectPage() {
                 className="h-auto object-cover"
               />
             </div>
-            {/* Add more screenshots here */}
           </div>
-        </section>
+        </section> */}
 
         {/* Back Link */}
         <div className="text-center py-8">

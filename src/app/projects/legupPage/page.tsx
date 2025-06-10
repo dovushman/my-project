@@ -98,7 +98,8 @@ export default function LegUpProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            LegUp simplifies the process of finding and sharing textbook-specific notes, creates a digital space where students can contribute and benefit from peer knowledge. By integrating the Google Books API, users can search for a textbook and instantly find notes related to the material. LegUp was built with collaboration in mind – designed to support students whether they were in the same classroom or not. The project was presented at Google Cambridge to a panel of employees and interns.          </p>
+            LegUp simplifies the process of finding and sharing textbook notes, and creates a digital space where students can contribute and benefit from peer knowledge. By integrating the Google Books API, users can search for a textbook and instantly find notes related to the material. LegUp was built with collaboration in mind – designed to support students whether they were in the same classroom or not. The project was presented at Google Cambridge to a panel of employees and interns.       
+            </p>
         </section>
 
         {/* Why I Built This */}
