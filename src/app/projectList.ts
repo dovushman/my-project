@@ -22,9 +22,9 @@ export const projectList = [
     {
       id: 2,
       title: "Sharpify: Image-Enhancing Website",
-      description: "A web app for enhancing images quality.",
+      description: "A full-stack web app for enhancing images quality and managing images.",
       fullDescription:
-        "A web application to enhance image quality and be a safe storing place for images. This was a react application with a Node.js backend. It used MongoDB to store user information and Firebase to store the images themselves. The image enhancements was accomplished through custom configurations using the Deep Image AI.",
+        "A full-stack web application designed to enhance image quality, and securely store and manage images. Built with a React frontend and Node.js backend, the app integrates MongoDB to store user data and Firebase for image storage. The image enhancements are powered by a custom configuration of the Deep Image AI API.",
       link: "/projects/sharpifyPage",
       image: "/static/images/Sharpify/SharpifyCoverImage.png",
       techStack: ["react", "nodejs", "mongodb", "firebase", "express"],

@@ -24,7 +24,7 @@ export default function SharpifyProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
@@ -52,13 +52,13 @@ export default function SharpifyProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">Sharpify: Image-Enhancing Website</h1>
           <p
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A web app for enhancing image quality and securely storing your images.
+            A full-stack web app for improving image quality and securely storing images in the cloud.
           </p>
           <div className="flex justify-center gap-4">
             <a
@@ -78,22 +78,17 @@ export default function SharpifyProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Image Enhancement:</strong> Improve the quality of your images with advanced algorithms.
+                <strong className="font-semibold">Image Enhancement:</strong> Upgrade image resolution and clarity using AI-powered processing 
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Secure Storage:</strong> Safely store and organize your images in the cloud.
+                <strong className="font-semibold">Secure Cloud Storage:</strong> Upload and store images safely with Firebase integration
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Batch Processing:</strong> Enhance multiple images at once for efficiency.
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <div>
-                <strong className="font-semibold">User-Friendly Interface:</strong> Intuitive design for seamless user experience.
+                <strong className="font-semibold">Modern UI:</strong> Clean, intuitive interface for seamless user experience
               </div>
             </li>
           </ul>
@@ -103,7 +98,7 @@ export default function SharpifyProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            Sharpify is a web application designed to enhance image quality and provide a secure platform for storing and managing images. It leverages advanced algorithms to improve image resolution and clarity, making it an essential tool for photographers, designers, and anyone who values high-quality visuals.
+            Sharpify combines AI image enhancement with secure and user-friendly cloud storage. Users can upload images, improve their quality with the Deep Image AI, and organize them in a personal image library. The app uses a Node.js backend and a React frontend, with MongoDB managing user accounts and Firebase to store the images themselves.
           </p>
         </section>
 
@@ -111,7 +106,7 @@ export default function SharpifyProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for Sharpify stemmed from the need for a reliable tool to enhance image quality without compromising on security. As someone passionate about photography and technology, I wanted to create a platform that combines cutting-edge image processing techniques with a user-friendly interface.
+            The idea for Sharpify stemmed from my trying to find a website to improve an images quality. I had taken a photo on my phone and the image didn&apos;t look as crisp as I wanted it. The idea for Sharpify was born. At the time, I was also taking the Webware course at WPI. For my final project, I needed to create a full-stack web application, and an image enhancer seemed perfect. Sharpify was an idea that I knew would be useful to me and something that could be useful to others as well. 
           </p>
         </section>
 

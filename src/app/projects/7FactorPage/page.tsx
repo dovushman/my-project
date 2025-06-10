@@ -52,7 +52,7 @@ export default function SevenFactorProjectPage() {
                 }}
             >
                 {/* Hero Section */}
-                <section id="hero" className="py-16 text-center">
+                <section id="intro" className="py-16 text-center">
                     <h1 className="text-4xl font-bold mb-2">7Factor AWS Analysis</h1>
                     <p
                         className="text-lg mb-6"
