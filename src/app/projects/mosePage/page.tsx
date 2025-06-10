@@ -24,7 +24,7 @@ export default function MoseProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
@@ -52,13 +52,13 @@ export default function MoseProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">MOSE Mobile App Prototype</h1>
           <p
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A prototype and design for MOSE floodgates in Venice, Italy.
+            A mobile app prototype designed to improve floodgate communication and public safety in Venice, Italy. 
           </p>
           <div className="flex justify-center gap-4">
             <a
@@ -83,12 +83,12 @@ export default function MoseProjectPage() {
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Interactive Design:</strong> User-friendly interface for easy navigation and information access.
+                <strong className="font-semibold">Customizable Notifications:</strong> Allow users to set preferences for flood alerts.
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Customizable Notifications:</strong> Allow users to set preferences for flood alerts.
+                <strong className="font-semibold">Intuitive UI:</strong> Designed with accessibility and ease-of-use in mind for residents and tourists alike.
               </div>
             </li>
           </ul>
@@ -98,7 +98,7 @@ export default function MoseProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The MOSE Mobile App Prototype is an interactive mock-up designed for the Commissario Straordinario MOSE in Venice, Italy. It aims to alert the public about floodgate closures and provide real-time updates to ensure safety and preparedness during high tides.
+            The MOSE Mobile App Prototype is an interactive mock-up designed for the Commissario Straordinario MOSE in Venice, Italy. It aims to alert the public about floodgate closures and provide real-time updates to ensure safety and preparedness during high tides. The app would allow users to set the nearest Vaporetto (Venetian Waterbus transport system, similar to buses) stop as a home location to see how tides will affect their houses, given the vastly different elevations throughout the city. It also includes alerts of Vaporetto closings and routing options to adjust based on closings. This design is being used by the Commissario Straordinario MOSE to help create their finalized app.
           </p>
         </section>
 
@@ -106,7 +106,7 @@ export default function MoseProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            This project was inspired by the need for a reliable and accessible system to inform the public about floodgate operations in Venice. By leveraging modern design tools, I aimed to create a prototype that combines functionality with an intuitive user experience, addressing the unique challenges posed by the MOSE floodgate system.
+            During my team&apos;s time in Venice, it became clear that while the MOSE floodgate system helps manage rising tides, communication with the public needed improvement. My group set out to design a mobile app that could help deliver alerts in a timely manner, targeting a user&apos;s individual location and preferences. This project challenged us to apply UX principles in a real-world, high-stakes environment and gave me the chance to contribute to a solution that could genuinely improve daily life in a city as unique and vulnerable as Venice.
           </p>
         </section>
 

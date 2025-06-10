@@ -42,9 +42,9 @@ export const projectList = [
     {
       id: 4,
       title: "MOSE Mobile App Prototype",
-      description: "A prototype and design for MOSE floodgates in Venice, Italy.",
+      description: "An interactive mobile mock-up for the MOSE floodgates in Venice, Italy.",
       fullDescription:
-        "A mobile application prototype created for MOSE with the Commissario Straordinario Mose, Venice Italy. This application was created to help improve the current communication of MOSE gate raises with the people of Venice. The application was created using AdobeXD to prototype all scenarios the app should handle. This project was completed as my IQP (Interactive Qualifying Project) for our sponsor MOSE.",
+        "An interactive mock-up designed in collaboration with the Commissario Straordinario MOSE in Venice, Italy. The app aims to improve communication around MOSE floodgate operations and high-tide events for residents and visitors. Built using Adobe XD, the mock-up simulates a range of real-world scenarios to ensure usability and effectiveness. This project was completed as my Interactive Qualifying Project (IQP) at WPI.",
       link: "/projects/mosePage",
       image: "/static/images/MOSECoverImage.png",
       techStack: ["xd"],
