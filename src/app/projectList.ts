@@ -64,7 +64,7 @@ export const projectList = [
       title: "LegUp: Note Sharing Website",
       description: "Note sharing website for textbook material and collaborative learning platform",
       fullDescription:
-        "Developed, with a team, a web note sharing platform for textbook material and collaborative learning platform. Implemented the Google Books API and constructed algorithms that identified requested book and contained submitted notes. Presented the above application at Google Cambridge to Google employees and interns. This was created using JavaScript, HTML5, CSS3 and Bootstrap.",
+        "LegUp is a web-based note-sharing and collaborative learning platform built to help students exchange textbook-based notes and study materials more effectively. It integrates the Google Books API to match notes with specific books based on title and author and ISBN number. The project was developed using JavaScript, HTML5, CSS3, and Bootstrap. The project was presented at Google Cambridge to employees and interns.s",
       link: "/projects/legupPage",
       image: "/static/images/LegUpCoverImage.png",
       techStack: ["javascript", "html5", "css3", "bootstrap", "heroku"],

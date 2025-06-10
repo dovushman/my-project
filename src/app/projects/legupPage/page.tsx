@@ -15,7 +15,7 @@ export default function LegUpProjectPage() {
       setIsMobile(window.innerWidth <= 1024); // Adjust breakpoint as needed
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -58,7 +58,7 @@ export default function LegUpProjectPage() {
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            Note sharing website for textbook material and collaborative learning platform.
+            A web platform sharing textbook notes and promoting collaborative learning among students.
           </p>
           <div className="flex justify-center gap-4">
             <a
@@ -78,22 +78,17 @@ export default function LegUpProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Note Sharing:</strong> Share and access notes for textbook material.
+                <strong className="font-semibold">Note Sharing:</strong> Upload and access notes tied to specific textbooks
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Collaborative Learning:</strong> Engage with peers to enhance learning experiences.
+                <strong className="font-semibold">Collaborative Learning:</strong> Engage with classmates to enhance learning experiences
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Google Books API Integration:</strong> Identify requested books and link them with submitted notes.
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <div>
-                <strong className="font-semibold">Cross-Platform Support:</strong> Available as both a web and mobile application.
+                <strong className="font-semibold">Google Books API Integration:</strong> Identify requested books and link them with submitted notes
               </div>
             </li>
           </ul>
@@ -103,15 +98,14 @@ export default function LegUpProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            LegUp is a web and mobile application designed to facilitate note sharing for textbook material and foster collaborative learning. The platform integrates the Google Books API to identify requested books and associate them with user-submitted notes. This project was presented at Google Cambridge to employees and interns, showcasing its innovative approach to collaborative education.
-          </p>
+            LegUp simplifies the process of finding and sharing textbook-specific notes, creates a digital space where students can contribute and benefit from peer knowledge. By integrating the Google Books API, users can search for a textbook and instantly find notes related to the material. LegUp was built with collaboration in mind – designed to support students whether they were in the same classroom or not. The project was presented at Google Cambridge to a panel of employees and interns.          </p>
         </section>
 
         {/* Why I Built This */}
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for LegUp stemmed from the need for a centralized platform to share and access notes for textbook material. As a student, I often found it challenging to collaborate with peers effectively. This project aimed to address that gap by creating a platform that combines note sharing with collaborative learning tools, making education more accessible and engaging.
+            The idea for LegUp stemmed from the need for a centralized platform to share and access notes for textbook material. As a student, I often found it challenging to collaborate with peers effectively. This project aimed to address that gap by creating a platform that combines note sharing with collaborative learning tools, making education more accessible and engaging.          
           </p>
         </section>
 
@@ -151,8 +145,8 @@ export default function LegUpProjectPage() {
           </div>
         </section>
 
-       {/* Back Link */}
-       <div className="text-center py-8">
+        {/* Back Link */}
+        <div className="text-center py-8">
           <button
             onClick={() => {
               const section = document.getElementById("projects");
