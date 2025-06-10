@@ -2,9 +2,9 @@ export const projectList = [
   {
     id: 0,
     title: "Pokédex App",
-    description: "A React Native app for searching Pokémon.",
+    description: "Mobile Pokédex app with AI searching and team builder.",
     fullDescription:
-      "A full-featured Pokédex with searching, filters and information regarding Pokémon. Includes a comprehensive 'Who's that Pokémon?' feature with AI image recognition and textual description. Also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
+      "A React-Native mobile Pokédex app with searching, filters and information regarding Pokémon. The app includes a comprehensive “Who's that Pokémon?” feature with AI image recognition and textual description. It also includes a team builder feature where users can manually enter a team or use a custom AI model to help create a competitively viable team.",
     link: "/projects/pokedexPage",
     image: "/static/images/Pokedex/tempPokedexPhoto.png",
     techStack: ["reactNative", "expo", "sqlite"],

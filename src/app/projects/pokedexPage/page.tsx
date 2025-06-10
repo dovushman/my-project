@@ -24,14 +24,14 @@ export default function PokedexProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "ai-deep-dive", title: "AI Deep Dive" },
     { id: "tech-stack", title: "Tech Stack" },
-    { id: "screenshots", title: "Screenshots" },
     { id: "future-plans", title: "Future Plans" },
+    { id: "screenshots", title: "Screenshots" },
   ];
 
   return (
@@ -60,7 +60,7 @@ export default function PokedexProjectPage() {
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A React Native app for searching Pokémon and building teams.
+            A Pokédex built with React Native, featuring AI-powered Pokémon recognition and team building.
           </p>
           <div className="flex justify-center gap-4">
             <a
@@ -80,22 +80,22 @@ export default function PokedexProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">View & Filters:</strong> View information on all Pokémon and filter by type, stats, and more.
+                <strong className="font-semibold">Comprehensive Pokédex:</strong> Search and filter all Pokémon, items, abilities, and more by type, stats, generation, and availability
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">AI Pokémon Recognition:</strong> Upload an image or describe a Pokémon to identify it.
+                <strong className="font-semibold">AI-Powered Identification:</strong> Upload an image or type a description to identify Pokémon with AI
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Smart Team Builder:</strong> Build teams manually or with AI-generated suggestions.
+                <strong className="font-semibold">Smart Team Builder:</strong> Build teams manually or generate competitive teams using a custom AI model
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Offline Support:</strong> Uses SQLite for persistent offline access.
+                <strong className="font-semibold">Offline Access:</strong> Uses SQLite for storing and accessing data without the need for internet connectivity
               </div>
             </li>
           </ul>
@@ -105,10 +105,7 @@ export default function PokedexProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            A full-featured Pokédex with searching, filters, and detailed information about each Pokémon.
-            The app incorporates a unique &quot;Who&apos;s that Pokémon?&quot; feature powered by AI for both image and
-            text-based identification. Additionally, it includes a smart team builder, allowing users to
-            create teams manually or leverage a custom AI model for competitively viable suggestions.
+            A complete Pokédex with searching and filtering capabilities, and detailed information about each Pokémon. The app incorporates a unique &quot;Who&apos;s that Pokémon?&quot; feature powered by AI for both image and text-based identification. Additionally, it includes a smart team builder, allowing users to create teams manually or leverage a custom AI model for competitively viable suggestions. Users have the option to export their teams so that the teams can be easily to uploaded to Pokémon Showdown (online Pokémon battle simulator).
           </p>
         </section>
 
@@ -116,11 +113,7 @@ export default function PokedexProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            As a lifelong Pokémon enthusiast, my interest in the franchise deepened during my time at WPI.
-            The sheer volume of Pokémon and the constant release of new content became overwhelming. This
-            inspired the idea of creating a mobile Pokédex to centralize all the information. While a
-            basic Pokédex wasn&apos;t novel, I saw it as an excellent opportunity to learn React Native and build
-            something I was passionate about.
+            As a lifelong Pokémon enthusiast, my interest in the franchise deepened during my time at WPI. The sheer volume of Pokémon and the constant release of new content became overwhelming. This inspired the idea of creating a mobile Pokédex to centralize all the information. While a basic Pokédex is not a new idea, I saw the app as an excellent opportunity to learn React Native and build something I am passionate about. I saw this app as a great way to learn how to implement currently existing AI models, as well as a chance to learn how to refine these models and even create my own to be used in a way I have not seen anyone else use them.
           </p>
         </section>
 
@@ -131,8 +124,10 @@ export default function PokedexProjectPage() {
             <div>
               <h3 className="text-xl font-semibold mb-2">AI Pokémon Recognition</h3>
               <p className="text-lg leading-relaxed">
-                The &quot;Who&apos;s That Pokémon?&quot; feature utilizes advanced AI models to identify Pokémon from
-                user-uploaded images and textual descriptions.
+                The &quot;Who&apos;s That Pokémon?&quot; feature utilizes advanced AI models to identify Pokémon from user-uploaded images and textual descriptions.
+                <br></br><br></br>
+                <h3 className="text-xl font-semibold mb-2">AI Team Builder</h3>
+                The AI team builder allows users to create a competitively viable team in a matter of seconds. Using a custom AI model, users can select the format they wish to compete in and enter a textual description of what they are looking for. For example, users could enter &quot;Rain team&quot; or &quot;Team centered around Charizard&quot; and the model then returns a competitively viable team based on the prompt. The outputted team includes all six Pokémon, their items, abilities, moves and stats.
               </p>
             </div>
           </div>
@@ -162,7 +157,22 @@ export default function PokedexProjectPage() {
           </ul>
         </section>
 
-        {/* Screenshots */}
+        {/* Future Plans */}
+        <section id="future-plans" className="py-12">
+          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
+          <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--text-color)" }}>
+            I am actively working on the following features and improvements:
+          </p>
+          <ul className="list-disc pl-6 space-y-2" style={{ color: "var(--text-color)" }}>
+            <li>Improve AI model accuracy, especially for non-official artwork like plushies and fan art</li>
+            <li>Integrate the custom AI team builder into the mobile app</li>
+            <li>Add optional user accounts for cross-device syncing and data persistence</li>
+            <li>Create a brand name and create new art/sprites to decorate the app</li>
+            <li>Publish to the IOS app store</li>
+          </ul>
+        </section>
+
+                {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-8">
