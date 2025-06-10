@@ -14,7 +14,7 @@ export const projectList = [
       title: "7Factor AWS Analysis",
       description: "Web Application to analyze and help lower AWS costs.",
       fullDescription:
-        "A web application with a Python backend and React frontend, providing a way to help reduce AWS costs. Specifically, it looks at different Amazon EC2 instances to see if there was potential to downsize storage configurations and reduce cost. This project was completed as my senior project at WPI called an MQP (Major Qualifying Project) for our sponsor 7Factor.",
+        "A web application with a Python backend and React frontend to help reduce AWS costs. Specifically, the application examines different AWS EC2 instances to identify opportunities for downsizing storage configurations and minimizing expenses. This project was completed as my Major Qualifying Project (MQP) at WPI, sponsored by 7Factor.",
       link: "/projects/7FactorPage",
       image: "/static/images/7Factor/7FactorSmallLogo.png",
       techStack: ["react", "python", "axios"],

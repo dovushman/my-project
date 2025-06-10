@@ -24,7 +24,7 @@ export default function SevenFactorProjectPage() {
     }, []);
 
     const sections = [
-        { id: "hero", title: "Hero Section" },
+        { id: "intro", title: "Introduction" },
         { id: "features", title: "Key Features" },
         { id: "overview", title: "Overview" },
         { id: "why", title: "Why I Built This" },
@@ -58,7 +58,7 @@ export default function SevenFactorProjectPage() {
                         className="text-lg mb-6"
                         style={{ color: "var(--secondary-text-color)" }}
                     >
-                        A web application to analyze and help lower AWS costs.
+                        A full-stack web application designed to analyze AWS usage and recommend measures to lower AWS costs.
                     </p>
                     <div className="flex justify-center gap-4">
                         <a
@@ -78,17 +78,17 @@ export default function SevenFactorProjectPage() {
                     <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
                         <li className="flex items-start gap-4">
                             <div>
-                                <strong className="font-semibold">Cost Optimization:</strong> Engineered tools to analyze AWS usage and provide actionable insights to reduce cloud spending.
+                                <strong className="font-semibold">Cost Optimization:</strong> Analyzes AWS EC2 instances to provide recommendations to reduce cloud spending
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div>
-                                <strong className="font-semibold">Custom Tools:</strong> Developed new tools for 7Factor to optimize AWS cloud resource allocation and spending.
+                                <strong className="font-semibold">Custom Tools:</strong> Developed internal tools for 7Factor to improve storage efficiency
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div>
-                                <strong className="font-semibold">Modern Tech Stack:</strong> Built with a Python backend and React frontend for seamless performance and scalability.
+                                <strong className="font-semibold">Modern Tech Stack:</strong> Built with a Python backend and React frontend for responsive performance and scalability
                             </div>
                         </li>
                     </ul>
@@ -98,8 +98,7 @@ export default function SevenFactorProjectPage() {
                 <section id="overview" className="py-12">
                     <h2 className="text-3xl font-semibold mb-6">Overview</h2>
                     <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-                        This project is a web application designed to help businesses optimize their AWS usage and reduce costs.
-                        It features a Python backend and a React frontend, providing detailed cost analysis and actionable recommendations.
+                        This project is a web-based tool aimed to help 7Factor monitor and optimize their AWS EC2 storage usage. It performs detailed analysis and helps display the current EC2 usage and how it could be downsized to help cut costs. It features a Python backend and a React frontend to improve usability and allow for future developments on a more modern tech stack.
                     </p>
                 </section>
 
@@ -107,9 +106,7 @@ export default function SevenFactorProjectPage() {
                 <section id="why" className="py-12">
                     <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
                     <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-                        Managing AWS costs can be challenging for businesses. This project was created to provide a simple yet powerful
-                        solution for analyzing AWS usage and identifying cost-saving opportunities. By combining a Python backend with
-                        a React frontend, the application delivers a seamless user experience and actionable insights.
+                        AWS cost management can be a major challenge for businesses and costs thousands of dollars. This tool was designed to offer a straightforward yet effective solution for analyzing AWS usage and identifying cost-saving opportunities. Our MQP team at WPI was tasked with modernizing and expanding upon an existing internal tool created by the prior year&apos;s MQP project. We transitioned the project to a modern tech stack, maintained the core functionality, improved performance and completely redesigned the frontend for a more intuitive user experience.
                     </p>
                 </section>
 
