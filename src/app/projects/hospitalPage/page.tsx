@@ -24,7 +24,7 @@ export default function HospitalProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
@@ -52,13 +52,13 @@ export default function HospitalProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">Brigham and Women&apos;s Hospital Desktop Application</h1>
           <p
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A desktop application for hospital management, including staff communication, management requests, and adjustable signage.
+            A Java-based desktop application designed to streamline hospital operations through internal communication, service request management, and customizable signage.
           </p>
           <div className="flex justify-center gap-4">
             <a
@@ -78,17 +78,22 @@ export default function HospitalProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Staff Communication:</strong> Streamlined communication between hospital staff.
+                <strong className="font-semibold">Staff Communication:</strong> Tools for efficient internal messaging and task delegation
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Management Requests:</strong> Efficient handling of management requests and tasks.
+                <strong className="font-semibold">Service Requests System:</strong> Submit and track management and maintenance requests
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Adjustable Signage:</strong> Dynamic signage for hospital navigation and announcements.
+                <strong className="font-semibold">Adjustable Signage:</strong> Customizable hospital signage for navigation and announcements
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <div>
+                <strong className="font-semibold">Interactive Map:</strong> In-app pathfinding and map-editing for navigating hospital floors
               </div>
             </li>
           </ul>
@@ -98,7 +103,7 @@ export default function HospitalProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            This desktop application was developed to improve hospital management processes at Brigham and Women&apos;s Hospital. It provides tools for staff communication, management request handling, and dynamic signage adjustments, ensuring efficient operations and better patient care.
+            Developed by a 10-person Agile team, this desktop application was built to help Brigham and Women&apos;s Hospital explore new approaches to internal operations. The application allows hospital staff to communicate more effectively, manage requests, and update digital signage throughout the hospital. Additional features include a floor map editor and a pathfinding algorithm for navigation. Built with Java, JavaFX, and PostgreSQL, the application was presented to hospital staff for evaluation and potential future use.
           </p>
         </section>
 
@@ -106,7 +111,7 @@ export default function HospitalProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The project was inspired by the need for a centralized system to manage hospital operations effectively. By combining my interest in healthcare and software development, I aimed to create a solution that addresses common challenges faced by hospital staff and management.
+            This project was part of my Software Engineering course at WPI, where student teams collaborated with Brigham and Women&apos;s Hospital to prototype internal system improvements. I served as the assistant lead engineer on our 10-person team, contributing to both feature development and architecture planning. We followed Agile methodology, working in weekly sprints with daily standups to iteratively design and build the application. While certain features were required, we also introduced original ideas, such as in-app messaging system and calendar booking tool, to enhance communication and usability for hospital staff.
           </p>
         </section>
 
@@ -135,29 +140,29 @@ export default function HospitalProjectPage() {
           <div className="grid grid-cols-1 gap-8 justify-items-center">
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-          src="/static/images/B&W/HomePage.jpg"
-          alt="Hospital application homepage screenshot"
-          width={800}
-          height={400}
-          className="h-auto object-cover"
+                src="/static/images/B&W/HomePage.jpg"
+                alt="Hospital application homepage screenshot"
+                width={800}
+                height={400}
+                className="h-auto object-cover"
               />
             </div>
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-          src="/static/images/B&W/Pathfinder.jpg"
-          alt="Hospital application pathfinder screenshot"
-          width={800}
-          height={400}
-          className="h-auto object-cover"
+                src="/static/images/B&W/Pathfinder.jpg"
+                alt="Hospital application pathfinder screenshot"
+                width={800}
+                height={400}
+                className="h-auto object-cover"
               />
             </div>
             <div className="shadow-md rounded-lg overflow-hidden">
               <Image
-          src="/static/images/B&W/PersonalPage.jpg"
-          alt="Hospital application personal page screenshot"
-          width={800}
-          height={400}
-          className="h-auto object-cover"
+                src="/static/images/B&W/PersonalPage.jpg"
+                alt="Hospital application personal page screenshot"
+                width={800}
+                height={400}
+                className="h-auto object-cover"
               />
             </div>
             {/* Add more screenshots here */}

@@ -32,9 +32,9 @@ export const projectList = [
     {
       id: 3,
       title: "Brigham and Women's Hospital Desktop Application",
-      description: "A desktop application for hospital management.",
+      description: "A desktop application for hospital management created for Brigham and Women's Hospital.",
       fullDescription:
-        "A desktop application for hospital management including staff communications, management request and adjustable signage. This application. This application was given to Brigham and Women’s Hospital to help in the improvement of their systems and for them to take inspiration from. It was created using Java, JavaFX, and PostgreSQL.",
+        "A prototype desktop application to assist hospital staff with communication, request handling, and dynamic signage management. Built using Java, JavaFX, and PostgreSQL, the application was developed for Brigham and Women’s Hospital as part of a collaborative effort to enhance hospital operations. ",
       link: "/projects/hospitalPage",
       image: "/static/images/B&W/B&WLogo.png",
       techStack: ["java", "postgresql", "figma"],
