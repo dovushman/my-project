@@ -58,36 +58,36 @@ function ClientSideHeader() {
     };
   }, [isThemeMenuOpen]);
 
-const handleNavigation = (id: string) => {
-  if (pathname === "/") {
-    const section = document.getElementById(id);
-    if (section) {
-      const width = window.innerWidth;
-      const isDesktop = width >= 1024;
-      const isMedium = width >= 768 && width < 1024;
+  const handleNavigation = (id: string) => {
+    if (pathname === "/") {
+      const section = document.getElementById(id);
+      if (section) {
+        const width = window.innerWidth;
+        const isDesktop = width >= 1024;
+        const isMedium = width >= 768 && width < 1024;
 
-      if ((id === "about" && (isDesktop || isMedium)) || (id === "skills" && isDesktop)) {
-        const rect = section.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        let offset = rect.bottom - window.innerHeight;
-        if (id === "about" && isMedium) {
-          offset += 80; // Custom tweak for medium screens
+        if ((id === "about" && (isDesktop || isMedium)) || (id === "skills" && isDesktop)) {
+          const rect = section.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          let offset = rect.bottom - window.innerHeight;
+          if (id === "about" && isMedium) {
+            offset += 80; // Custom tweak for medium screens
+          }
+          // Clamp so we never scroll past the bottom of the page
+          const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+          const targetScroll = Math.min(scrollTop + offset, maxScroll);
+          window.scrollTo({
+            top: targetScroll,
+            behavior: "smooth",
+          });
+        } else {
+          section.scrollIntoView({ behavior: "smooth" });
         }
-        // Clamp so we never scroll past the bottom of the page
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const targetScroll = Math.min(scrollTop + offset, maxScroll);
-        window.scrollTo({
-          top: targetScroll,
-          behavior: "smooth",
-        });
-      } else {
-        section.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      router.push(`/?section=${id}`);
     }
-  } else {
-    router.push(`/?section=${id}`);
-  }
-};
+  };
 
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);
@@ -376,6 +376,37 @@ const handleNavigation = (id: string) => {
     //     </div>
     //   </div>
     // </header>
+    // <header
+    //   className="flex justify-between items-center p-2 md:p-4 fixed w-full z-50 shadow-md"
+    //   style={{
+    //     backgroundColor: "var(--navbar-background)",
+    //     color: "var(--text-color)",
+    //     height: "56px",
+    //   }}
+    // >
+    //   {/* Mobile Menu Button */}
+    //   <button
+    //     className="md:hidden p-2 focus:outline-none"
+    //     onClick={() => setIsMenuOpen(!isMenuOpen)}
+    //     aria-label="Toggle menu"
+    //   >
+    //     <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+    //   </button>
+
+    //   {/* Logo (Centered on Mobile) */}
+    //   <h1 className="text-xl font-semibold absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none">
+    //     Dov Ushman
+    //   </h1>
+
+    //   {/* Side Menu (visible when mobile and menu is open) */}
+    //   <div
+    //     className={`fixed top-14 left-0 h-full w-40 bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 z-40 ${isMobile && isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+    //       }`}
+    //     style={{
+    //       backgroundColor: "var(--navbar-background)",
+    //       color: "var(--text-color)",
+    //     }}
+    //   >
     <header
       className="flex justify-between items-center p-2 md:p-4 fixed w-full z-50 shadow-md"
       style={{
@@ -393,187 +424,147 @@ const handleNavigation = (id: string) => {
         <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
       </button>
 
-      {/* Logo (Centered on Mobile) */}
-      <h1 className="text-xl font-semibold absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none">
+      {/* Logo */}
+      <h1 className="text-xl font-semibold absolute left-1/2 transform -translate-x-1/2 md:static md:left-auto md:transform-none mx-0">
         Dov Ushman
       </h1>
 
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex space-x-4 ml-8">
+        <button onClick={() => handleNavigation("home")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Home</button>
+        <button onClick={() => handleNavigation("about")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>About</button>
+        <button onClick={() => handleNavigation("skills")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Skills</button>
+        <button onClick={() => handleNavigation("projects")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Projects</button>
+        <button onClick={() => handleNavigation("contact")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Contact</button>
+        <a href="/static/images/Dov Ushman Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--text-color)" }}>Resume</a>
+      </nav>
+
+      {/* Overlay for closing side menu on mobile */}
+      {isMobile && isMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black bg-opacity-30"
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Close menu overlay"
+        />
+      )}
+
       {/* Side Menu (visible when mobile and menu is open) */}
       <div
-        className={`fixed top-14 left-0 h-full w-40 bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 z-40 ${isMobile && isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 h-screen w-40 bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 z-40 ${isMobile && isMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         style={{
           backgroundColor: "var(--navbar-background)",
           color: "var(--text-color)",
         }}
       >
-        <nav className="pt-4">
-          <ul className="flex flex-col space-y-4 p-4">
-            <li>
-              <button
-                onClick={() => {
-                  handleNavigation("home");
-                  setIsMenuOpen(false);
-                }}
-                className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
-                style={{
-                  color: "var(--text-color)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                Home
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  handleNavigation("about");
-                  setIsMenuOpen(false);
-                }}
-                className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
-                style={{
-                  color: "var(--text-color)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  handleNavigation("skills");
-                  setIsMenuOpen(false);
-                }}
-                className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
-                style={{
-                  color: "var(--text-color)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                Skills
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  handleNavigation("projects");
-                  setIsMenuOpen(false);
-                }}
-                className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
-                style={{
-                  color: "var(--text-color)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                Projects
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  handleNavigation("contact");
-                  setIsMenuOpen(false);
-                }}
-                className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
-                style={{
-                  color: "var(--text-color)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                Contact
-              </button>
-            </li>
-            <li>
-              <a
-                href="/static/images/Dov Ushman Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline block"
-                style={{ color: "var(--text-color)" }}
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {/* Close button inside the side menu */}
+        <div
+          className={`fixed top-0 left-0 h-screen w-40 bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 z-40 ${isMobile && isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          style={{
+            backgroundColor: "var(--navbar-background)",
+            color: "var(--text-color)",
+          }}
+        >
+          {/* Absolutely positioned close button */}
+          <button
+            className="absolute top-4 right-4 w-7 h-10 flex items-center justify-center rounded bg-[#02796B] hover:bg-[#026357] text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <i className="fas fa-times text-lg"></i>
+          </button>
+          <nav className="pt-2">
+            <ul className="flex flex-col space-y-4 p-4">
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("home");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("about");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  About
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("skills");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Skills
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("projects");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Projects
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("contact");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Contact
+                </button>
+              </li>
+              <li>
+                <a
+                  href="/static/images/Dov Ushman Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline block"
+                  style={{ color: "var(--text-color)" }}
+                >
+                  Resume
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
-        <ul className="flex space-x-4">
-          <li>
-            <button
-              onClick={() => handleNavigation("home")}
-              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
-              style={{
-                color: "var(--text-color)",
-                backgroundColor: "transparent",
-              }}
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleNavigation("about")}
-              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
-              style={{
-                color: "var(--text-color)",
-                backgroundColor: "transparent",
-              }}
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleNavigation("skills")}
-              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
-              style={{
-                color: "var(--text-color)",
-                backgroundColor: "transparent",
-              }}
-            >
-              Skills
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleNavigation("projects")}
-              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
-              style={{
-                color: "var(--text-color)",
-                backgroundColor: "transparent",
-              }}
-            >
-              Projects
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleNavigation("contact")}
-              className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none"
-              style={{
-                color: "var(--text-color)",
-                backgroundColor: "transparent",
-              }}
-            >
-              Contact
-            </button>
-          </li>
-          <li>
-            <a
-              href="/static/images/Dov Ushman Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Resume
-            </a>
-          </li>
-        </ul>
-      </nav>
 
       {/* Icons */}
       <div className="flex items-center -space-x-2 md:space-x-2">
@@ -606,11 +597,12 @@ const handleNavigation = (id: string) => {
             className="p-2 rounded-full bg-transparent transition-all duration-300 flex items-center gap-1"
             aria-label="Toggle Theme"
           >
-<i
-  className={`fas fa-paint-roller text-lg`}
-  style={{
-    color: theme === "dark" || theme === "ide" ? "#fff" : "#1f2937", }}
-/>
+            <i
+              className={`fas fa-paint-roller text-lg`}
+              style={{
+                color: theme === "dark" || theme === "ide" ? "#fff" : "#1f2937",
+              }}
+            />
           </button>
 
           {isThemeMenuOpen && (
