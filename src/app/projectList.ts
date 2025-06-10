@@ -52,9 +52,9 @@ export const projectList = [
     {
       id: 5,
       title: "HomeHub: Smart Home Management",
-      description: "A web application to streamline roommate management ",
+      description: "A web application for managing shared living spaces.",
       fullDescription:
-        "A web application to streamline roommate management, including a calendar, task manager, and shopping list. This application is meant to improve roommate communications while being a platform for roommate agreements and tool to help manage household responsibilities. It is being created with React, React-Bootstrap, Node.js and MongoDB.",
+        "A web application built to simplify the logistics of shared living. HomeHub combines a collaborative calendar, task manager, and shopping list into a single platform to help roommates stay organized and communicate effectively. It is being built with React, React-Bootstrap, Node.js and MongoDB.",
       link: "/projects/homehubPage",
       image: "/images/team-builder.jpg",
       techStack: ["react", "nodejs", "mongodb", "bootstrap"],

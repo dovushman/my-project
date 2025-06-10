@@ -24,13 +24,13 @@ export default function HomeHubProjectPage() {
   }, []);
 
   const sections = [
-    { id: "hero", title: "Hero Section" },
+    { id: "intro", title: "Introduction" },
     { id: "features", title: "Key Features" },
     { id: "overview", title: "Overview" },
     { id: "why", title: "Why I Built This" },
     { id: "tech-stack", title: "Tech Stack" },
-    { id: "screenshots", title: "Screenshots" },
     { id: "future-plans", title: "Future Plans" },
+    { id: "screenshots", title: "Screenshots" },
   ];
 
   return (
@@ -53,13 +53,13 @@ export default function HomeHubProjectPage() {
         }}
       >
         {/* Hero Section */}
-        <section id="hero" className="py-16 text-center">
+        <section id="intro" className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-2">HomeHub: Smart Home Management</h1>
           <p
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A web application to streamline roommate management, including a calendar, task manager, and shopping list.
+            A full-stack web app designed to help roommates coordinate tasks, schedules and shared shopping lists in one place. 
           </p>
           <div className="flex justify-center gap-4">
           </div>
@@ -71,22 +71,22 @@ export default function HomeHubProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Shared Calendar:</strong> Organize events and schedules for all roommates.
+                <strong className="font-semibold">Shared Calendar:</strong> Coordinate events, schedules and shared commitments
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Task Manager:</strong> Assign and track household chores efficiently.
+                <strong className="font-semibold">Task Manager:</strong> Assign, track, and complete chores with visibility across all users 
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Shopping List:</strong> Collaboratively manage grocery lists in real-time.
+                <strong className="font-semibold">Collaborative shopping List:</strong> Add, edit, and manage grocery items together in real time
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">User-Friendly Interface:</strong> Intuitive design for seamless roommate collaboration.
+                <strong className="font-semibold">Clean UI:</strong> Built with React and Bootstrap for an intuitive and responsive interface
               </div>
             </li>
           </ul>
@@ -96,7 +96,7 @@ export default function HomeHubProjectPage() {
         <section id="overview" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Overview</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            HomeHub is a web application designed to simplify roommate management. It provides tools for organizing shared schedules, assigning tasks, and managing shopping lists, making it easier for roommates to collaborate and maintain a harmonious living environment.
+            HomeHub is a roommate management tool aimed to help manage shared living spaces. Whether it is coordinating cleaning duties, remembering who is buying groceries or just knowing what is happening when, HomeHub centralizes all of this information. The app supports a more organized, transparent, and low stress living environment by helping roommates stay on the same page. 
           </p>
         </section>
 
@@ -104,7 +104,7 @@ export default function HomeHubProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for HomeHub came from the challenges of managing shared living spaces. Coordinating schedules, dividing chores, and keeping track of shared expenses can be overwhelming. I wanted to create a solution that simplifies these tasks and fosters better communication among roommates.
+            The idea for HomeHub came from personal experience – living with roommates can be great, but it often leads to miscommunication over chores, groceries, and scheduling. I wanted to build a tool that made these everyday tasks easier to manage, encouraging fairness and collaboration without relying on constant texts or awkward reminders. HomeHub combines organization with simplicity, offering a single space to support smoother, more respectful co-living.
           </p>
         </section>
 
@@ -126,6 +126,20 @@ export default function HomeHubProjectPage() {
           </ul>
         </section>
 
+        {/* Future Plans */}
+        <section id="future-plans" className="py-12">
+          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
+          <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
+            I am actively working on the following features and improvements:
+          </p>
+          <ul className="list-disc list-inside space-y-2" style={{ color: "var(--text-color)" }}>
+            <li>Adding real-time notifications for task updates and calendar reminders</li>
+            <li>Integrating expense tracking and bill splitting functionality</li>
+            <li>Enhancing the shopping list with barcode scanning and price comparison</li>
+            <li>Developing a mobile app for better accessibility and on-the-go use</li>
+          </ul>
+        </section>
+
         {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
@@ -141,20 +155,6 @@ export default function HomeHubProjectPage() {
             </div>
             {/* Add more screenshots here */}
           </div>
-        </section>
-
-        {/* Future Plans */}
-        <section id="future-plans" className="py-12">
-          <h2 className="text-3xl font-semibold mb-6">Future Plans</h2>
-          <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            I am actively working on the following features and improvements:
-          </p>
-          <ul className="list-disc list-inside space-y-2" style={{ color: "var(--text-color)" }}>
-            <li>Adding real-time notifications for task updates and reminders.</li>
-            <li>Integrating expense tracking and bill splitting features.</li>
-            <li>Enhancing the shopping list with barcode scanning and price comparison.</li>
-            <li>Developing a mobile app for better accessibility.</li>
-          </ul>
         </section>
 
         {/* Back Link */}
