@@ -467,7 +467,10 @@ function ClientSideHeader() {
         >
           {/* Absolutely positioned close button */}
           <button
-            className="absolute top-4 right-4 w-7 h-10 flex items-center justify-center rounded bg-[#02796B] hover:bg-[#026357] text-white focus:outline-none"
+            className={`absolute top-4 right-4 w-7 h-10 flex items-center justify-center rounded text-white focus:outline-none`}
+            style={{
+              backgroundColor: theme === "dark" ? "#0A84FF" : "#02796B",
+            }}
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
           >
