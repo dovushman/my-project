@@ -67,7 +67,11 @@ export default function PokedexProjectPage() {
               href="https://github.com/dovushman/pokedex"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+              className="px-6 py-3 rounded-md shadow-md hover:bg-opacity-90 transition duration-300 font-semibold"
+              style={{
+                backgroundColor: "var(--button-background)",
+                color: "var(--button-text-color)",
+              }}
             >
               <span className="font-semibold">View Source Code</span>
             </a>
@@ -172,7 +176,7 @@ export default function PokedexProjectPage() {
           </ul>
         </section>
 
-                {/* Screenshots */}
+        {/* Screenshots */}
         <section id="screenshots" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Screenshots</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-8">

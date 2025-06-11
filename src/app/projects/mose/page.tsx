@@ -58,14 +58,18 @@ export default function MoseProjectPage() {
             className="text-lg mb-6"
             style={{ color: "var(--secondary-text-color)" }}
           >
-            A mobile app prototype designed to improve floodgate communication and public safety in Venice, Italy. 
+            A mobile app prototype designed to improve floodgate communication and public safety in Venice, Italy.
           </p>
           <div className="flex justify-center gap-4">
             <a
               href="https://digital.wpi.edu/concern/student_works/8g84mq70r?locale=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+              className="px-6 py-3 rounded-md shadow-md hover:bg-opacity-90 transition duration-300 font-semibold"
+              style={{
+                backgroundColor: "var(--button-background)",
+                color: "var(--button-text-color)",
+              }}
             >
               <span className="font-semibold">Learn More</span>
             </a>

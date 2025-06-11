@@ -65,7 +65,11 @@ export default function HospitalProjectPage() {
               href="https://github.com/CS3733-D23-Team-Q/CS3733-D23-Team-Q-Production"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+              className="px-6 py-3 rounded-md shadow-md hover:bg-opacity-90 transition duration-300 font-semibold"
+              style={{
+                backgroundColor: "var(--button-background)",
+                color: "var(--button-text-color)",
+              }}
             >
               <span className="font-semibold">View Source Code</span>
             </a>

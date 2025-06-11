@@ -65,7 +65,11 @@ export default function SharpifyProjectPage() {
               href="https://github.com/dovushman/cs4241-final-project"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+              className="px-6 py-3 rounded-md shadow-md hover:bg-opacity-90 transition duration-300 font-semibold"
+              style={{
+                backgroundColor: "var(--button-background)",
+                color: "var(--button-text-color)",
+              }}
             >
               <span className="font-semibold">View Source Code</span>
             </a>
@@ -78,7 +82,7 @@ export default function SharpifyProjectPage() {
           <ul className="space-y-6" style={{ color: "var(--text-color)" }}>
             <li className="flex items-start gap-4">
               <div>
-                <strong className="font-semibold">Image Enhancement:</strong> Upgrade image resolution and clarity using AI-powered processing 
+                <strong className="font-semibold">Image Enhancement:</strong> Upgrade image resolution and clarity using AI-powered processing
               </div>
             </li>
             <li className="flex items-start gap-4">
@@ -106,7 +110,7 @@ export default function SharpifyProjectPage() {
         <section id="why" className="py-12">
           <h2 className="text-3xl font-semibold mb-6">Why I Built This</h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
-            The idea for Sharpify stemmed from my trying to find a website to improve an images quality. I had taken a photo on my phone and the image didn&apos;t look as crisp as I wanted it. The idea for Sharpify was born. At the time, I was also taking the Webware course at WPI. For my final project, I needed to create a full-stack web application, and an image enhancer seemed perfect. Sharpify was an idea that I knew would be useful to me and something that could be useful to others as well. 
+            The idea for Sharpify stemmed from my trying to find a website to improve an images quality. I had taken a photo on my phone and the image didn&apos;t look as crisp as I wanted it. The idea for Sharpify was born. At the time, I was also taking the Webware course at WPI. For my final project, I needed to create a full-stack web application, and an image enhancer seemed perfect. Sharpify was an idea that I knew would be useful to me and something that could be useful to others as well.
           </p>
         </section>
 

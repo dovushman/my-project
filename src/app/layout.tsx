@@ -9,7 +9,7 @@ import "./styles/globals.css";
 export const metadata: Metadata = {
   title: "Dov Ushman | Portfolio",
   icons: {
-    icon: "/static/images/favicon.ico", // Updated path
+    icon: "/static/images/favicon.ico",
     shortcut: "/static/images/favicon.ico",
     apple: "/static/images/favicon.ico",
   },
