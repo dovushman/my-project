@@ -18,7 +18,7 @@
   --border-color: #2C2C2E;
   --section-font-color: #FFFFFF;
   --hero-gradient-start: #1e3a8a;
-   --hero-gradient-end: #065f46; 
+  --hero-gradient-end: #065f46; 
 }
 
 .section {
@@ -40,7 +40,6 @@
   --accent-color: #4d95d8;
   --hero-gradient-start: #93c5fd;
   --hero-gradient-end: #6ee7b7;
-
 }
 
 /* IDE Theme styles */
