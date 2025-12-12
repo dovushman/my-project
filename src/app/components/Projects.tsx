@@ -147,9 +147,9 @@ export default function Projects() {
           style={{
             height: "500px",
             overflowY: "auto",
-            backgroundColor: theme === "dark" ? "#121212" : "var(--background-color)",
+            backgroundColor: "var(--card-background)",
             border: theme === "dark" ? "1px solid #2A2A2A" : "1px solid #E5E5E5",
-            color: theme === "dark" ? "#ffffff" : "var(--text-color)",
+            color: "var(--text-color)",
           }}
         >
           <h2 className="text-2xl font-bold mb-4">{projects[selectedProject].title}</h2>

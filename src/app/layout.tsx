@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import ClientSideHeader from "./components/Header";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "./ThemeContext"; 
+import { ThemeProvider } from "./ThemeContext";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"; 
 import "./styles/globals.css";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Dov Ushman | Portfolio",
@@ -33,30 +34,22 @@ export const metadata: Metadata = {
   description: "A personal portfolio website",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get("theme")?.value;
+  const initialTheme =
+    themeCookie === "light" || themeCookie === "dark" || themeCookie === "ide"
+      ? themeCookie
+      : "dark";
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={initialTheme} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/static/images/favicon.ico" />
-        {/* Inline script to set theme before React loads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (theme === 'light' || theme === 'dark' || theme === 'ide') {
-                    document.documentElement.setAttribute('data-theme', theme);
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
       </head>
       <body className="antialiased">
         <ThemeProvider>

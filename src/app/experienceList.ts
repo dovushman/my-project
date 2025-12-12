@@ -22,9 +22,9 @@ export const experienceList: Experience[] = [
     url: "https://tryturbotune.com",
     summary: "AI-powered automotive image enhancement platform for auto dealers.",
     highlights: [
-      "Architected AWS (S3, RDS) with presigned URL flows to securely intake dealer photo uploads.",
-      "Integrated fal.ai image enhancement into a scalable pipeline for user-submitted photos.",
-      "Built full-stack workflows (React, Node.js, TypeScript) for uploads, previews, usage tracking, and galleries.",
+      "Designed AWS infrastructure (S3, RDS) with secure presigned-URL workflows for image uploads.",
+      "Integrated fal.ai image enhancement APIs into a scalable backend pipeline for processing user-uploaded photos.",
+      "Built full-stack features using React, Node.js, Typescript for upload workflows, previews, usage tracking and galleries.",
     ],
     skills: ["AWS (S3/RDS)", "React", "Node.js", "TypeScript", "fal.ai"],
   },

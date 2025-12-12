@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTheme } from "../ThemeContext";
 
 export default function Contact() {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,10 +55,20 @@ export default function Contact() {
     }
   };
 
+  const cardBackground = theme === "dark" ? "var(--background-color)" : "#ffffff";
+  const fieldBackground = theme === "dark" ? "#1a1a1d" : "#f9fafb";
+  const borderColor = theme === "dark" ? "#2a2a2e" : "#e5e7eb";
+
   return (
-    <section className="p-8 max-w-2xl mx-auto rounded-xl shadow-xl bg-white border border-gray-200 text-slate-900">
-      <h2 className="text-3xl font-bold mb-6 text-slate-900">Get in Touch</h2>
-      <p className="mb-4 text-slate-700">
+    <section
+      className="p-8 max-w-2xl mx-auto rounded-xl shadow-xl text-[var(--text-color)] transition-colors"
+      style={{
+        backgroundColor: cardBackground,
+        border: `1px solid ${borderColor}`,
+      }}
+    >
+      <h2 className="text-3xl font-bold mb-6 text-[var(--text-color)]">Get in Touch</h2>
+      <p className="mb-4 text-[var(--secondary-text-color)]">
         Feel free to reach out for collaborations or just to chat.
       </p>
       <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
@@ -67,7 +79,8 @@ export default function Contact() {
           value={formData.name}
           onChange={handleChange}
           onKeyDown={handleKeyDown} // Prevent Enter key submission
-          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
+          className="p-3 rounded text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)] transition-colors"
+          style={{ backgroundColor: fieldBackground, border: `1px solid ${borderColor}` }}
         />
         <input
           type="email"
@@ -76,14 +89,16 @@ export default function Contact() {
           value={formData.email}
           onChange={handleChange}
           onKeyDown={handleKeyDown} // Prevent Enter key submission
-          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
+          className="p-3 rounded text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)] transition-colors"
+          style={{ backgroundColor: fieldBackground, border: `1px solid ${borderColor}` }}
         />
         <textarea
           name="message"
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
-          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
+          className="p-3 rounded text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)] transition-colors"
+          style={{ backgroundColor: fieldBackground, border: `1px solid ${borderColor}` }}
           rows={5}
         />
         <button
