@@ -15,7 +15,7 @@
     "flowbite": "^3.1.2",
     "flowbite-react": "^0.9.0",
     "mongodb": "^6.15.0",
-    "next": "15.2.4",
+    "next": "15.2.8",
     "nodemailer": "^6.10.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
