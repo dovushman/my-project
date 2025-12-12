@@ -37,9 +37,9 @@ export const experienceList: Experience[] = [
     dates: "Jun 2022 - Aug 2022 & Jun 2023 - Aug 2023",
     summary: "Digital marketing agency focused on fundraising and engagement campaigns.",
     highlights: [
-      "Built Python dashboards to visualize live fundraising totals and campaign performance.",
-      "Developed dynamic marketing emails (HTML/CSS/JS) sent to 10,000+ recipients.",
-      "Improved targeting and engagement, contributing to ~12% CTR lift and ~15% higher open rates.",
+      "Utilized Python to develop dashboards displaying live campaign funds raised and to track marketing performance.",
+      "Created dynamic marketing emails using HTML, CSS, and JavaScript which were sent to 10,000+ recipients.",
+      "Improved email targeting and engagement, contributing to ~12% increase in click through rate and ~15% in open rates.",
     ],
     skills: ["Python", "HTML/CSS/JS", "Email automation", "Data dashboards"],
   },
@@ -52,8 +52,8 @@ export const experienceList: Experience[] = [
     dates: "Jun 2021 - Aug 2021",
     summary: "Local IT services provider supporting client hardware and software needs.",
     highlights: [
-      "Performed hardware upgrades and software installs to keep client systems performant.",
-      "Communicated setup plans and delivered fully operational machines on deadline.",
+      "Executed hardware adjustments and software installations to ensure optimal performance and functionality of client systems.",
+      "Enhanced client satisfaction through effective communication and timely delivery of fully operational setups.",
     ],
     skills: ["PC setup", "Client support", "Networking basics"],
   },
