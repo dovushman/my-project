@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
@@ -39,13 +40,18 @@ function HomePageContent() {
         <Skills />
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="bg-[var(--card-background)]">
+        <Experience />
+      </section>
+
       {/* Projects Section */}
-      <section id="projects" className="bg-[var(--card-background)]">
+      <section id="projects" className="bg-[var(--background-color)]">
         <Projects />
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-[var(--background-color)]">
+      <section id="contact" className="bg-[var(--card-background)]">
         <Contact />
       </section>
     </main>

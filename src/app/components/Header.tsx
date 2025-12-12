@@ -434,6 +434,7 @@ function ClientSideHeader() {
         <button onClick={() => handleNavigation("home")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Home</button>
         <button onClick={() => handleNavigation("about")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>About</button>
         <button onClick={() => handleNavigation("skills")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Skills</button>
+        <button onClick={() => handleNavigation("experience")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Experience</button>
         <button onClick={() => handleNavigation("projects")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Projects</button>
         <button onClick={() => handleNavigation("contact")} className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none" style={{ color: "var(--text-color)" }}>Contact</button>
         <a href="/static/images/Dov Ushman Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--text-color)" }}>Resume</a>
@@ -521,6 +522,21 @@ function ClientSideHeader() {
                   }}
                 >
                   Skills
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("experience");
+                    setIsMenuOpen(false);
+                  }}
+                  className="hover:underline bg-transparent border-none cursor-pointer p-0 appearance-none text-left w-full"
+                  style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Experience
                 </button>
               </li>
               <li>

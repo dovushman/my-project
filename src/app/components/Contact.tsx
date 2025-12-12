@@ -54,9 +54,9 @@ export default function Contact() {
   };
 
   return (
-    <section className="p-8 max-w-2xl mx-auto bg-[var(--section-background)] rounded-lg focus:outline-none focus:ring-0 border-none">
-      <h2 className="text-3xl font-bold mb-6 text-[var(--heading-color)]">Get in Touch</h2>
-      <p className="mb-4 text-[var(--text-color)]">
+    <section className="p-8 max-w-2xl mx-auto rounded-xl shadow-xl bg-white border border-gray-200 text-slate-900">
+      <h2 className="text-3xl font-bold mb-6 text-slate-900">Get in Touch</h2>
+      <p className="mb-4 text-slate-700">
         Feel free to reach out for collaborations or just to chat.
       </p>
       <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
@@ -67,7 +67,7 @@ export default function Contact() {
           value={formData.name}
           onChange={handleChange}
           onKeyDown={handleKeyDown} // Prevent Enter key submission
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
+          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
         />
         <input
           type="email"
@@ -76,14 +76,14 @@ export default function Contact() {
           value={formData.email}
           onChange={handleChange}
           onKeyDown={handleKeyDown} // Prevent Enter key submission
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
+          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
         />
         <textarea
           name="message"
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
-          className="p-3 rounded bg-[var(--card-background)] text-[var(--text-color)] focus:outline-none focus:ring-0 border-none"
+          className="p-3 rounded bg-gray-100 text-slate-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]"
           rows={5}
         />
         <button
@@ -93,7 +93,7 @@ export default function Contact() {
           Send Message
         </button>
       </form>
-      {status && <p className="mt-4 text-[var(--status-color)]">{status}</p>}
+      {status && <p className="mt-4 text-slate-800">{status}</p>}
     </section>
   );
 }
